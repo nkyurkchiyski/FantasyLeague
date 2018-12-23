@@ -14,9 +14,9 @@ namespace FantasyLeague.Models
         
         public string Name { get; set; }
 
-        public Guid CreatorId { get; set; }
-        public User Creator { get; set; }
+        public string CreatorId { get; set; }
+        public virtual User Creator { get; set; }
 
-        public ICollection<UserLeague> Users { get; set; }
+        public virtual ICollection<UserLeague> Users { get; set; }
     }
 }

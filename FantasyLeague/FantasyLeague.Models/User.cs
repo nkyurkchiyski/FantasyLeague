@@ -27,11 +27,11 @@ namespace FantasyLeague.Models
         public string ClubName { get; set; }
 
         public Guid FavouriteTeamId { get; set; }
-        public Team FavouriteTeam { get; set; }
+        public virtual Team FavouriteTeam { get; set; }
 
-        public ICollection<Roster> Rosters { get; set; }
-        public ICollection<League> CreatedLeagues { get; set; }
-        public ICollection<UserLeague> AllLeagues { get; set; }
+        public virtual ICollection<Roster> Rosters { get; set; }
+        public virtual ICollection<League> CreatedLeagues { get; set; }
+        public virtual ICollection<UserLeague> AllLeagues { get; set; }
 
 
     }

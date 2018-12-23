@@ -17,7 +17,9 @@ namespace FantasyLeague.Models
 
         public DateTime EndDate { get; set; }
 
-        public ICollection<Fixture> Fixtures { get; set; }
-        public ICollection<Transfer> Transfers { get; set; }
+        public int Week { get; set; }
+
+        public virtual ICollection<Fixture> Fixtures { get; set; }
+        public virtual ICollection<Transfer> Transfers { get; set; }
     }
 }

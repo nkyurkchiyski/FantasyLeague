@@ -9,13 +9,13 @@ namespace FantasyLeague.Models
     public class Transfer : BaseEntity
     {
         public Guid RosterId { get; set; }
-        public Roster Roster { get; set; }
+        public virtual Roster Roster { get; set; }
 
         public Guid PlayerId { get; set; }
-        public Player Player { get; set; }
+        public virtual Player Player { get; set; }
 
         public Guid MatchdayId { get; set; }
-        public Matchday Matchday { get; set; }
+        public virtual Matchday Matchday { get; set; }
 
         public TransferType TransferType { get; set; }
 

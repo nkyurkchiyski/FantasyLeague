@@ -14,11 +14,13 @@ namespace FantasyLeague.Models
         }
 
         public Guid HomeTeamId { get; set; }
-        public Team HomeTeam { get; set; }
-        public int? HomeTeamGoals { get; set; }
+        public virtual Team HomeTeam { get; set; }
 
         public Guid AwayTeamId { get; set; }
-        public Team AwayTeam { get; set; }
+        public virtual Team AwayTeam { get; set; }
+
+        public int? HomeTeamGoals { get; set; }
+        
         public int? AwayTeamGoals { get; set; }
 
         public MatchResult Result { get; set; }
@@ -26,8 +28,8 @@ namespace FantasyLeague.Models
         public FixtureStatus Status { get; set; }
 
         public Guid MatchdayId { get; set; }
-        public Matchday Matchday { get; set; }
+        public virtual Matchday Matchday { get; set; }
 
-        public ICollection<Score> Scores { get; set; }
+        public virtual ICollection<Score> Scores { get; set; }
     }
 }

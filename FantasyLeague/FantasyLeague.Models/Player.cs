@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace FantasyLeague.Models
 {
-    public class Player : ImageEntity
+    public class Player : BaseEntity
     {
         public Player()
         {
@@ -25,12 +25,15 @@ namespace FantasyLeague.Models
         public double Price { get; set; }
 
         public Guid TeamId { get; set; }
-        public Team Team { get; set; }
+        public virtual Team Team { get; set; }
+
+        public Guid ImageId { get; set; }
+        public virtual Image Image { get; set; }
 
         public bool Active { get; set; }
 
-        public ICollection<RosterPlayer> Rosters { get; set; }
-        public ICollection<Transfer> Transfers { get; set; }
-        public ICollection<Score> Scores { get; set; }
+        public virtual ICollection<RosterPlayer> Rosters { get; set; }
+        public virtual ICollection<Transfer> Transfers { get; set; }
+        public virtual ICollection<Score> Scores { get; set; }
     }
 }

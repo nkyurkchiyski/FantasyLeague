@@ -17,10 +17,10 @@ namespace FantasyLeague.Models
         public Formation Formation { get; set; }
 
         public string UserId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
-        public ICollection<RosterPlayer> Players { get; set; }
-        public ICollection<Transfer> Transfers { get; set; }
+        public virtual ICollection<RosterPlayer> Players { get; set; }
+        public virtual ICollection<Transfer> Transfers { get; set; }
 
     }
 }

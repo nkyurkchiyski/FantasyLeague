@@ -9,7 +9,7 @@ namespace FantasyLeague.Models
 
         public string Url { get; set; }
 
-        public Guid ImageEntityId { get; set; }
-        public ImageEntity ImageEntity { get; set; }
+        public Guid PlayerId { get; set; }
+        public virtual Player Player { get; set; }
     }
 }

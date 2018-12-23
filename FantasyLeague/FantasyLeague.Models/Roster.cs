@@ -1,8 +1,7 @@
 ﻿using FantasyLeague.Models.Abstract;
 using FantasyLeague.Models.Enums;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace FantasyLeague.Models
 {
@@ -13,9 +12,10 @@ namespace FantasyLeague.Models
             this.Players = new HashSet<RosterPlayer>();
             this.Transfers = new HashSet<Transfer>();
         }
-
+        
         public Formation Formation { get; set; }
 
+        [Required]
         public string UserId { get; set; }
         public virtual User User { get; set; }
 

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FantasyLeague.Models.Enums
+﻿namespace FantasyLeague.Models.Enums
 {
     public enum Formation
     {
-        Formation352 = 352,
         Formation343 = 343,
+        Formation352 = 352,
         Formation442 = 442,
         Formation451 = 451,
         Formation532 = 532,

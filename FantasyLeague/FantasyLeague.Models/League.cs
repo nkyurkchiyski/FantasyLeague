@@ -1,7 +1,6 @@
 ﻿using FantasyLeague.Models.Abstract;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace FantasyLeague.Models
 {
@@ -10,13 +9,18 @@ namespace FantasyLeague.Models
         public League()
         {
             this.Users = new HashSet<UserLeague>();
+            this.Invites = new HashSet<Invite>();
         }
-        
+
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string CreatorId { get; set; }
         public virtual User Creator { get; set; }
 
         public virtual ICollection<UserLeague> Users { get; set; }
+        public virtual ICollection<Invite> Invites { get; set; }
+
     }
 }

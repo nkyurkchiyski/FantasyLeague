@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using FantasyLeague.Data.Configurations;
 using FantasyLeague.Models;
 using FantasyLeague.Models.Abstract;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -45,35 +46,14 @@ namespace FantasyLeague.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Fixture>(entity =>
-            {
-                entity.HasOne(e => e.HomeTeam)
-                .WithMany(t => t.HomeFixtures)
-                .HasForeignKey(e => e.HomeTeamId);
-
-                entity.HasOne(e => e.AwayTeam)
-                .WithMany(t => t.AwayFixtures)
-                .HasForeignKey(e => e.AwayTeamId);
-
-            });
-
-            builder.Entity<Team>(entity =>
-            {
-                entity.Property(e => e.Initials)
-                .IsRequired()
-                .HasColumnType("NCHAR(3)");
-            });
-
-            builder.Entity<Player>(entity =>
-            {
-                entity.HasOne(e => e.Image)
-                .WithOne(i => i.Player)
-                .HasForeignKey<Image>(e => e.PlayerId);
-            });
-
+            builder.ApplyConfiguration(new FixtureConfiguration());
+            builder.ApplyConfiguration(new LeagueConfiguration());
+            builder.ApplyConfiguration(new PlayerConfiguration());
+            builder.ApplyConfiguration(new TeamConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new InviteConfiguration());
             base.OnModelCreating(builder);
         }
-
 
     }
 }

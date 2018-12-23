@@ -58,9 +58,11 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<Guid>("PlayerId");
 
-                    b.Property<string>("PublicId");
+                    b.Property<string>("PublicId")
+                        .IsRequired();
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Url")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -70,18 +72,49 @@ namespace FantasyLeague.Data.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("FantasyLeague.Models.Invite", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("InviteeId")
+                        .IsRequired();
+
+                    b.Property<string>("InviterId")
+                        .IsRequired();
+
+                    b.Property<Guid>("LeagueId");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InviteeId");
+
+                    b.HasIndex("InviterId");
+
+                    b.HasIndex("LeagueId");
+
+                    b.ToTable("Invite");
+                });
+
             modelBuilder.Entity("FantasyLeague.Models.League", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CreatorId");
+                    b.Property<string>("CreatorId")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorId");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Leagues");
                 });
@@ -109,13 +142,15 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<bool>("Active");
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .IsRequired();
 
                     b.Property<Guid>("ImageId");
 
                     b.Property<bool>("Injured");
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .IsRequired();
 
                     b.Property<int>("Position");
 
@@ -137,7 +172,8 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<int>("Formation");
 
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -195,7 +231,8 @@ namespace FantasyLeague.Data.Migrations
                         .IsRequired()
                         .HasColumnType("NCHAR(3)");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -233,7 +270,8 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<Guid>("LeagueId");
 
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -422,15 +460,22 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<int>("Age");
 
-                    b.Property<string>("ClubName");
+                    b.Property<string>("ClubName")
+                        .IsRequired();
 
                     b.Property<string>("Country");
 
                     b.Property<Guid>("FavouriteTeamId");
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .IsRequired();
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .IsRequired();
+
+                    b.HasIndex("ClubName")
+                        .IsUnique()
+                        .HasFilter("[ClubName] IS NOT NULL");
 
                     b.HasIndex("FavouriteTeamId");
 
@@ -463,11 +508,30 @@ namespace FantasyLeague.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("FantasyLeague.Models.Invite", b =>
+                {
+                    b.HasOne("FantasyLeague.Models.User", "Invitee")
+                        .WithMany("ReceivedInvitations")
+                        .HasForeignKey("InviteeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("FantasyLeague.Models.User", "Inviter")
+                        .WithMany("SentInvitations")
+                        .HasForeignKey("InviterId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("FantasyLeague.Models.League", "League")
+                        .WithMany("Invites")
+                        .HasForeignKey("LeagueId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("FantasyLeague.Models.League", b =>
                 {
                     b.HasOne("FantasyLeague.Models.User", "Creator")
                         .WithMany("CreatedLeagues")
-                        .HasForeignKey("CreatorId");
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("FantasyLeague.Models.Player", b =>
@@ -482,7 +546,8 @@ namespace FantasyLeague.Data.Migrations
                 {
                     b.HasOne("FantasyLeague.Models.User", "User")
                         .WithMany("Rosters")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("FantasyLeague.Models.RosterPlayer", b =>
@@ -538,7 +603,8 @@ namespace FantasyLeague.Data.Migrations
 
                     b.HasOne("FantasyLeague.Models.User", "User")
                         .WithMany("AllLeagues")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

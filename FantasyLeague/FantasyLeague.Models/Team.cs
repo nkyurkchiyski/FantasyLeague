@@ -1,6 +1,7 @@
 ﻿using FantasyLeague.Models.Abstract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace FantasyLeague.Models
@@ -13,12 +14,15 @@ namespace FantasyLeague.Models
             this.Fans = new HashSet<User>();
             this.HomeFixtures = new HashSet<Fixture>();
             this.AwayFixtures = new HashSet<Fixture>();
+            this.Active = true;
         }
 
+        [Required]
         public string Name { get; set; }
 
         public bool Active { get; set; }
 
+        [Required]
         public string Initials { get; set; }
 
         public virtual ICollection<Player> Players { get; set; }

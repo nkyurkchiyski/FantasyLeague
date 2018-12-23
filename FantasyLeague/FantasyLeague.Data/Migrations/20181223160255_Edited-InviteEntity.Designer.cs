@@ -4,41 +4,22 @@ using FantasyLeague.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FantasyLeague.Data.Migrations
 {
     [DbContext(typeof(FantasyLeagueDbContext))]
-    partial class FantasyLeagueDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181223160255_Edited-InviteEntity")]
+    partial class EditedInviteEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("FantasyLeague.Models.Abstract.Image", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ImageType")
-                        .IsRequired();
-
-                    b.Property<string>("PublicId")
-                        .IsRequired();
-
-                    b.Property<string>("Url")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Images");
-
-                    b.HasDiscriminator<string>("ImageType").HasValue("Image");
-                });
 
             modelBuilder.Entity("FantasyLeague.Models.Fixture", b =>
                 {
@@ -70,6 +51,27 @@ namespace FantasyLeague.Data.Migrations
                     b.HasIndex("MatchdayId");
 
                     b.ToTable("Fixtures");
+                });
+
+            modelBuilder.Entity("FantasyLeague.Models.Image", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("PlayerId");
+
+                    b.Property<string>("PublicId")
+                        .IsRequired();
+
+                    b.Property<string>("Url")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlayerId")
+                        .IsUnique();
+
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("FantasyLeague.Models.Invite", b =>
@@ -145,12 +147,12 @@ namespace FantasyLeague.Data.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired();
 
+                    b.Property<Guid>("ImageId");
+
                     b.Property<bool>("Injured");
 
                     b.Property<string>("LastName")
                         .IsRequired();
-
-                    b.Property<Guid>("PlayerImageId");
 
                     b.Property<int>("Position");
 
@@ -233,8 +235,6 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired();
-
-                    b.Property<Guid>("TeamImageId");
 
                     b.HasKey("Id");
 
@@ -454,32 +454,6 @@ namespace FantasyLeague.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("FantasyLeague.Models.PlayerImage", b =>
-                {
-                    b.HasBaseType("FantasyLeague.Models.Abstract.Image");
-
-                    b.Property<Guid>("PlayerId");
-
-                    b.HasIndex("PlayerId")
-                        .IsUnique()
-                        .HasFilter("[PlayerId] IS NOT NULL");
-
-                    b.HasDiscriminator().HasValue("PlayerImage");
-                });
-
-            modelBuilder.Entity("FantasyLeague.Models.TeamImage", b =>
-                {
-                    b.HasBaseType("FantasyLeague.Models.Abstract.Image");
-
-                    b.Property<Guid>("TeamId");
-
-                    b.HasIndex("TeamId")
-                        .IsUnique()
-                        .HasFilter("[TeamId] IS NOT NULL");
-
-                    b.HasDiscriminator().HasValue("TeamImage");
-                });
-
             modelBuilder.Entity("FantasyLeague.Models.User", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
@@ -525,6 +499,14 @@ namespace FantasyLeague.Data.Migrations
                     b.HasOne("FantasyLeague.Models.Matchday", "Matchday")
                         .WithMany("Fixtures")
                         .HasForeignKey("MatchdayId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FantasyLeague.Models.Image", b =>
+                {
+                    b.HasOne("FantasyLeague.Models.Player", "Player")
+                        .WithOne("Image")
+                        .HasForeignKey("FantasyLeague.Models.Image", "PlayerId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -669,22 +651,6 @@ namespace FantasyLeague.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FantasyLeague.Models.PlayerImage", b =>
-                {
-                    b.HasOne("FantasyLeague.Models.Player", "Player")
-                        .WithOne("PlayerImage")
-                        .HasForeignKey("FantasyLeague.Models.PlayerImage", "PlayerId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FantasyLeague.Models.TeamImage", b =>
-                {
-                    b.HasOne("FantasyLeague.Models.Team", "Team")
-                        .WithOne("TeamImage")
-                        .HasForeignKey("FantasyLeague.Models.TeamImage", "TeamId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -52,6 +52,7 @@ namespace FantasyLeague.Data
             builder.ApplyConfiguration(new TeamConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new InviteConfiguration());
+            builder.ApplyConfiguration(new ImageConfiguration());
             base.OnModelCreating(builder);
         }
 

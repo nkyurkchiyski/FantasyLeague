@@ -4,14 +4,16 @@ using FantasyLeague.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FantasyLeague.Data.Migrations
 {
     [DbContext(typeof(FantasyLeagueDbContext))]
-    partial class FantasyLeagueDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181223192515_Added-AbstractImage")]
+    partial class AddedAbstractImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

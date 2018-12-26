@@ -1,0 +1,197 @@
+{
+  "name": "SC Freiburg",
+  "squad": [
+    {
+      "name": "Alexander Schwolow",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Mark Flekken",
+      "nationality": "Netherlands",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Constantin Frommann",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Dominique Heintz",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Christian Günter",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 30
+    },
+    {
+      "name": "Lukas Kübler",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Manuel Gulde",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Philipp Lienhart",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Florian Kath",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 38
+    },
+    {
+      "name": "Robin Koch",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Chima Okoroji",
+      "nationality": "Nigeria",
+      "position": "Defender",
+      "shirtNumber": 52
+    },
+    {
+      "name": "Keven Schlotterbeck",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jérôme Gondorf",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Mike Frantz",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Nicolas Höfler",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Amir Abrashi",
+      "nationality": "Albania",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Pascal Stenzel",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Janik Haberer",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Caleb Stanko",
+      "nationality": "United States",
+      "position": "Midfielder",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Yoric Ravet",
+      "nationality": "France",
+      "position": "Midfielder",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Patrick Kammerbauer",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Roland Sallai",
+      "nationality": "Hungary",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Gian-Luca Waldschmidt",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Brandon Borrello",
+      "nationality": "Australia",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Nils Petersen",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Florian Niederlechner",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Tim Kleindienst",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 34
+    },
+    {
+      "name": "Marco Terrazzino",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Lucas Höler",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Christian Streich",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Florian Bruns",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Lars Voßler",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

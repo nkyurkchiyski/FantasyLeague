@@ -1,0 +1,203 @@
+{
+  "name": "Fortuna Düsseldorf",
+  "squad": [
+    {
+      "name": "Michael Rensing",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Tim Wiesner",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Raphael Wolf",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 30
+    },
+    {
+      "name": "Mario Zelic",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Jannick Theißen",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Marcin Kamiński",
+      "nationality": "Poland",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Aymen Barkok",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Diego Contento",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Marcel Sobottka",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Robin Bormuth",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 32
+    },
+    {
+      "name": "Kaan Ayhan",
+      "nationality": "Turkey",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Niko Gießelmann",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Jean Zimmer",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 39
+    },
+    {
+      "name": "Georgios Siadas",
+      "nationality": "Greece",
+      "position": "Defender",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Marvin Ducksch",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Takashi Usami",
+      "nationality": "Japan",
+      "position": "Midfielder",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Alfredo Morales",
+      "nationality": "United States",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Dodi Lukebakio",
+      "nationality": "Belgium",
+      "position": "Midfielder",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Matthias Zimmermann",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Adam Bodzek",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Oliver Fink",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Taylan Duman",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Davor Lovren",
+      "nationality": "Croatia",
+      "position": "Midfielder",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Andre Hoffmann",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Kianz Froese",
+      "nationality": "Canada",
+      "position": "Midfielder",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Kevin Stöger",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Kenan Karaman",
+      "nationality": "Turkey",
+      "position": "Attacker",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Karlo Majić",
+      "nationality": "Croatia",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Rouwen Hennings",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Håvard Nielsen",
+      "nationality": "Norway",
+      "position": "Attacker",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Emir Kujović",
+      "nationality": "Sweden",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Benito Raman",
+      "nationality": "Belgium",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Friedhelm Funkel",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

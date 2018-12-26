@@ -16,17 +16,15 @@ namespace FantasyLeague.Models
             this.Scores = new HashSet<Score>();
             this.Transfers = new HashSet<Transfer>();
             this.Active = true;
+            this.Price = 0;
         }
 
         [Required]
-        public string FirstName { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public string LastName { get; set; }
+        public string Nationality { get; set; }
 
-        [Required]
-        public bool Injured { get; set; }
-        
         public PlayerPosition Position { get; set; }
 
         [Required]
@@ -36,10 +34,10 @@ namespace FantasyLeague.Models
         [Required]
         public Guid TeamId { get; set; }
         public virtual Team Team { get; set; }
-        
+
         public Guid PlayerImageId { get; set; }
         public virtual PlayerImage PlayerImage { get; set; }
-        
+
         public bool Active { get; set; }
 
         public virtual ICollection<RosterPlayer> Rosters { get; set; }

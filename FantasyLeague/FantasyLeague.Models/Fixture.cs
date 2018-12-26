@@ -11,7 +11,7 @@ namespace FantasyLeague.Models
     {
         public Fixture()
         {
-            this.Status = FixtureStatus.Upcoming;
+            this.Status = FixtureStatus.Scheduled;
             this.Scores = new HashSet<Score>();
         }
 
@@ -27,7 +27,7 @@ namespace FantasyLeague.Models
 
         public int? AwayTeamGoals { get; set; }
 
-        public MatchResult Result { get; set; }
+        public MatchResult Winner { get; set; }
 
         [Required]
         public DateTime Date { get; set; }

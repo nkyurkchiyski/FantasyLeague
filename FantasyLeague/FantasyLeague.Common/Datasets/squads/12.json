@@ -1,0 +1,221 @@
+{
+  "name": "Werder Bremen",
+  "squad": [
+    {
+      "name": "Michael Zetterer",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 30
+    },
+    {
+      "name": "Jaroslav Drobný",
+      "nationality": "Czech Republic",
+      "position": "Goalkeeper",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Jiří Pavlenka",
+      "nationality": "Czech Republic",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Stefanos Kapino",
+      "nationality": "Greece",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Luca Plogmann",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Miloš Veljković",
+      "nationality": "Serbia",
+      "position": "Defender",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Jan-Niklas Beste",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Theodor Gebre Selassie",
+      "nationality": "Czech Republic",
+      "position": "Defender",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Luca Caldirola",
+      "nationality": "Italy",
+      "position": "Defender",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Niklas Moisander",
+      "nationality": "Finland",
+      "position": "Defender",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Ludwig Augustinsson",
+      "nationality": "Sweden",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Marco Friedl",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": 32
+    },
+    {
+      "name": "Sebastian Langkamp",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Nuri Şahin",
+      "nationality": "Turkey",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Kevin Möhwald",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Davy Klaassen",
+      "nationality": "Netherlands",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Philipp Bargfrede",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 44
+    },
+    {
+      "name": "Fin Bartels",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Maximilian Eggestein",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 35
+    },
+    {
+      "name": "Florian Kainz",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Ole Käuper",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Thore-Andreas Jacobsen",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 36
+    },
+    {
+      "name": "Milot Rashica",
+      "nationality": "Kosovo",
+      "position": "Midfielder",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Thanos Petsos",
+      "nationality": "Greece",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Felix Beijmo",
+      "nationality": "Sweden",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jean-Manuel Mbom",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "David Lennart Philipp",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Yūya Ōsako",
+      "nationality": "Japan",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Claudio Pizarro",
+      "nationality": "Peru",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Martin Harnik",
+      "nationality": "Austria",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Aron Jóhannsson",
+      "nationality": "United States",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Johannes Eggestein",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Max Kruse",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Ousman Manneh",
+      "nationality": "Gambia",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Josh Sargent",
+      "nationality": "United States",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Florian Kohfeldt",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

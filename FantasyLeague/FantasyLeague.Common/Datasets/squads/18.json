@@ -1,0 +1,221 @@
+{
+  "name": "Borussia M'gladbach",
+  "squad": [
+    {
+      "name": "Yann Sommer",
+      "nationality": "Switzerland",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Tobias Sippel",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Moritz Nicolas",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 35
+    },
+    {
+      "name": "Matthias Ginter",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Michael Lang",
+      "nationality": "Switzerland",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Nico Elvedi",
+      "nationality": "Switzerland",
+      "position": "Defender",
+      "shirtNumber": 30
+    },
+    {
+      "name": "Oscar Wendt",
+      "nationality": "Sweden",
+      "position": "Defender",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Tony Jantschke",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Mamadou Doucouré",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Justin Hoffmans",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Marcel Benger",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 38
+    },
+    {
+      "name": "Florian Mayer",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 42
+    },
+    {
+      "name": "Mandela Egbo",
+      "nationality": "England",
+      "position": "Defender",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Louis Beyer",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Andreas Poulsen",
+      "nationality": "Denmark",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Lars Stindl",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Thorgan Hazard",
+      "nationality": "Belgium",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Ibrahima Traoré",
+      "nationality": "Guinea",
+      "position": "Midfielder",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Patrick Herrmann",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Jonas Hofmann",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Christoph Kramer",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Tobias Strobl",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 5
+    },
+    {
+      "name": "László Bénes",
+      "nationality": "Slovakia",
+      "position": "Midfielder",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Denis Zakaria",
+      "nationality": "Switzerland",
+      "position": "Midfielder",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Mickaël Cuisance",
+      "nationality": "France",
+      "position": "Midfielder",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Aaron Herzog",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 39
+    },
+    {
+      "name": "Florian Neuhaus",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Josip Drmić",
+      "nationality": "Switzerland",
+      "position": "Attacker",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Torben Müsel",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Fabian Johnson",
+      "nationality": "United States",
+      "position": "Attacker",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Raffael",
+      "nationality": "Brazil",
+      "position": "Attacker",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Mike Feigenspan",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Julio Villalba",
+      "nationality": "Paraguay",
+      "position": "Attacker",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Alassane Pléa",
+      "nationality": "France",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Keanen Bennetts",
+      "nationality": "England",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Dieter Hecking",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

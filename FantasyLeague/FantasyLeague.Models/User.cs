@@ -19,24 +19,13 @@ namespace FantasyLeague.Models
             this.SentInvitations = new HashSet<Invite>();
             this.ReceivedInvitations = new HashSet<Invite>();
         }
-
-        [Required]
-        public string FirstName { get; set; }
-
-        [Required]
-        public string LastName { get; set; }
-
-        public string Country { get; set; }
-
-        [Required]
-        public int Age { get; set; }
-
+        
         public bool Active { get; set; }
 
         [Required]
         public string ClubName { get; set; }
 
-        public Guid FavouriteTeamId { get; set; }
+        public Guid? FavouriteTeamId { get; set; }
         public virtual Team FavouriteTeam { get; set; }
 
         public virtual ICollection<Roster> Rosters { get; set; }

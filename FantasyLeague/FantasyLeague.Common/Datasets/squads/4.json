@@ -1,0 +1,185 @@
+{
+  "name": "Borussia Dortmund",
+  "squad": [
+    {
+      "name": "Roman Bürki",
+      "nationality": "Switzerland",
+      "position": "Goalkeeper",
+      "shirtNumber": 38
+    },
+    {
+      "name": "Marwin Hitz",
+      "nationality": "Switzerland",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Eric Oelschlägel",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Achraf Hakimi",
+      "nationality": "Morocco",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Łukasz Piszczek",
+      "nationality": "Poland",
+      "position": "Defender",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Ömer Toprak",
+      "nationality": "Turkey",
+      "position": "Defender",
+      "shirtNumber": 36
+    },
+    {
+      "name": "Manuel Akanji",
+      "nationality": "Switzerland",
+      "position": "Defender",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Jeremy Toljan",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Raphaël Guerreiro",
+      "nationality": "Portugal",
+      "position": "Defender",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Marcel Schmelzer",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 29
+    },
+    {
+      "name": "Dan-Axel Zagadou",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Abdou Diallo",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Marco Reus",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Mario Götze",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Julian Weigl",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Christian Pulisic",
+      "nationality": "United States",
+      "position": "Midfielder",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Jadon Sancho",
+      "nationality": "England",
+      "position": "Midfielder",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Mahmoud Dahoud",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Thomas Delaney",
+      "nationality": "Denmark",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Axel Witsel",
+      "nationality": "Belgium",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Sebastian Rode",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Alexander Isak",
+      "nationality": "Sweden",
+      "position": "Midfielder",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Marius Wolf",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Dženis Burnić",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jacob Bruun Larsen",
+      "nationality": "Denmark",
+      "position": "Midfielder",
+      "shirtNumber": 34
+    },
+    {
+      "name": "Maximilian Philipp",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Sergio Gómez",
+      "nationality": "Spain",
+      "position": "Attacker",
+      "shirtNumber": 34
+    },
+    {
+      "name": "Shinji Kagawa",
+      "nationality": "Japan",
+      "position": "Attacker",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Paco Alcácer",
+      "nationality": "Spain",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Lucien Favre",
+      "nationality": "Switzerland",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

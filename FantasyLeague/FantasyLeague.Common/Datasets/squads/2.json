@@ -1,0 +1,221 @@
+{
+  "name": "1899 Hoffenheim",
+  "squad": [
+    {
+      "name": "Oliver Baumann",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Gregor Kobel",
+      "nationality": "Switzerland",
+      "position": "Goalkeeper",
+      "shirtNumber": 36
+    },
+    {
+      "name": "Alexander Stolz",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "nationality": "Norway",
+      "position": "Defender",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Kevin Akpoguma",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Ermin Bičakčić",
+      "nationality": "Bosnia and Herzegovina",
+      "position": "Defender",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Benjamin Hübner",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Stefan Posch",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": 38
+    },
+    {
+      "name": "Justin Hoogma",
+      "nationality": "Netherlands",
+      "position": "Defender",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Joshua Brenet",
+      "nationality": "Netherlands",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Kassim Nuhu",
+      "nationality": "Ghana",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Alfons Amade",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Leonardo Bittencourt",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Nico Schulz",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Kerem Demirbay",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Kevin Vogt",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Pavel Kadeřábek",
+      "nationality": "Czech Republic",
+      "position": "Midfielder",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Nadiem Amiri",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Lukas Rupp",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Steven Zuber",
+      "nationality": "Switzerland",
+      "position": "Midfielder",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Dennis Geiger",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 32
+    },
+    {
+      "name": "Robin Hack",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 37
+    },
+    {
+      "name": "Nicolas Wähling",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Vincenzo Grifo",
+      "nationality": "Italy",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Joelinton",
+      "nationality": "Brazil",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Felipe Pires",
+      "nationality": "Brazil",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Christoph Baumgartner",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Andrej Kramarić",
+      "nationality": "Croatia",
+      "position": "Attacker",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Ádám Szalai",
+      "nationality": "Hungary",
+      "position": "Attacker",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Florian Grillitsch",
+      "nationality": "Austria",
+      "position": "Attacker",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Meris Skenderović",
+      "nationality": "Montenegro",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "David Otto",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Reiss Nelson",
+      "nationality": "England",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Ishak Belfodil",
+      "nationality": "Algeria",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Julian Nagelsmann",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Pellegrino Matarazzo",
+      "nationality": "United States",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

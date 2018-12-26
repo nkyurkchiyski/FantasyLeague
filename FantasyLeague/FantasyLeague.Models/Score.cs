@@ -48,8 +48,7 @@ namespace FantasyLeague.Models
         public int GetSocre()
         {
             var position = this.Player.Position;
-            var fixtureResult = this.Fixture.Result;
-
+            
             int result = 0;
 
             //Attacking Stats

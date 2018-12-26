@@ -1,0 +1,128 @@
+[
+  {
+    "Key": "bayern",
+    "Name": "FC Bayern München",
+    "Initials": "FCB",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/915.png",
+    "PublicId":"FantasyLeague/Teams/915.png"
+  },
+  {
+    "Key": "dortmund",
+    "Name": "Borussia Dortmund",
+    "Initials": "BVB",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/907.png",
+    "PublicId":"FantasyLeague/Teams/907.png"
+  },
+  {
+    "Key": "leverkusen",
+    "Name": "Bayer 04 Leverkusen",
+    "Initials": "B04",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/901.png",
+    "PublicId":"FantasyLeague/Teams/901.png"
+  },
+  {
+    "Key": "schalke",
+    "Name": "Schalke 04",
+    "Initials": "S04",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/920.png",
+    "PublicId":"FantasyLeague/Teams/920.png"
+  },
+  {
+    "Key": "frankfurt",
+    "Name": "Eintracht Frankfurt",
+    "Initials": "FFM",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/912.png",
+    "PublicId":"FantasyLeague/Teams/912.png"
+  },
+  {
+    "Key": "duesseldorf",
+    "Name": "Fortuna Düsseldorf",
+    "Initials": "F95",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/921.png",
+    "PublicId":"FantasyLeague/Teams/921.png"
+  },
+  {
+    "Key": "mgladbach",
+    "Name": "Borussia M'gladbach",
+    "Initials": "BMG",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/908.png",
+    "PublicId":"FantasyLeague/Teams/908.png"
+  },
+  {
+    "Key": "hannover",
+    "Name": "Hannover 96",
+    "Initials": "H96",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753204/FantasyLeague/Teams/927.png",
+    "PublicId":"FantasyLeague/Teams/927.png"
+  },
+  {
+    "Key": "wolfsburg",
+    "Name": "VfL Wolfsburg",
+    "Initials": "WOB",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753206/FantasyLeague/Teams/961.png",
+    "PublicId":"FantasyLeague/Teams/961.png"
+  },
+  {
+    "Key": "mainz",
+    "Name": "1. FSV Mainz 05",
+    "Initials": "M05",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/918.png",
+    "PublicId":"FantasyLeague/Teams/918.png"
+  },
+  {
+    "Key": "bremen",
+    "Name": "Werder Bremen",
+    "Initials": "BRE",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753205/FantasyLeague/Teams/948.png",
+    "PublicId":"FantasyLeague/Teams/948.png"
+  },
+  {
+    "Key": "hoffenheim",
+    "Name": "1899 Hoffenheim",
+    "Initials": "HOF",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/879226.png",
+    "PublicId":"FantasyLeague/Teams/879226.png"
+  },
+  {
+    "Key": "stuttgart",
+    "Name": "VfB Stuttgart",
+    "Initials": "VFB",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753205/FantasyLeague/Teams/960.png",
+    "PublicId":"FantasyLeague/Teams/960.png"
+  },
+  {
+    "Key": "augsburg",
+    "Name": "FC Augsburg",
+    "Initials": "FCA",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/2238.png",
+    "PublicId":"FantasyLeague/Teams/2238.png"
+  },
+  {
+    "Key": "herthabsc",
+    "Name": "Hertha BSC",
+    "Initials": "BSC",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/2247.png",
+    "PublicId":"FantasyLeague/Teams/2247.png"
+  },
+  {
+    "Key": "nuernberg",
+    "Name": "1. FC Nürnberg",
+    "Initials": "FCN",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/899.png",
+    "PublicId":"FantasyLeague/Teams/899.png"
+  },
+  {
+    "Key": "freiburg",
+    "Name": "SC Freiburg",
+    "Initials": "SCF",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753205/FantasyLeague/Teams/944.png",
+    "PublicId":"FantasyLeague/Teams/944.png"
+  },
+  {
+    "Key": "leipzig",
+    "Name": "RB Leipzig",
+    "Initials": "RBL",
+    "Url":"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545753201/FantasyLeague/Teams/91013388.png",
+    "PublicId":"FantasyLeague/Teams/91013388.png"
+  }
+]

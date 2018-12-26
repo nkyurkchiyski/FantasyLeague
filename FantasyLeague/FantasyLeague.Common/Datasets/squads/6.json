@@ -1,0 +1,191 @@
+{
+  "name": "Schalke 04",
+  "squad": [
+    {
+      "name": "Ralf Fährmann",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Christian Wetklo",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Alexander Nübel",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 35
+    },
+    {
+      "name": "Michael Langer",
+      "nationality": "Austria",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Yannic Lenze",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Salif Sané",
+      "nationality": "Senegal",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Matija Nastasić",
+      "nationality": "Serbia",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Hamza Mendyl",
+      "nationality": "Morocco",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Naldo",
+      "nationality": "Brazil",
+      "position": "Defender",
+      "shirtNumber": 29
+    },
+    {
+      "name": "Bastian Oczipka",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Sascha Riether",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Abdul Rahman Baba",
+      "nationality": "Ghana",
+      "position": "Defender",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Johannes Geis",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Sebastian Rudy",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Amine Harit",
+      "nationality": "Morocco",
+      "position": "Midfielder",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Alessandro Schöpf",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Benjamin Stambouli",
+      "nationality": "France",
+      "position": "Midfielder",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Nabil Bentaleb",
+      "nationality": "Algeria",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Yevhen Konoplyanka",
+      "nationality": "Ukraine",
+      "position": "Midfielder",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Guido Burgstaller",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Daniel Caligiuri",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Weston McKennie",
+      "nationality": "United States",
+      "position": "Midfielder",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Suat Serdar",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Omar Mascarell",
+      "nationality": "Equatorial Guinea",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Mark Uth",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Breel Embolo",
+      "nationality": "Switzerland",
+      "position": "Attacker",
+      "shirtNumber": 36
+    },
+    {
+      "name": "Franco Di Santo",
+      "nationality": "Argentina",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Cedric Teuchert",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Steven Skrzybski",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Haji Wright",
+      "nationality": "United States",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Domenico Tedesco",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

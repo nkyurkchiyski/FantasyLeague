@@ -3,6 +3,7 @@ using FantasyLeague.Data.Seeding.Contracts;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 
 namespace FantasyLeague.Data.Seeding
 {
@@ -32,7 +33,7 @@ namespace FantasyLeague.Data.Seeding
 
                 if (!result.Succeeded)
                 {
-                    throw new Exception(ExceptionConstants.CreateRoleException);
+                    throw new Exception(string.Join(";", result.Errors.Select(x => x.Description)));
                 }
             }
         }

@@ -1,0 +1,209 @@
+{
+  "name": "FC Augsburg",
+  "squad": [
+    {
+      "name": "Andreas Luthe",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Fabian Giefer",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Benjamin Leneis",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jan-Ingwer Callsen-Bracker",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Christoph Janker",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Raphael Framberger",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 32
+    },
+    {
+      "name": "Philipp Max",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Jeffrey Gouweleeuw",
+      "nationality": "Netherlands",
+      "position": "Defender",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Martin Hinteregger",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": 36
+    },
+    {
+      "name": "Killian Jakob",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Simon Asta",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Georg Teigl",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Kostas Stafylidis",
+      "nationality": "Greece",
+      "position": "Defender",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Felix Götze",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Koo Jacheol",
+      "nationality": "Korea Republic",
+      "position": "Midfielder",
+      "shirtNumber": 19
+    },
+    {
+      "name": "André Hahn",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Daniel Baier",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Jan Morávek",
+      "nationality": "Czech Republic",
+      "position": "Midfielder",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Jonathan Schmid",
+      "nationality": "France",
+      "position": "Midfielder",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Kevin Danso",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 38
+    },
+    {
+      "name": "Rani Khedira",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Fredrik Jensen",
+      "nationality": "Finland",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Romario Rösch",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 29
+    },
+    {
+      "name": "Felix Schwarzholz",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Julian Schieber",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Caiuby",
+      "nationality": "Brazil",
+      "position": "Attacker",
+      "shirtNumber": 30
+    },
+    {
+      "name": "Alfreð Finnbogason",
+      "nationality": "Iceland",
+      "position": "Attacker",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Michael Gregoritsch",
+      "nationality": "Austria",
+      "position": "Attacker",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Sergio Córdova",
+      "nationality": "Venezuela",
+      "position": "Attacker",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Marco Richter",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Maurice Malone",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 37
+    },
+    {
+      "name": "Ji Dongwon",
+      "nationality": "Korea Republic",
+      "position": "Attacker",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Manuel Baum",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Alexander Frankenberger",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

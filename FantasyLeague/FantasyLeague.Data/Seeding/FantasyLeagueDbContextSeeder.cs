@@ -23,7 +23,8 @@ namespace FantasyLeague.Data.Seeding
                               new RolesSeeder(),
                               new UsersSeeder(),
                               new TeamsSeeder(),
-                              new PlayersSeeder()
+                              new PlayersSeeder(),
+                              new MatchdaysSeeder()
                           };
 
             foreach (var seeder in seeders)

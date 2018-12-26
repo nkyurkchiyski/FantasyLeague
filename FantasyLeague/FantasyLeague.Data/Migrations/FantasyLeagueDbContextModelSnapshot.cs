@@ -57,9 +57,9 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<Guid>("MatchdayId");
 
-                    b.Property<int>("Result");
-
                     b.Property<int>("Status");
+
+                    b.Property<int>("Winner");
 
                     b.HasKey("Id");
 
@@ -142,12 +142,10 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<bool>("Active");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("Name")
                         .IsRequired();
 
-                    b.Property<bool>("Injured");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Nationality")
                         .IsRequired();
 
                     b.Property<Guid>("PlayerImageId");
@@ -169,6 +167,8 @@ namespace FantasyLeague.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Budget");
 
                     b.Property<int>("Formation");
 
@@ -286,28 +286,18 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<bool>("Active");
 
-                    b.Property<int>("Age");
-
                     b.Property<string>("ClubName")
                         .IsRequired();
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Country");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<Guid>("FavouriteTeamId");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired();
-
-                    b.Property<string>("LastName")
-                        .IsRequired();
+                    b.Property<Guid?>("FavouriteTeamId");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -613,8 +603,7 @@ namespace FantasyLeague.Data.Migrations
                 {
                     b.HasOne("FantasyLeague.Models.Team", "FavouriteTeam")
                         .WithMany("Fans")
-                        .HasForeignKey("FavouriteTeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("FavouriteTeamId");
                 });
 
             modelBuilder.Entity("FantasyLeague.Models.UserLeague", b =>

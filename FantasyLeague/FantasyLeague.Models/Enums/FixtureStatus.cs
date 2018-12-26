@@ -6,8 +6,8 @@ namespace FantasyLeague.Models.Enums
 {
     public enum FixtureStatus
     {
-        Upcoming = 0,
-        Past = 1,
+        Scheduled = 0,
+        Finished = 1,
         Postponed = 2
     }
 }

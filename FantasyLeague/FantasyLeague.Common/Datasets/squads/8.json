@@ -1,0 +1,203 @@
+{
+  "name": "Hannover 96",
+  "squad": [
+    {
+      "name": "Philipp Tschauner",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Michael Esser",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Leo Weinkauf",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Marlon Sündermann",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 30
+    },
+    {
+      "name": "Josip Elez",
+      "nationality": "Croatia",
+      "position": "Defender",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Oliver Sorg",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Timo Hübers",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Matthias Ostrzolek",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Felipe",
+      "nationality": "Brazil",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Waldemar Anton",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Lars Ritzka",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Fabian Senninger",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Pirmin Schwegler",
+      "nationality": "Switzerland",
+      "position": "Midfielder",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Miiko Albornoz",
+      "nationality": "Chile",
+      "position": "Midfielder",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Julian Korb",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Marvin Bakalorz",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Iver Fossum",
+      "nationality": "Norway",
+      "position": "Midfielder",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Linton Maina",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 40
+    },
+    {
+      "name": "Edgar Prib",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Noah-Joel Sarenren-Bazee",
+      "nationality": "Nigeria",
+      "position": "Midfielder",
+      "shirtNumber": 37
+    },
+    {
+      "name": "Yousef Emghames",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Tom Baller",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Walace",
+      "nationality": "Brazil",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Florent Muslija",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Kevin Wimmer",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Hendrik Weydandt",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Niclas Füllkrug",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Ihlas Bebou",
+      "nationality": "Togo",
+      "position": "Attacker",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Tim Dierßen",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Genki Haraguchi",
+      "nationality": "Japan",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Bobby Wood",
+      "nationality": "United States",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Takuma Asano",
+      "nationality": "Japan",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "André Breitenreiter",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

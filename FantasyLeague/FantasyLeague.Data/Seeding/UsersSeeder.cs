@@ -4,6 +4,7 @@ using FantasyLeague.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 
 namespace FantasyLeague.Data.Seeding
 {
@@ -12,6 +13,7 @@ namespace FantasyLeague.Data.Seeding
         private const string AdminName = "admin";
         private const string AdminPassword = "admin123";
         private const string AdminEmail = "admin@gmail.com";
+        private const string AdminClubName = "AdminClub";
 
         public void Seed(FantasyLeagueDbContext context, IServiceProvider serviceProvider)
         {
@@ -32,7 +34,8 @@ namespace FantasyLeague.Data.Seeding
                 user = new User
                 {
                     UserName = AdminName,
-                    Email = AdminEmail
+                    Email = AdminEmail,
+                    ClubName = AdminClubName
                 };
 
                 var createResult = userManager
@@ -42,7 +45,7 @@ namespace FantasyLeague.Data.Seeding
 
                 if (!createResult.Succeeded)
                 {
-                    throw new Exception(ExceptionConstants.CreateUserException);
+                    throw new Exception(string.Join(";", createResult.Errors.Select(x => x.Description)));
                 }
 
                 var addToRoleResult = userManager
@@ -52,7 +55,7 @@ namespace FantasyLeague.Data.Seeding
 
                 if (!addToRoleResult.Succeeded)
                 {
-                    throw new Exception(ExceptionConstants.AddUserToRoleException);
+                    throw new Exception(string.Join(";", createResult.Errors.Select(x => x.Description)));
                 }
 
             }

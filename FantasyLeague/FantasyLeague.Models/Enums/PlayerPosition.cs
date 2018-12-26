@@ -2,7 +2,7 @@
 {
     public enum PlayerPosition
     {
-        Forward = 4,
+        Attacker = 4,
         Midfielder = 5,
         Defender = 6,
         Goalkeeper = 7

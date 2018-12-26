@@ -1,0 +1,215 @@
+{
+  "name": "RB Leipzig",
+  "squad": [
+    {
+      "name": "Marius Müller",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Fabio Coltorti",
+      "nationality": "Switzerland",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Péter Gulácsi",
+      "nationality": "Hungary",
+      "position": "Goalkeeper",
+      "shirtNumber": 32
+    },
+    {
+      "name": "Yvon Mvogo",
+      "nationality": "Switzerland",
+      "position": "Goalkeeper",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Julian Krahl",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Nordi Mukiele",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Lukas Klostermann",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Willi Orban",
+      "nationality": "Hungary",
+      "position": "Defender",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Marcel Halstenberg",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Dayot Upamecano",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Ibrahima Konaté",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Niclas Stierlin",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Marcelo Saracchi",
+      "nationality": "Uruguay",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Atınç Nukan",
+      "nationality": "Turkey",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Max Winter",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Emil Forsberg",
+      "nationality": "Sweden",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Diego Demme",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Stefan Ilsanker",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Konrad Laimer",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Kevin Kampl",
+      "nationality": "Slovenia",
+      "position": "Midfielder",
+      "shirtNumber": 44
+    },
+    {
+      "name": "Fabrice Hartmann",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Oliver Bias",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Erik Majetschak",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Tom Krauß",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Timo Werner",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Yussuf Poulsen",
+      "nationality": "Denmark",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Nils Quaschner",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Marcel Sabitzer",
+      "nationality": "Austria",
+      "position": "Attacker",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Jean-Kévin Augustin",
+      "nationality": "France",
+      "position": "Attacker",
+      "shirtNumber": 29
+    },
+    {
+      "name": "Bruma",
+      "nationality": "Portugal",
+      "position": "Attacker",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Matheus Cunha",
+      "nationality": "Brazil",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Lukas Krüger",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jesse Marsch",
+      "nationality": "United States",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Ralf Rangnick",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Robert Klauß",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

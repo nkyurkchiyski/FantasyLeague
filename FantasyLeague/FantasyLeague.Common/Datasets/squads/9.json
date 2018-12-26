@@ -1,0 +1,215 @@
+{
+  "name": "Hertha BSC",
+  "squad": [
+    {
+      "name": "Thomas Kraft",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Rune Jarstein",
+      "nationality": "Norway",
+      "position": "Goalkeeper",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Dennis Smarsch",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Jonathan Klinsmann",
+      "nationality": "United States",
+      "position": "Goalkeeper",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Marius Gersbeck",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Lukas Klünter",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Marvin Plattenhardt",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Peter Pekarík",
+      "nationality": "Slovakia",
+      "position": "Defender",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Maximilian Mittelstädt",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Florian Baak",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 29
+    },
+    {
+      "name": "Jordan Torunarigha",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Karim Rekik",
+      "nationality": "Netherlands",
+      "position": "Defender",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Derrick Luckassen",
+      "nationality": "Netherlands",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Marko Grujić",
+      "nationality": "Serbia",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Fabian Lustenberger",
+      "nationality": "Switzerland",
+      "position": "Midfielder",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Per Skjelbred",
+      "nationality": "Norway",
+      "position": "Midfielder",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Vladimír Darida",
+      "nationality": "Czech Republic",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Niklas Stark",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Sinan Kurt",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Ondrej Duda",
+      "nationality": "Slovakia",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Julius Kade",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Arne Maier",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Valentino Lazaro",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Maurice Covic",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 34
+    },
+    {
+      "name": "Dennis Jastrzembski",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Mathew Leckie",
+      "nationality": "Australia",
+      "position": "Attacker",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Salomon Kalou",
+      "nationality": "Côte d’Ivoire",
+      "position": "Attacker",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Vedad Ibišević",
+      "nationality": "Bosnia and Herzegovina",
+      "position": "Attacker",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Alexander Esswein",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Pal Dárdai",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 32
+    },
+    {
+      "name": "Davie Selke",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Pascal Köpke",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Javairô Dilrosun",
+      "nationality": "Netherlands",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Muhammed Kiprit",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Pál Dárdai",
+      "nationality": "Hungary",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

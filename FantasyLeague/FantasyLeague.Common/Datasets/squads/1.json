@@ -1,0 +1,191 @@
+{
+  "name": "VfB Stuttgart",
+  "squad": [
+    {
+      "name": "Jens Grahl",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Ron-Robert Zieler",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Alexander Meyer",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Benjamin Pavard",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Timo Baumgartl",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Emiliano Insúa",
+      "nationality": "Argentina",
+      "position": "Defender",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Holger Badstuber",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Andreas Beck",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 32
+    },
+    {
+      "name": "Marc-Oliver Kempf",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Borna Sosa",
+      "nationality": "Croatia",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Pablo Maffeo",
+      "nationality": "Spain",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Antonis Aidonis",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Gonzalo Castro",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Christian Gentner",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Tobias Rathgeb",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Berkay Özcan",
+      "nationality": "Turkey",
+      "position": "Midfielder",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Tasos Donis",
+      "nationality": "Greece",
+      "position": "Midfielder",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Dennis Aogo",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Santiago Ascacíbar",
+      "nationality": "Argentina",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Erik Thommy",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Daniel Didavi",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Nicolás González",
+      "nationality": "Argentina",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "David Kopacz",
+      "nationality": "Poland",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Hans Nunoo Sarpei",
+      "nationality": "Ghana",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Mario Gómez",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Chadrac Akolo",
+      "nationality": "Congo DR",
+      "position": "Attacker",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Jan Kliment",
+      "nationality": "Czech Republic",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Leon Dajaku",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Steve Cherundolo",
+      "nationality": "United States",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Ilija Aračić",
+      "nationality": "Croatia",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Markus Weinzierl",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

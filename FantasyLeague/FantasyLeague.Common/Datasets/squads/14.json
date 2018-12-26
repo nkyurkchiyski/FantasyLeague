@@ -1,0 +1,173 @@
+{
+  "name": "1. FC Nürnberg",
+  "squad": [
+    {
+      "name": "Christian Mathenia",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Fabian Bredlow",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Georg Margreitter",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Enrico Valentini",
+      "nationality": "Italy",
+      "position": "Defender",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Eduard Löwen",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Lukas Mühl",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Tim Leibold",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Dennis Lippert",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Lukas Jäger",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Ewerton",
+      "nationality": "Brazil",
+      "position": "Defender",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Kevin Goden",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Hanno Behrens",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Patrick Erras",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 29
+    },
+    {
+      "name": "Ondrej Petrak",
+      "nationality": "Czech Republic",
+      "position": "Midfielder",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Timothy Tillman",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Edgard Salli",
+      "nationality": "Cameroon",
+      "position": "Midfielder",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Sebastian Kerk",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Alexander Fuchs",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 35
+    },
+    {
+      "name": "Robert Bauer",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Simon Rhein",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Mikael Ishak",
+      "nationality": "Sweden",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Federico Palacios Martinez",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Adam Zreľák",
+      "nationality": "Slovakia",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Yūya Kubo",
+      "nationality": "Japan",
+      "position": "Attacker",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Virgil Misidjan",
+      "nationality": "Netherlands",
+      "position": "Attacker",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Matheus Pereira",
+      "nationality": "Brazil",
+      "position": "Attacker",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Törless Tim Knöll",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Michael Köllner",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

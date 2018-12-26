@@ -1,0 +1,209 @@
+{
+  "name": "Eintracht Frankfurt",
+  "squad": [
+    {
+      "name": "Kevin Trapp",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Frederik Rønnow",
+      "nationality": "Denmark",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Felix Wiedwald",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jan Zimmermann",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 37
+    },
+    {
+      "name": "Obite N'Dicka",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Carlos Salcedo",
+      "nationality": "Mexico",
+      "position": "Defender",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Anderson Bamba",
+      "nationality": "Brazil",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Marco Russ",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Timmy Chandler",
+      "nationality": "United States",
+      "position": "Defender",
+      "shirtNumber": 22
+    },
+    {
+      "name": "David Abraham",
+      "nationality": "Argentina",
+      "position": "Defender",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Noel Knothe",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Deji Beyreuther",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Danny da Costa",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Jetro Willems",
+      "nationality": "Netherlands",
+      "position": "Defender",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Simon Falette",
+      "nationality": "Guinea",
+      "position": "Defender",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Makoto Hasebe",
+      "nationality": "Japan",
+      "position": "Midfielder",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Mijat Gaćinović",
+      "nationality": "Serbia",
+      "position": "Midfielder",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Gelson Fernandes",
+      "nationality": "Switzerland",
+      "position": "Midfielder",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Nicolai Müller",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Marc Stendera",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Taleb Tawatha",
+      "nationality": "Israel",
+      "position": "Midfielder",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Jonathan de Guzmán",
+      "nationality": "Netherlands",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Lucas Torró",
+      "nationality": "Spain",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Chico Geraldes",
+      "nationality": "Portugal",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Allan",
+      "nationality": "Brazil",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Mischa Häuser",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Marco Fabián",
+      "nationality": "Mexico",
+      "position": "Attacker",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Filip Kostić",
+      "nationality": "Serbia",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Ante Rebić",
+      "nationality": "Croatia",
+      "position": "Attacker",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Branimir Hrgota",
+      "nationality": "Sweden",
+      "position": "Attacker",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Sébastien Haller",
+      "nationality": "France",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Luka Jović",
+      "nationality": "Serbia",
+      "position": "Attacker",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Gonçalo Paciência",
+      "nationality": "Portugal",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Adi Hütter",
+      "nationality": "Austria",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "name": "VfL Wolfsburg",
+  "squad": [
+    {
+      "name": "Koen Casteels",
+      "nationality": "Belgium",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Phillip Menzel",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Pavao Pervan",
+      "nationality": "Austria",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jérôme Roussillon",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Robin Knoche",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Sebastian Jung",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Jeffrey Bruma",
+      "nationality": "Netherlands",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Robin Ziegele",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Gian-Luca Itter",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 35
+    },
+    {
+      "name": "John Brooks",
+      "nationality": "United States",
+      "position": "Defender",
+      "shirtNumber": 25
+    },
+    {
+      "name": "William",
+      "nationality": "Brazil",
+      "position": "Defender",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Paul Verhaegh",
+      "nationality": "Netherlands",
+      "position": "Defender",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Marcel Tisserand",
+      "nationality": "Congo DR",
+      "position": "Defender",
+      "shirtNumber": 29
+    },
+    {
+      "name": "Dominik Franke",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Felix Klaus",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jakub Błaszczykowski",
+      "nationality": "Poland",
+      "position": "Midfielder",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Marvin Stefaniak",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Amara Condé",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Maximilian Arnold",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Josuha Guilavogui",
+      "nationality": "France",
+      "position": "Midfielder",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Yannick Gerhardt",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Yunus Mallı",
+      "nationality": "Turkey",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Ohis Uduokhai",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Ignacio Camacho",
+      "nationality": "Spain",
+      "position": "Midfielder",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Elvis Rexhbecaj",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 37
+    },
+    {
+      "name": "Renato Steffen",
+      "nationality": "Switzerland",
+      "position": "Midfielder",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Paul Seguin",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "John Yeboah",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Ismail Azzaoui",
+      "nationality": "Belgium",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Wout Weghorst",
+      "nationality": "Netherlands",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Paul-Georges Ntep",
+      "nationality": "Cameroon",
+      "position": "Attacker",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Daniel Ginczek",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Josip Brekalo",
+      "nationality": "Croatia",
+      "position": "Attacker",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Admir Mehmedi",
+      "nationality": "Switzerland",
+      "position": "Attacker",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Bruno Labbadia",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Olaf Janßen",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

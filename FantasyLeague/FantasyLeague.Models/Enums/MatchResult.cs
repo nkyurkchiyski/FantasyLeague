@@ -2,8 +2,9 @@
 {
     public enum MatchResult
     {
+        Unknown = -1,
         Draw = 0,
-        HomeWin = 1,
-        AwayWin = 2
+        HomeTeam = 1,
+        AwayTeam = 2
     }
 }

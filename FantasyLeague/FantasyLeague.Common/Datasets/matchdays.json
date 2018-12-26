@@ -1,0 +1,2994 @@
+[
+  {
+    "Week": 1,
+    "StartDate": "2018-08-24T18:30:00Z",
+    "EndDate": "2018-08-27T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-08-24T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-08-25T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-08-25T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-08-25T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-08-25T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-08-25T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-08-25T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-08-26T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-08-26T16:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 2,
+    "StartDate": "2018-08-31T18:30:00Z",
+    "EndDate": "2018-09-03T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-08-31T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 0,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-01T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-01T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-01T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-01T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-01T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-01T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-02T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-02T16:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      }
+    ]
+  },
+  {
+    "Week": 3,
+    "StartDate": "2018-09-14T18:30:00Z",
+    "EndDate": "2018-09-17T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-09-14T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-15T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-15T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-15T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 2,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-15T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-15T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 2,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-15T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-16T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-16T16:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 3,
+        "Winner": "Draw"
+      }
+    ]
+  },
+  {
+    "Week": 4,
+    "StartDate": "2018-09-21T18:30:00Z",
+    "EndDate": "2018-09-24T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-09-21T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 0,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-22T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-22T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 2,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-22T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-22T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-22T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-22T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-23T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-23T16:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      }
+    ]
+  },
+  {
+    "Week": 5,
+    "StartDate": "2018-09-25T16:30:00Z",
+    "EndDate": "2018-09-27T06:30:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-09-25T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-25T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-25T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-25T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-26T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-26T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": 7,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-26T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-26T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 0,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-26T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 6,
+    "StartDate": "2018-09-28T18:30:00Z",
+    "EndDate": "2018-10-01T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-09-28T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-29T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-29T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-29T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-29T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 2,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-09-29T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-29T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 4,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-09-30T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-09-30T16:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 7,
+    "StartDate": "2018-10-05T18:30:00Z",
+    "EndDate": "2018-10-08T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-10-05T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-10-06T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 3,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-10-06T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-10-06T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-06T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 0,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-10-06T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-07T11:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 0,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-10-07T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-07T16:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": 6,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 8,
+    "StartDate": "2018-10-19T18:30:00Z",
+    "EndDate": "2018-10-22T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-10-19T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": 7,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-10-20T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 4,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-20T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-20T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 2,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-10-20T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-20T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 0,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-10-20T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-21T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-10-21T16:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 9,
+    "StartDate": "2018-10-26T18:30:00Z",
+    "EndDate": "2018-10-29T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-10-26T18:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-10-27T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 2,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-10-27T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-27T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-27T13:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-10-27T16:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-10-28T12:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-10-28T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 0,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-10-28T17:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 6,
+        "Winner": "AwayTeam"
+      }
+    ]
+  },
+  {
+    "Week": 10,
+    "StartDate": "2018-11-02T19:30:00Z",
+    "EndDate": "2018-11-05T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-11-02T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-03T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-03T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-11-03T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 4,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-03T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 1,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-03T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 2,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-11-03T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-04T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-04T17:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 11,
+    "StartDate": "2018-11-09T19:30:00Z",
+    "EndDate": "2018-11-12T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-11-09T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-10T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-10T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-10T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-10T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-10T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-10T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 2,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-11T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-11T17:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 12,
+    "StartDate": "2018-11-23T19:30:00Z",
+    "EndDate": "2018-11-26T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-11-23T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-24T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 3,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-11-24T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 3,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-11-24T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-24T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-24T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-11-24T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": 5,
+        "AwayTeamGoals": 2,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-11-25T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-11-25T17:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 13,
+    "StartDate": "2018-11-30T19:30:00Z",
+    "EndDate": "2018-12-04T07:30:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-11-30T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 1,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-01T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-01T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-01T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-01T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-01T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-12-02T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-02T17:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-03T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      }
+    ]
+  },
+  {
+    "Week": 14,
+    "StartDate": "2018-12-07T19:30:00Z",
+    "EndDate": "2018-12-10T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-12-07T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-08T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-08T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-08T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-08T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-08T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 2,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-12-08T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-09T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-12-09T17:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 15,
+    "StartDate": "2018-12-14T19:30:00Z",
+    "EndDate": "2018-12-17T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-12-14T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-15T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-15T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 4,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-15T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-15T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 0,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-12-15T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-12-15T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-16T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": 4,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-16T17:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      }
+    ]
+  },
+  {
+    "Week": 16,
+    "StartDate": "2018-12-18T17:30:00Z",
+    "EndDate": "2018-12-20T07:30:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-12-18T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-18T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 2,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-12-18T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-18T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-19T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 2,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-19T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-12-19T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 0,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-19T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      },
+      {
+        "Date": "2018-12-19T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 2,
+        "Winner": "Draw"
+      }
+    ]
+  },
+  {
+    "Week": 17,
+    "StartDate": "2018-12-21T19:30:00Z",
+    "EndDate": "2018-12-24T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2018-12-21T19:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-22T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-22T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 1,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-22T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 1,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-22T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 1,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-22T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": 3,
+        "AwayTeamGoals": 2,
+        "Winner": "HomeTeam"
+      },
+      {
+        "Date": "2018-12-22T17:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": 0,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-23T14:30:00Z",
+        "Status": "Finished",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": 2,
+        "AwayTeamGoals": 3,
+        "Winner": "AwayTeam"
+      },
+      {
+        "Date": "2018-12-23T17:00:00Z",
+        "Status": "Finished",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": 1,
+        "AwayTeamGoals": 1,
+        "Winner": "Draw"
+      }
+    ]
+  },
+  {
+    "Week": 18,
+    "StartDate": "2019-01-18T19:30:00Z",
+    "EndDate": "2019-01-21T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-01-18T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-19T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-19T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-19T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-19T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-19T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-19T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-20T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-20T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 19,
+    "StartDate": "2019-01-25T19:30:00Z",
+    "EndDate": "2019-01-28T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-01-25T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-26T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-26T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-26T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-26T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-26T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-26T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-27T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-01-27T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 20,
+    "StartDate": "2019-02-01T19:30:00Z",
+    "EndDate": "2019-02-04T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-02-01T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-02T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-03T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-03T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 21,
+    "StartDate": "2019-02-08T19:30:00Z",
+    "EndDate": "2019-02-11T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-02-08T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-09T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-10T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-10T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 22,
+    "StartDate": "2019-02-15T19:30:00Z",
+    "EndDate": "2019-02-19T07:30:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-02-15T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-16T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-16T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-16T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-16T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-16T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-17T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-17T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-18T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 23,
+    "StartDate": "2019-02-22T19:30:00Z",
+    "EndDate": "2019-02-26T07:30:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-02-22T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-23T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-23T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-23T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-23T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-23T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-24T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-24T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-02-25T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 24,
+    "StartDate": "2019-03-01T19:30:00Z",
+    "EndDate": "2019-03-04T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-03-01T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-02T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-02T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-03T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-03T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 25,
+    "StartDate": "2019-03-08T19:30:00Z",
+    "EndDate": "2019-03-12T07:30:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-03-08T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-09T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-09T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-10T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-10T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-11T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 26,
+    "StartDate": "2019-03-15T19:30:00Z",
+    "EndDate": "2019-03-18T05:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-03-15T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-16T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-16T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-16T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-16T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-16T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-17T12:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-17T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-17T17:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 27,
+    "StartDate": "2019-03-29T19:30:00Z",
+    "EndDate": "2019-04-01T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-03-29T19:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-30T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-30T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-30T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-30T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-30T14:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-30T17:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-31T13:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-03-31T16:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 28,
+    "StartDate": "2019-04-05T18:30:00Z",
+    "EndDate": "2019-04-08T04:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-04-05T18:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-06T13:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-06T13:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-06T13:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-06T13:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-06T13:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-06T16:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-07T13:30:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-07T16:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 29,
+    "StartDate": "2019-04-13T00:00:00Z",
+    "EndDate": "2019-04-13T12:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-13T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 30,
+    "StartDate": "2019-04-20T00:00:00Z",
+    "EndDate": "2019-04-20T12:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-20T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 31,
+    "StartDate": "2019-04-27T00:00:00Z",
+    "EndDate": "2019-04-27T12:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-04-27T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 32,
+    "StartDate": "2019-05-04T00:00:00Z",
+    "EndDate": "2019-05-04T12:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-04T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 33,
+    "StartDate": "2019-05-11T00:00:00Z",
+    "EndDate": "2019-05-11T12:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Eintracht Frankfurt",
+        "AwayTeam": "1. FSV Mainz 05",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia Dortmund",
+        "AwayTeam": "Fortuna Düsseldorf",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfB Stuttgart",
+        "AwayTeam": "VfL Wolfsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FC Nürnberg",
+        "AwayTeam": "Borussia M'gladbach",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hannover 96",
+        "AwayTeam": "SC Freiburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Bayer 04 Leverkusen",
+        "AwayTeam": "Schalke 04",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1899 Hoffenheim",
+        "AwayTeam": "Werder Bremen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Augsburg",
+        "AwayTeam": "Hertha BSC",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-11T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "RB Leipzig",
+        "AwayTeam": "FC Bayern München",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  },
+  {
+    "Week": 34,
+    "StartDate": "2019-05-18T00:00:00Z",
+    "EndDate": "2019-05-18T12:00:00Z",
+    "Fixtures": [
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Schalke 04",
+        "AwayTeam": "VfB Stuttgart",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Werder Bremen",
+        "AwayTeam": "RB Leipzig",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Hertha BSC",
+        "AwayTeam": "Bayer 04 Leverkusen",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Borussia M'gladbach",
+        "AwayTeam": "Borussia Dortmund",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "FC Bayern München",
+        "AwayTeam": "Eintracht Frankfurt",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "Fortuna Düsseldorf",
+        "AwayTeam": "Hannover 96",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "SC Freiburg",
+        "AwayTeam": "1. FC Nürnberg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "VfL Wolfsburg",
+        "AwayTeam": "FC Augsburg",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      },
+      {
+        "Date": "2019-05-18T00:00:00Z",
+        "Status": "Scheduled",
+        "HomeTeam": "1. FSV Mainz 05",
+        "AwayTeam": "1899 Hoffenheim",
+        "HomeTeamGoals": null,
+        "AwayTeamGoals": null,
+        "Winner": null
+      }
+    ]
+  }
+]

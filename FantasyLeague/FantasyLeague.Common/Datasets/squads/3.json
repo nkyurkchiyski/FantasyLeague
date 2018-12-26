@@ -1,0 +1,191 @@
+{
+  "name": "Bayer 04 Leverkusen",
+  "squad": [
+    {
+      "name": "Ramazan Özcan",
+      "nationality": "Austria",
+      "position": "Goalkeeper",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Thorsten Kirschbaum",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Lukáš Hrádecký",
+      "nationality": "Finland",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Tomasz Kucz",
+      "nationality": "Poland",
+      "position": "Goalkeeper",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jonathan Tah",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Tin Jedvaj",
+      "nationality": "Croatia",
+      "position": "Defender",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Wendell",
+      "nationality": "Brazil",
+      "position": "Defender",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Aleksandar Dragović",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Sven Bender",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Charles Aránguiz",
+      "nationality": "Chile",
+      "position": "Midfielder",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Dominik Kohr",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Panagiotis Retsos",
+      "nationality": "Greece",
+      "position": "Midfielder",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Karim Bellarabi",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 38
+    },
+    {
+      "name": "Julian Baumgartlinger",
+      "nationality": "Austria",
+      "position": "Midfielder",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Kai Havertz",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 29
+    },
+    {
+      "name": "Lars Bender",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Mitchell Weiser",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Sam Schreck",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Julian Brandt",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Kevin Volland",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 31
+    },
+    {
+      "name": "Lucas Alario",
+      "nationality": "Argentina",
+      "position": "Attacker",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Leon Bailey",
+      "nationality": "Jamaica",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Paulinho",
+      "nationality": "Brazil",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Isaac Thelin",
+      "nationality": "Sweden",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Joel Pohjanpalo",
+      "nationality": "Finland",
+      "position": "Attacker",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Jakub Bednarczyk",
+      "nationality": "Poland",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Dennis-Mukuna Mbay",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Heiko Herrlich",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Dieter Herzog",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Markus Krösche",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Daniel Niedzkowski",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "name": "1. FSV Mainz 05",
+  "squad": [
+    {
+      "name": "Florian Müller",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 22
+    },
+    {
+      "name": "René Adler",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Robin Zentner",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Finn Dahmen",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 37
+    },
+    {
+      "name": "Jannik Huth",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 33
+    },
+    {
+      "name": "Philipp Mwene",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Daniel Brosinski",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Niko Bungert",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Stefan Bell",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Alexander Hack",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 42
+    },
+    {
+      "name": "Giulio Donati",
+      "nationality": "Italy",
+      "position": "Defender",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Jean-Philippe Gbamin",
+      "nationality": "Côte d’Ivoire",
+      "position": "Defender",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Moussa Niakhaté",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Gaëtan Bussmann",
+      "nationality": "France",
+      "position": "Defender",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Aaron Martín",
+      "nationality": "Spain",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Ahmet Gürleyen",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": null
+    },
+    {
+      "name": "Danny Latza",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Gerrit Holtmann",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 38
+    },
+    {
+      "name": "Levin Öztunali",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Robin Quaison",
+      "nationality": "Sweden",
+      "position": "Midfielder",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Alexandru Maxim",
+      "nationality": "Romania",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Bote Baku",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 34
+    },
+    {
+      "name": "Devante Parker",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Pierre Kunde Malong",
+      "nationality": "Cameroon",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Ridle Baku",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Abass Issah",
+      "nationality": "Ghana",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Leandro Barreiro Martins",
+      "nationality": "Luxembourg",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jean-Philippe Mateta",
+      "nationality": "France",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Karim Onisiwo",
+      "nationality": "Austria",
+      "position": "Attacker",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Emil Berggreen",
+      "nationality": "Denmark",
+      "position": "Attacker",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Anthony Ujah",
+      "nationality": "Nigeria",
+      "position": "Attacker",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Jean-Paul Boëtius",
+      "nationality": "Netherlands",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jonathan Burkardt",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": null
+    },
+    {
+      "name": "Sandro Schwarz",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

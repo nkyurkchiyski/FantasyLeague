@@ -1,0 +1,203 @@
+{
+  "name": "FC Bayern München",
+  "squad": [
+    {
+      "name": "Manuel Neuer",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Sven Ulreich",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 26
+    },
+    {
+      "name": "Christian Früchtl",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 36
+    },
+    {
+      "name": "Ron-Thorben Hoffmann",
+      "nationality": "Germany",
+      "position": "Goalkeeper",
+      "shirtNumber": 42
+    },
+    {
+      "name": "Jérôme Boateng",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Rafinha",
+      "nationality": "Brazil",
+      "position": "Defender",
+      "shirtNumber": 13
+    },
+    {
+      "name": "David Alaba",
+      "nationality": "Austria",
+      "position": "Defender",
+      "shirtNumber": 27
+    },
+    {
+      "name": "Mats Hummels",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Niklas Süle",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Lukas Mai",
+      "nationality": "Germany",
+      "position": "Defender",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Serge Gnabry",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Arjen Robben",
+      "nationality": "Netherlands",
+      "position": "Midfielder",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Franck Ribéry",
+      "nationality": "France",
+      "position": "Midfielder",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Javi Martínez",
+      "nationality": "Spain",
+      "position": "Midfielder",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Thiago Alcântara",
+      "nationality": "Spain",
+      "position": "Midfielder",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Joshua Kimmich",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 32
+    },
+    {
+      "name": "Kingsley Coman",
+      "nationality": "France",
+      "position": "Midfielder",
+      "shirtNumber": 29
+    },
+    {
+      "name": "James Rodríguez",
+      "nationality": "Colombia",
+      "position": "Midfielder",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Corentin Tolisso",
+      "nationality": "France",
+      "position": "Midfielder",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Meritan Shabani",
+      "nationality": "Albania",
+      "position": "Midfielder",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Leon Goretzka",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Jonathan Meier",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Jeong Wooyeong",
+      "nationality": "Korea Republic",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Paul Will",
+      "nationality": "Germany",
+      "position": "Midfielder",
+      "shirtNumber": null
+    },
+    {
+      "name": "Thomas Müller",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Robert Lewandowski",
+      "nationality": "Poland",
+      "position": "Attacker",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Kwasi Okyere Wriedt",
+      "nationality": "Ghana",
+      "position": "Attacker",
+      "shirtNumber": 28
+    },
+    {
+      "name": "Sandro Wagner",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Franck Evina",
+      "nationality": "Germany",
+      "position": "Attacker",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Renato Sanches",
+      "nationality": "Portugal",
+      "position": "Attacker",
+      "shirtNumber": 35
+    },
+    {
+      "name": "Niko Kovać",
+      "nationality": "Croatia",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Peter Hermann",
+      "nationality": "Germany",
+      "position": null,
+      "shirtNumber": null
+    },
+    {
+      "name": "Robert Kovač",
+      "nationality": "Croatia",
+      "position": null,
+      "shirtNumber": null
+    }
+  ]
+}

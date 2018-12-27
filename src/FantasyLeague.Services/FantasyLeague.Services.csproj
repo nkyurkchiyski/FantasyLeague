@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FantasyLeague.Data\FantasyLeague.Data.csproj" />
+    <ProjectReference Include="..\FantasyLeague.ViewModels\FantasyLeague.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>

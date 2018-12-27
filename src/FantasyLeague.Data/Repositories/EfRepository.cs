@@ -11,7 +11,7 @@ namespace FantasyLeague.Data.Repositories
     {
         private readonly DbSet<TEntity> dbSet;
         private readonly FantasyLeagueDbContext context;
-        
+
         public EfRepository(FantasyLeagueDbContext context)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
@@ -44,6 +44,8 @@ namespace FantasyLeague.Data.Repositories
         public Task<int> SaveChangesAsync() => this.context.SaveChangesAsync();
 
         public void Dispose() => this.context.Dispose();
+
+        public Task<TEntity> GetByIdAsync(params object[] id) => this.dbSet.FindAsync(id);
     }
 
 }

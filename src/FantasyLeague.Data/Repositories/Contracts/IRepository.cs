@@ -8,7 +8,9 @@ namespace FantasyLeague.Data.Repositories.Contracts
         where TEntity : class
     {
         IQueryable<TEntity> All();
-        
+
+        Task<TEntity> GetByIdAsync(params object[] id);
+
         void Add(TEntity entity);
 
         void Update(TEntity entity);

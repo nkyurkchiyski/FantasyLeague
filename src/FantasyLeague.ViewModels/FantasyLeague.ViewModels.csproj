@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="League\" />
+    <Folder Include="Transfer\" />
+    <Folder Include="Roster\" />
+    <Folder Include="Team\" />
+    <Folder Include="Player\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FantasyLeague.Common\FantasyLeague.Common.csproj" />
+  </ItemGroup>
+
+</Project>

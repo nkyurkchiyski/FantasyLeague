@@ -12,7 +12,7 @@ namespace FantasyLeague.Models
         [Required]
         public Guid PlayerId { get; set; }
         public virtual Player Player { get; set; }
-        
+
         [Required]
         public Guid FixtureId { get; set; }
         public virtual Fixture Fixture { get; set; }
@@ -40,10 +40,12 @@ namespace FantasyLeague.Models
         [Required]
         public bool CleanSheet { get; set; }
 
+        public bool? IsWiner { get; set; }
+
         [Required]
         [Range(minimum: 0, maximum: ScoreConstants.MaxPlayedMinutesValue)]
         public int PlayedMinutes { get; set; }
-        
+
         public int GetScore()
         {
             var position = this.Player.Position;
@@ -73,6 +75,11 @@ namespace FantasyLeague.Models
 
             //Other stats
             result += this.PlayedMinutes / ScoreConstants.PlayedMinutesDivider;
+
+            if (IsWiner.HasValue)
+            {
+                result += this.IsWiner.Value ? 1 : -2;
+            }
 
             return result;
         }

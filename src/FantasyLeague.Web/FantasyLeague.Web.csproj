@@ -8,6 +8,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
@@ -16,10 +17,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FantasyLeague.Data\FantasyLeague.Data.csproj" />
+    <ProjectReference Include="..\FantasyLeague.Services\FantasyLeague.Services.csproj" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <Folder Include="Areas\Fixture\Controllers\" />
+    <Folder Include="Areas\Fixture\Views\" />
     <Folder Include="Areas\League\Controllers\" />
     <Folder Include="Areas\League\Data\" />
     <Folder Include="Areas\League\Models\" />

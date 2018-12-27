@@ -219,6 +219,8 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<int>("GoalsConceded");
 
+                    b.Property<bool?>("IsWiner");
+
                     b.Property<int>("PlayedMinutes");
 
                     b.Property<Guid>("PlayerId");

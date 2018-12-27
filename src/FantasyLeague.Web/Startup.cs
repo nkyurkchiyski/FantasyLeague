@@ -15,6 +15,11 @@ using Microsoft.Extensions.DependencyInjection;
 using FantasyLeague.Data;
 using FantasyLeague.Models;
 using FantasyLeague.Web.Middlewares.MiddlewareExtensions;
+using FantasyLeague.Data.Repositories.Contracts;
+using FantasyLeague.Data.Repositories;
+using FantasyLeague.Services.Contracts;
+using FantasyLeague.Services;
+using AutoMapper;
 
 namespace FantasyLeague.Web
 {
@@ -40,7 +45,7 @@ namespace FantasyLeague.Web
             services.AddDbContext<FantasyLeagueDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            
+
             services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -55,6 +60,21 @@ namespace FantasyLeague.Web
             services.Configure<IdentityOptions>(options =>
                options.SignIn.RequireConfirmedEmail = false
            );
+
+            //AutoMapper
+            var mappingConfig = new MapperConfiguration(mc =>
+              mc.AddProfile(new MappingProfile()));
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            //Repositories
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+
+            //Services
+            services.AddScoped<IScoreService, ScoreService>();
+            services.AddScoped<IFixtureService, FixtureService>();
+            services.AddScoped<IMatchdayService, MatchdayService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

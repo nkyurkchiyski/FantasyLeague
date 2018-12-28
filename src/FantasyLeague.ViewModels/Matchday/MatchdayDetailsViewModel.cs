@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FantasyLeague.ViewModels.Matchday
 {
-    public class MatchdayDetailsVieModel:MatchdayViewModel
+    public class MatchdayDetailsViewModel : MatchdayViewModel
     {
         public ICollection<FixtureViewModel> Fixtures { get; set; }
     }

@@ -1,0 +1,66 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using FantasyLeague.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Fantasy League</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="collapse" id="navbarSupportedContent">
+    <ul class="nav flex-column font-weight-bold">
+        <li class="nav-item px-3">
+            <a class="nav-link @ManageSidebar.HomeNavClass(ViewContext)" asp-area="" asp-controller="Home" asp-action="Index" ><span class="oi oi-home" aria-hidden="true"></span>Home</a>
+        </li>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <li class="nav-item px-3">
+                <a class="nav-link @ManageSidebar.RosterNavClass(ViewContext)" asp-area="Club" asp-controller="Roster" asp-action="Index">
+                    <span class="oi oi-people" aria-hidden="true"></span>Roster
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link @ManageSidebar.LeaguesNavClass(ViewContext)" asp-area="Leagues" asp-controller="Manage" asp-action="All">
+                    <span class="oi oi-list" aria-hidden="true"></span>Leagues
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link @ManageSidebar.MatchdaysNavClass(ViewContext)" asp-area="Rounds" asp-controller="Matchdays" asp-action="All">
+                    <span class="oi oi-task" aria-hidden="true"></span>Matchdays
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link @ManageSidebar.TeamsNavClass(ViewContext)" asp-area="Competition" asp-controller="Teams" asp-action="All">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span>Teams
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link @ManageSidebar.AccountNavClass(ViewContext)" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                    <span class="oi oi-wrench" aria-hidden="true"></span>Account
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <span class="oi oi-account-logout" aria-hidden="true"></span>Logout
+                </a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item px-3">
+                <a class="nav-link @ManageSidebar.RegisterNavClass(ViewContext)" asp-area="Identity" asp-page="/Account/Register">
+                    <span class="oi oi-pencil" aria-hidden="true"></span>Register
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link @ManageSidebar.LoginNavClass(ViewContext)" asp-area="Identity" asp-page="/Account/Login">
+                    <span class="oi oi-account-login" aria-hidden="true"></span>Login
+                </a>
+            </li>
+        }
+
+    </ul>
+</div>

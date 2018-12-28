@@ -1,8 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
+    ViewData["ActivePage"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="jumbotron text-center bundesliga-jumbotron p-4">
+    <h1 class="display-4">Bundesliga Fantasy League</h1>
+    <h3 class="lead">Create your dream team and compete with your friends!</h3>
+    <hr class="my-4">
+    <p>Earn points based on the performance of the Bundesliga's stars in actual games.</p>
+    <div class="text-center">
+        <img class="bundesliga-banner" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1546011034/FantasyLeague/Resources/banner.jpg" />
+    </div>
+    <a class="btn btn-primary btn-lg mt-4" asp-area="Identity" asp-page="/Account/Register">JOIN NOW!</a>
 </div>
+

@@ -22,26 +22,17 @@
 
 
   <ItemGroup>
-    <Folder Include="Areas\Fixture\Views\" />
-    <Folder Include="Areas\League\Controllers\" />
-    <Folder Include="Areas\League\Data\" />
-    <Folder Include="Areas\League\Models\" />
-    <Folder Include="Areas\League\Views\" />
-    <Folder Include="Areas\Matchday\Controllers\" />
-    <Folder Include="Areas\Matchday\Data\" />
-    <Folder Include="Areas\Matchday\Models\" />
-    <Folder Include="Areas\Matchday\Views\" />
-    <Folder Include="Areas\Player\Controllers\" />
-    <Folder Include="Areas\Player\Data\" />
-    <Folder Include="Areas\Player\Models\" />
-    <Folder Include="Areas\Player\Views\" />
-    <Folder Include="Areas\Roster\Controllers\" />
-    <Folder Include="Areas\Roster\Models\" />
-    <Folder Include="Areas\Roster\Views\" />
-    <Folder Include="Areas\Team\Controllers\" />
-    <Folder Include="Areas\Team\Data\" />
-    <Folder Include="Areas\Team\Models\" />
-    <Folder Include="Areas\Team\Views\" />
+    <Folder Include="Areas\Club\Controllers\" />
+    <Folder Include="Areas\Club\Views\" />
+    <Folder Include="Areas\Competition\Controllers\" />
+    <Folder Include="Areas\Competition\Data\" />
+    <Folder Include="Areas\Competition\Models\" />
+    <Folder Include="Areas\Competition\Views\" />
+    <Folder Include="Areas\Leagues\Controllers\" />
+    <Folder Include="Areas\Leagues\Data\" />
+    <Folder Include="Areas\Leagues\Models\" />
+    <Folder Include="Areas\Leagues\Views\" />
+    <Folder Include="Areas\Rounds\Views\Shared\" />
   </ItemGroup>
 
 </Project>

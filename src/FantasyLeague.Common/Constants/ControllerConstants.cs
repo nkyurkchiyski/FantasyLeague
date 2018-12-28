@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FantasyLeague.Common.Constants
+﻿namespace FantasyLeague.Common.Constants
 {
     public static class ControllerConstants
     {
+        public const string RoundsAreaName = "Rounds";
+        public const string ClubAreaName = "Club";
+        public const string CompetitionAreaName = "Competition";
+        public const string LeaguesAreaName = "Leagues";
     }
 }

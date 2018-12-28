@@ -22,7 +22,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Areas\Fixture\Controllers\" />
     <Folder Include="Areas\Fixture\Views\" />
     <Folder Include="Areas\League\Controllers\" />
     <Folder Include="Areas\League\Data\" />

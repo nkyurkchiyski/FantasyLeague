@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FantasyLeague.Common.Constants;
 using FantasyLeague.Data.Repositories.Contracts;
 using FantasyLeague.Models;
 using FantasyLeague.Models.Enums;
@@ -15,7 +16,7 @@ namespace FantasyLeague.Services
     {
         private readonly IRepository<Fixture> fixtureRepository;
         private readonly IScoreService scoreService;
-        
+
         public FixtureService(
             IRepository<Fixture> fixtureRepository,
             IScoreService scoreService,
@@ -81,6 +82,14 @@ namespace FantasyLeague.Services
 
             var fixture = await this.fixtureRepository.GetByIdAsync(fixtureId);
 
+            if (fixture == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.FixtureName);
+                return result;
+            }
+
             fixture.Status = parsedStatus;
             fixture.Date = date;
 
@@ -93,6 +102,8 @@ namespace FantasyLeague.Services
 
                 fixture.Winner = winner;
             }
+
+            await fixtureRepository.SaveChangesAsync();
 
             result.Success = true;
 
@@ -116,13 +127,29 @@ namespace FantasyLeague.Services
         {
             var result = new ServiceResult { Success = false };
 
+            var fixture = await this.fixtureRepository
+                .GetByIdAsync(fixtureId);
+
+            if (fixture == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.FixtureName);
+
+                return result;
+            }
+
             foreach (var scoreModel in models)
             {
                 var createResult = await this.scoreService.Create(
                     fixtureId,
                     scoreModel);
 
-                if (!createResult.Success) { return result; }
+                if (!createResult.Success)
+                {
+                    result.Error = createResult.Error;
+                    return result;
+                }
             }
 
             result.Success = true;

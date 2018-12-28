@@ -6,6 +6,11 @@ namespace FantasyLeague.Models
 {
     public class RosterPlayer : BaseEntity
     {
+        public RosterPlayer()
+        {
+            this.IsSub = true;
+        }
+
         [Required]
         public Guid PlayerId { get; set; }
         public virtual Player Player { get; set; }
@@ -13,5 +18,7 @@ namespace FantasyLeague.Models
         [Required]
         public Guid RosterId { get; set; }
         public virtual Roster Roster { get; set; }
+
+        public bool IsSub { get; set; }
     }
 }

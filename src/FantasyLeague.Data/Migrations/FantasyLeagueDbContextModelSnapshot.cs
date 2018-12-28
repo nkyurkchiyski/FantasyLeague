@@ -126,7 +126,11 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<DateTime>("EndDate");
 
+                    b.Property<int>("MatchdayStatus");
+
                     b.Property<DateTime>("StartDate");
+
+                    b.Property<int>("TransferWindowStatus");
 
                     b.Property<int>("Week");
 
@@ -190,6 +194,8 @@ namespace FantasyLeague.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("IsSub");
 
                     b.Property<Guid>("PlayerId");
 

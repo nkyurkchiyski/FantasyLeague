@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FantasyLeague.Common.Constants;
 using FantasyLeague.Data.Repositories.Contracts;
 using FantasyLeague.Models;
 using FantasyLeague.Models.Enums;
@@ -65,10 +66,22 @@ namespace FantasyLeague.Services
             var fixture = await this.fixtureRepository.GetByIdAsync(fixtureId);
             var player = await this.playerRepository.GetByIdAsync(model.PlayerId);
 
-            if (fixture == null || player == null || fixture.Status != FixtureStatus.Finished)
+            if (fixture == null || fixture.Status != FixtureStatus.Finished)
             {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.FixtureName);
                 return result;
             }
+
+            if (player == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.PlayerName);
+                return result;
+            }
+
 
             int goalsConceded = this.GetGoalsConceded(player, fixture);
             bool? winner = this.GetFixtureOutcome(player, fixture);
@@ -101,7 +114,13 @@ namespace FantasyLeague.Services
 
             var score = await this.scoreRepository.GetByIdAsync(scoreId);
 
-            if (score == null) { return result; }
+            if (score == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.ScoreName);
+                return result;
+            }
 
             this.scoreRepository.Delete(score);
             await this.scoreRepository.SaveChangesAsync();
@@ -109,7 +128,6 @@ namespace FantasyLeague.Services
             result.Success = true;
 
             return result;
-
         }
 
         public async Task<IServiceResult> Edit(
@@ -120,7 +138,13 @@ namespace FantasyLeague.Services
 
             var score = await this.scoreRepository.GetByIdAsync(scoreId);
 
-            if (score == null) { return result; }
+            if (score == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.ScoreName);
+                return result;
+            }
 
             int goalsConceded = this.GetGoalsConceded(score.Player, score.Fixture);
             bool? winner = this.GetFixtureOutcome(score.Player, score.Fixture);

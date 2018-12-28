@@ -32,7 +32,10 @@ namespace FantasyLeague.Web
 
         private void CreateMatchdayMappings()
         {
-            CreateMap<Matchday, MatchdayViewModel>();
+            CreateMap<Matchday, MatchdayViewModel>()
+                .ForMember(
+                    f => f.Status,
+                    opt => opt.MapFrom(src => src.MatchdayStatus.ToString()));
         }
 
         private void CreateScoreMappings()

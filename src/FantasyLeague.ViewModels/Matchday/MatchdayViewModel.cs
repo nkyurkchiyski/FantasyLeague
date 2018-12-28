@@ -8,6 +8,9 @@ namespace FantasyLeague.ViewModels.Matchday
     public class MatchdayViewModel
     {
         [Required]
+        public Guid Id { get; set; }
+
+        [Required]
         public DateTime StartDate { get; set; }
 
         [Required]
@@ -17,6 +20,7 @@ namespace FantasyLeague.ViewModels.Matchday
         [Range(minimum: 0, maximum: int.MaxValue)]
         public int Week { get; set; }
 
-        public ICollection<FixtureViewModel> Fixtures { get; set; }
+        [Required]
+        public string Status { get; set; }
     }
 }

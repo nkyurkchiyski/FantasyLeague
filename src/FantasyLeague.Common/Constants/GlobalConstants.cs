@@ -12,8 +12,10 @@
         public const string LeagueName = "League";
         public const string ScoreName = "Score";
         public const string TransferWindowStatusName = "TransferWindowStatus";
-
+        
         public const int TeamNumber = 18;
         public const double Budget = 150;
+
+        public const int MatchdaysPageSize = 9;
     }
 }

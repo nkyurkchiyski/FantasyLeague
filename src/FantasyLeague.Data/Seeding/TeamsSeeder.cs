@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using FantasyLeague.Common.Constants;
-using FantasyLeague.Common.Helpers;
 using FantasyLeague.Data.Dtos;
 using FantasyLeague.Data.Seeding.Contracts;
 using FantasyLeague.Models;

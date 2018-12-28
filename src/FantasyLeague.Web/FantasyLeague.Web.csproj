@@ -32,7 +32,6 @@
     <Folder Include="Areas\Leagues\Data\" />
     <Folder Include="Areas\Leagues\Models\" />
     <Folder Include="Areas\Leagues\Views\" />
-    <Folder Include="Areas\Rounds\Views\Shared\" />
   </ItemGroup>
 
 </Project>

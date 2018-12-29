@@ -8,7 +8,7 @@ namespace FantasyLeague.Services.Contracts
     {
         ICollection<T> All<T>();
 
-        T Details<T>(Guid matchdayId);
+        T GetMatchday<T>(Guid matchdayId);
 
         int Count();
 

@@ -1,0 +1,29 @@
+﻿@{
+    @model MatchdayDetailsViewModel
+    ViewData["Title"] = $"{GlobalConstants.MatchdayName} {Model.Week}";
+    ViewData["ActivePage"] = PagesConstants.Matchdays;
+}
+
+<h1>Matchday @Model.Week</h1>
+<h4>
+    @Model.StartDate.ToString(GlobalConstants.Date, CultureInfo.CreateSpecificCulture(GlobalConstants.DateTimeFormat)) ÷ @Model.EndDate.ToString(GlobalConstants.Date, CultureInfo.CreateSpecificCulture(GlobalConstants.DateTimeFormat))
+</h4>
+<div class="button-holder d-flex justify-content-start">
+    <div>
+        @{
+            <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.All" class="btn btn-outline-primary"><span class="oi oi-share-boxed"></span></a>
+            if (User.IsInRole(RoleConstants.AdminRoleName))
+            {
+                <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Edit" asp-route-id="@Model.Id" class="btn btn-primary"><span class="oi oi-pencil"></span></a>
+            }
+        }
+
+    </div>
+</div>
+<hr>
+
+<div class="d-flex justify-content-center">
+    <div class="w-75 text-center">
+        <partial name="~/Areas/Rounds/Views/Shared/_MatchdayDetailsPartial.cshtml" model="Model.Fixtures" />
+    </div>
+</div>

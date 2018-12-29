@@ -7,23 +7,23 @@
 <h1>All Matchdays</h1>
 <h4>Browse all Bundesliga matchdays for season 2018/2019</h4>
 <hr>
-    <div class="row d-flex justify-content-center my-4-5">
-        @{
-            @for (int i = 0; i < Model.Count; i++)
+<div class="row d-flex justify-content-center my-4-5">
+    @{
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var md = Model[i];
+
+            if (i % 3 == 0 && i != 0)
             {
-                var md = Model[i];
-
-                if (i % 3 == 0 && i != 0)
-                {
-                    @Html.Raw(@"</div><div class=""row d-flex justify-content-center my-4-5"">");
-                }
-                <div class="col-md-3">
-                    <partial name="~/Areas/Rounds/Views/Shared/_MatchdayPartial.cshtml" model="md" />
-                </div>
+                @Html.Raw(@"</div><div class=""row d-flex justify-content-center my-4-5"">");
             }
+            <div class="col-md-3">
+                <partial name="~/Areas/Rounds/Views/Shared/_MatchdayPartial.cshtml" model="md" />
+            </div>
         }
+    }
 
-    </div>
+</div>
 <div class="d-flex justify-content-center">
     <ul class="pagination pagination-lg">
         @for (int i = 1; i <= Model.TotalPages; i++)

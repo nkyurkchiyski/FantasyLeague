@@ -52,7 +52,7 @@ namespace FantasyLeague.Services
             return models;
         }
 
-        public T Details<T>(Guid fixtureId)
+        public T GetFixture<T>(Guid fixtureId)
         {
             var fixture = this.fixtureRepository
                 .GetByIdAsync(fixtureId)
@@ -67,19 +67,12 @@ namespace FantasyLeague.Services
         public async Task<IServiceResult> Edit(
             Guid fixtureId,
             DateTime date,
-            string status,
+            FixtureStatus status,
             int homeTeamGoals,
             int awayTeamGoals)
         {
             var result = new ServiceResult { Success = false };
-
-            bool isValidStatus = Enum.TryParse(status, out FixtureStatus parsedStatus);
-
-            if (!isValidStatus)
-            {
-                return result;
-            }
-
+            
             var fixture = await this.fixtureRepository.GetByIdAsync(fixtureId);
 
             if (fixture == null)
@@ -90,10 +83,10 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            fixture.Status = parsedStatus;
+            fixture.Status = status;
             fixture.Date = date;
 
-            if (parsedStatus == FixtureStatus.Finished)
+            if (status == FixtureStatus.Finished)
             {
                 fixture.HomeTeamGoals = homeTeamGoals;
                 fixture.AwayTeamGoals = awayTeamGoals;
@@ -102,23 +95,18 @@ namespace FantasyLeague.Services
 
                 fixture.Winner = winner;
             }
+            else
+            {
+                fixture.HomeTeamGoals = null;
+                fixture.AwayTeamGoals = null;
+                fixture.Winner = MatchResult.Unknown;
+            }
 
             await fixtureRepository.SaveChangesAsync();
 
             result.Success = true;
 
             return result;
-        }
-
-        public ICollection<T> GetFixturesFromMatchday<T>(Guid matchdayId)
-        {
-            var fixtures = this.fixtureRepository.All()
-                .Where(x => x.MatchdayId == matchdayId);
-
-            var models = fixtures.Select(x => this.mapper.Map<T>(x))
-                .ToList();
-
-            return models;
         }
 
         public async Task<IServiceResult> AddPlayerScores(

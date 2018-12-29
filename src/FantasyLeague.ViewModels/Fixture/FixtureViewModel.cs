@@ -1,23 +1,25 @@
-﻿using System;
+﻿using FantasyLeague.Models.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FantasyLeague.ViewModels.Fixture
 {
     public class FixtureViewModel
     {
-        [Required]
+        public Guid Id { get; set; }
+
         public string HomeTeam { get; set; }
 
-        [Required]
         public string AwayTeam { get; set; }
 
-        public int? HomeTeamGoals { get; set; }
+        public int HomeTeamGoals { get; set; }
 
-        public int? AwayTeamGoals { get; set; }
+        public int AwayTeamGoals { get; set; }
 
-        [Required]
+        [DataType(DataType.DateTime)]
         public DateTime Date { get; set; }
 
-        public string Status { get; set; }
+        [Required]
+        public FixtureStatus Status { get; set; }
     }
 }

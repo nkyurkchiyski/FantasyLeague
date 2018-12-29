@@ -1,0 +1,61 @@
+﻿@model ICollection<FixtureViewModel>
+
+<table class="table mx-auto table-hover">
+    <thead>
+        <tr class="row">
+            <th class="col-md-1">#</th>
+            <th class="col-md-3">Home Team</th>
+            <th class="col-md-3">Away Team</th>
+            <th class="col-md-2">Status</th>
+            <th class="col-md-1">Score</th>
+            <th class="col-md-2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int index = 1;
+            foreach (var fixture in Model)
+            {
+                <tr class="row">
+                    <td class="col-md-1">@(index++)</td>
+                    <td class="col-md-3">@fixture.HomeTeam</td>
+                    <td class="col-md-3">@fixture.AwayTeam</td>
+                    <td class="col-md-2">@fixture.Status</td>
+                    <td class="col-md-1 text-danger font-weight-bold">
+                        @{
+                            string result = GlobalConstants.Unknown;
+                            switch (fixture.Status)
+                            {
+                                case FantasyLeague.Models.Enums.FixtureStatus.Scheduled:
+                                    result = fixture.Date
+                                        .ToString("m");
+                                    break;
+                                case FantasyLeague.Models.Enums.FixtureStatus.Finished:
+                                    result = $"{fixture.HomeTeamGoals} : {fixture.AwayTeamGoals}";
+                                    break;
+                            }
+                        }
+                        @result
+                    </td>
+                    <td class="col-md-2">
+                        <div class="button-holder d-flex justify-content-center">
+                            <div>
+                                @{
+                                    string disabled = fixture.Status == FixtureStatus.Finished ? null: HtmlCssConstants.Disabled;
+                                    
+                                    <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.Details" asp-route-id="@fixture.Id" role="button" class="btn btn-outline-primary @disabled"><span class="oi oi-info"></span></a>
+
+                                    if (User.IsInRole(RoleConstants.AdminRoleName) && fixture.Status == FixtureStatus.Finished)
+                                    {
+                                        <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.AddPlayerStats" asp-route-id="@fixture.Id" class="btn btn-primary"><span class="oi oi-pencil"></span></a>
+                                    }
+                                }
+
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

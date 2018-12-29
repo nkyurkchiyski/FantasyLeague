@@ -39,9 +39,12 @@ namespace FantasyLeague.Services
             return count;
         }
 
-        public T Details<T>(Guid matchdayId)
+        public T GetMatchday<T>(Guid matchdayId)
         {
-            var matchday = this.matchdayRepository.GetByIdAsync(matchdayId);
+            var matchday =  this.matchdayRepository
+                .GetByIdAsync(matchdayId)
+                .GetAwaiter()
+                .GetResult();
 
             var model = this.mapper.Map<T>(matchday);
 

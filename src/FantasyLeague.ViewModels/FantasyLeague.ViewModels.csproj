@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FantasyLeague.Common\FantasyLeague.Common.csproj" />
+    <ProjectReference Include="..\FantasyLeague.Models\FantasyLeague.Models.csproj" />
   </ItemGroup>
 
 </Project>

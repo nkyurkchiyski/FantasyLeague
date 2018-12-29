@@ -1,4 +1,5 @@
-﻿using FantasyLeague.ViewModels.Score;
+﻿using FantasyLeague.Models.Enums;
+using FantasyLeague.ViewModels.Score;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,14 +10,12 @@ namespace FantasyLeague.Services.Contracts
     {
         ICollection<T> All<T>();
 
-        ICollection<T> GetFixturesFromMatchday<T>(Guid matchdayId);
-
-        T Details<T>(Guid fixtureId);
+        T GetFixture<T>(Guid fixtureId);
 
         Task<IServiceResult> Edit(
             Guid fixtureId,
             DateTime date,
-            string status,
+            FixtureStatus status,
             int homeTeamGoals,
             int awayTeamGoals);
 

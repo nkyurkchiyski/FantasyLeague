@@ -1,0 +1,89 @@
+﻿@{
+    @model MatchdayEditViewModel
+    var statuses = new SelectList(Enum.GetValues(typeof(FixtureStatus)));
+}
+
+@using (Html.BeginForm())
+{
+    <input asp-for="@Model.Id" value="@Model.Id" hidden>
+    <table class="table mx-auto table-hover">
+        <thead>
+            <tr class="row">
+                <th class="col-md-1">#</th>
+                <th class="col-md-2">Home Team</th>
+                <th class="col-md-2">Away Team</th>
+                <th class="col-md-3">Date</th>
+                <th class="col-md-2">Status</th>
+                <th class="col-md-2">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                for (int i = 0; i < Model.Fixtures.Count; i++)
+                {
+                    <tr class="row">
+                        <td class="col-md-1">@(i + 1)</td>
+                        <td class="col-md-2">@Model.Fixtures[i].HomeTeam</td>
+                        <td class="col-md-2">@Model.Fixtures[i].AwayTeam</td>
+                        <td class="col-md-3">
+                            @Html.EditorFor(
+                                        o => o.Fixtures[i].Date,
+                                        new
+                                        {
+                                            htmlAttributes = new {
+                                                @id = TagConstants.FixtureDate + i,
+                                                @class = HtmlCssConstants.FormControl
+                                            }
+                                        })
+                        </td>
+                        <td class="col-md-2">
+                            <div>
+                                <input asp-for="@Model.Fixtures[i].Id" value="@Model.Fixtures[i].Id" hidden>
+                                @Html.DropDownListFor(
+                                        o => o.Fixtures[i].Status,
+                                        statuses,
+                                        new {
+                                            @id = TagConstants.FixtureStatus + i,
+                                            @class = HtmlCssConstants.FormControl
+                                        })
+                            </div>
+                        </td>
+                        <td class="col-md-2">
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                @Html.EditorFor(
+                                        o => o.Fixtures[i].HomeTeamGoals,
+                                        new
+                                        {
+                                            htmlAttributes = new {
+                                                @id = TagConstants.HomeTeamGoals + i,
+                                                @class = HtmlCssConstants.FormControl + HtmlCssConstants.ColMd4,
+                                                @min = "0"
+                                            }
+                                        })
+                                <div class="col-md-2"> : </div>
+                                @Html.EditorFor(
+                                       o => o.Fixtures[i].AwayTeamGoals,
+                                       new
+                                       {
+                                           htmlAttributes = new
+                                           {
+                                               @id = TagConstants.AwayTeamGoals + i,
+                                               @class = HtmlCssConstants.FormControl + HtmlCssConstants.ColMd4,
+                                               @min = "0"
+                                           }
+                                       })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <div class="button-holder d-flex justify-content-center">
+        <div>
+            <button type="submit" class="btn btn-primary">Confirm All</button>
+        </div>
+    </div>
+}

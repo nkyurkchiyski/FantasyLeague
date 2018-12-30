@@ -94,6 +94,8 @@ namespace FantasyLeague.Services
                 Assists = model.Assists,
                 Goals = model.Goals,
                 Tackles = model.Tackles,
+                YellowCards = model.YellowCards,
+                RedCards = model.RedCards,
                 PlayedMinutes = model.PlayedMinutes,
                 GoalsConceded = goalsConceded,
                 CleanSheet = goalsConceded == 0,

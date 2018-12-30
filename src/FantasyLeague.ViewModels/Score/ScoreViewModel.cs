@@ -1,4 +1,5 @@
 ﻿using FantasyLeague.Common.Constants;
+using FantasyLeague.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,6 +11,8 @@ namespace FantasyLeague.ViewModels.Score
     {
         [Required]
         public Guid PlayerId { get; set; }
+
+        public PlayerPosition Position { get; set; }
 
         [Required]
         [Range(minimum: 0, maximum: int.MaxValue)]
@@ -26,6 +29,14 @@ namespace FantasyLeague.ViewModels.Score
         [Required]
         [Range(minimum: 0, maximum: int.MaxValue)]
         public int Tackles { get; set; }
+
+        [Required]
+        [Range(minimum: 0, maximum: ScoreConstants.MaxYellowCards)]
+        public int YellowCards { get; set; }
+
+        [Required]
+        [Range(minimum: 0, maximum: ScoreConstants.MaxRedsCards)]
+        public int RedCards { get; set; }
 
         [Required]
         [Range(minimum: 0, maximum: ScoreConstants.MaxPlayedMinutesValue)]

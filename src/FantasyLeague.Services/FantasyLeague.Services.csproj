@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FantasyLeague.Data\FantasyLeague.Data.csproj" />
+    <ProjectReference Include="..\FantasyLeague.Generators\FantasyLeague.Generators.csproj" />
     <ProjectReference Include="..\FantasyLeague.ViewModels\FantasyLeague.ViewModels.csproj" />
   </ItemGroup>
 

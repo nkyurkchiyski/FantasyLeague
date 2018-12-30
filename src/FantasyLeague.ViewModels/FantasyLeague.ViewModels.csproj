@@ -9,7 +9,6 @@
     <Folder Include="Transfer\" />
     <Folder Include="Roster\" />
     <Folder Include="Team\" />
-    <Folder Include="Player\" />
   </ItemGroup>
 
   <ItemGroup>

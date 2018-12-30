@@ -2,11 +2,11 @@
 {
     public enum Formation
     {
-        Formation343 = 343,
-        Formation352 = 352,
-        Formation442 = 442,
-        Formation451 = 451,
-        Formation532 = 532,
-        Formation541 = 541
+        Formation343 = 0,
+        Formation352 = 1,
+        Formation442 = 2,
+        Formation451 = 3,
+        Formation532 = 4,
+        Formation541 = 5
     }
 }

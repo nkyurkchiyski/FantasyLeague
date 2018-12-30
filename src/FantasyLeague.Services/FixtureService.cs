@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FantasyLeague.Common.Constants;
 using FantasyLeague.Data.Repositories.Contracts;
+using FantasyLeague.Generators;
 using FantasyLeague.Models;
 using FantasyLeague.Models.Enums;
 using FantasyLeague.Services.Contracts;
@@ -72,7 +73,7 @@ namespace FantasyLeague.Services
             int awayTeamGoals)
         {
             var result = new ServiceResult { Success = false };
-            
+
             var fixture = await this.fixtureRepository.GetByIdAsync(fixtureId);
 
             if (fixture == null)
@@ -109,14 +110,15 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        public async Task<IServiceResult> AddPlayerScores(
+        private IServiceResult AddPlayerScores(
             Guid fixtureId,
             ICollection<ScoreViewModel> models)
         {
             var result = new ServiceResult { Success = false };
 
-            var fixture = await this.fixtureRepository
-                .GetByIdAsync(fixtureId);
+            var fixture = this.fixtureRepository.GetByIdAsync(fixtureId)
+                .GetAwaiter()
+                .GetResult();
 
             if (fixture == null)
             {
@@ -127,11 +129,11 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            foreach (var scoreModel in models)
+            foreach (var scoreModel in models.Where(x => x.PlayedMinutes > 0))
             {
-                var createResult = await this.scoreService.Create(
-                    fixtureId,
-                    scoreModel);
+                var createResult = this.scoreService.Create(fixtureId, scoreModel)
+                    .GetAwaiter()
+                    .GetResult();
 
                 if (!createResult.Success)
                 {
@@ -144,5 +146,50 @@ namespace FantasyLeague.Services
             return result;
 
         }
+
+        public async Task<IServiceResult> GenerateScores(Guid matchdayId)
+        {
+            var result = new ServiceResult { Success = false };
+
+            var fixtures = this.fixtureRepository
+                 .All()
+                 .Where(x => x.MatchdayId == matchdayId);
+
+
+            foreach (var f in fixtures)
+            {
+                var scores = new List<ScoreViewModel>();
+                try
+                {
+                    scores.AddRange(TeamScoresGenerator
+                        .GenerateTeamPlayerScores(f.HomeTeamGoals.Value,
+                                                  f.AwayTeamGoals.Value,
+                                                  f.HomeTeam));
+
+                    scores.AddRange(TeamScoresGenerator
+                       .GenerateTeamPlayerScores(f.AwayTeamGoals.Value,
+                                                 f.HomeTeamGoals.Value,
+                                                 f.AwayTeam));
+                }
+                catch (Exception e)
+                {
+                    result.Error = e.Source + "\n-----" + e.StackTrace + "\n-----" + e.Message;
+                    return result;
+                }
+
+                var addResult = this.AddPlayerScores(f.Id, scores);
+
+                if (!addResult.Success)
+                {
+                    result.Error = addResult.Error;
+                    return result;
+                }
+            }
+
+            result.Success = true;
+            return result;
+        }
+
+
     }
 }

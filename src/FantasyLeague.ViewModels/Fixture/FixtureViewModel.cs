@@ -18,8 +18,9 @@ namespace FantasyLeague.ViewModels.Fixture
 
         [DataType(DataType.DateTime)]
         public DateTime Date { get; set; }
-
-        [Required]
+        
         public FixtureStatus Status { get; set; }
+
+        public bool ScoresAdded { get; set; }
     }
 }

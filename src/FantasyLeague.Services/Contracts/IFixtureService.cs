@@ -11,7 +11,7 @@ namespace FantasyLeague.Services.Contracts
         ICollection<T> All<T>();
 
         T GetFixture<T>(Guid fixtureId);
-
+        
         Task<IServiceResult> Edit(
             Guid fixtureId,
             DateTime date,
@@ -19,8 +19,6 @@ namespace FantasyLeague.Services.Contracts
             int homeTeamGoals,
             int awayTeamGoals);
 
-        Task<IServiceResult> AddPlayerScores(
-            Guid fixtureId, 
-            ICollection<ScoreViewModel> models);
+        Task<IServiceResult> GenerateScores(Guid matchdayId);
     }
 }

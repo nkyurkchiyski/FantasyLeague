@@ -17,6 +17,8 @@
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    
 </head>
 <body>
     <div id="wrapper">
@@ -27,7 +29,7 @@
         <div class="main">
             <partial name="_CookieConsentPartial" />
             <div class="top-row mb-4 px-4">
-                <span><img class="bundesliga-logo" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1546008201/FantasyLeague/Resources/logo.png"/></span><p class="bundesliga-title">Bundesliga</p>
+                <span><img class="bundesliga-logo" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1546008201/FantasyLeague/Resources/logo.png" /></span><p class="bundesliga-title">Bundesliga</p>
             </div>
 
             <div class="pb-3">
@@ -60,6 +62,11 @@
         </script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
 
     @RenderSection("Scripts", required: false)
 </body>

@@ -38,6 +38,14 @@ namespace FantasyLeague.Models
         public int Tackles { get; set; }
 
         [Required]
+        [Range(minimum: 0, maximum: ScoreConstants.MaxYellowCards)]
+        public int YellowCards { get; set; }
+
+        [Required]
+        [Range(minimum: 0, maximum: ScoreConstants.MaxRedsCards)]
+        public int RedCards { get; set; }
+
+        [Required]
         public bool CleanSheet { get; set; }
 
         public bool? IsWiner { get; set; }
@@ -75,6 +83,8 @@ namespace FantasyLeague.Models
 
             //Other stats
             result += this.PlayedMinutes / ScoreConstants.PlayedMinutesDivider;
+            result -= this.YellowCards * ScoreConstants.CardParam;
+            result -= this.RedCards * ScoreConstants.CardParam * ScoreConstants.CardParam;
 
             if (IsWiner.HasValue)
             {

@@ -231,9 +231,13 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<Guid>("PlayerId");
 
+                    b.Property<int>("RedCards");
+
                     b.Property<int>("Shots");
 
                     b.Property<int>("Tackles");
+
+                    b.Property<int>("YellowCards");
 
                     b.HasKey("Id");
 

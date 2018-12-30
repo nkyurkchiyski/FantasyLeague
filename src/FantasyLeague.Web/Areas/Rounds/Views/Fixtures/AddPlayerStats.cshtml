@@ -1,0 +1,14 @@
+﻿@{
+    @model FixtureStatsViewModel
+    ViewData["Title"] = $"Add Player Statistics";
+    ViewData["ActivePage"] = PagesConstants.Matchdays;
+}
+
+<h1>Add Player Statistics</h1>
+<hr>
+
+<div class="d-flex justify-content-center">
+    <div class="w-95 text-center">
+        <partial name="~/Areas/Rounds/Views/Shared/_FixtureAddPlayerStatsPartial.cshtml" model="Model" />
+    </div>
+</div>

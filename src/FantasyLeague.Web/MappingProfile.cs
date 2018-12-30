@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using AutoMapper;
 using FantasyLeague.Models;
 using FantasyLeague.ViewModels.Fixture;
 using FantasyLeague.ViewModels.Matchday;
+using FantasyLeague.ViewModels.Player;
 using FantasyLeague.ViewModels.Score;
 
 namespace FantasyLeague.Web
@@ -14,6 +16,7 @@ namespace FantasyLeague.Web
             this.CreateScoreMappings();
             this.CreateMatchdayMappings();
             this.CreateFixtureMappings();
+            this.CreatePlayerMappings();
         }
 
         private void CreateFixtureMappings()
@@ -30,7 +33,26 @@ namespace FantasyLeague.Web
                     opt => opt.MapFrom(src => src.HomeTeamGoals.GetValueOrDefault(0)))
                 .ForMember(
                     f => f.AwayTeamGoals,
-                    opt => opt.MapFrom(src => src.AwayTeamGoals.GetValueOrDefault(0))); 
+                    opt => opt.MapFrom(src => src.AwayTeamGoals.GetValueOrDefault(0)))
+                .ForMember(
+                    f => f.ScoresAdded,
+                    opt => opt.MapFrom(src => src.Scores.Any()));
+
+            CreateMap<Fixture, FixtureStatsViewModel>()
+                .ForMember(
+                    f => f.Scores,
+                    opt => opt.MapFrom(src => src.Scores))
+                .ForMember(
+                    f => f.HomePlayers,
+                    opt => opt.MapFrom(src => src.HomeTeam.Players))
+                .ForMember(
+                    f => f.AwayPlayers,
+                    opt => opt.MapFrom(src => src.AwayTeam.Players));
+        }
+
+        private void CreatePlayerMappings()
+        {
+            CreateMap<Player, PlayerViewModel>();
         }
 
         private void CreateMatchdayMappings()
@@ -53,8 +75,7 @@ namespace FantasyLeague.Web
 
         private void CreateScoreMappings()
         {
-            CreateMap<Score, ScoreViewModel>()
-                .ReverseMap();
+            CreateMap<Score, ScoreViewModel>();
         }
     }
 }

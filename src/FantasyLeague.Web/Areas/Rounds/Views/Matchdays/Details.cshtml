@@ -15,6 +15,7 @@
             if (User.IsInRole(RoleConstants.AdminRoleName))
             {
                 <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Edit" asp-route-id="@Model.Id" class="btn btn-primary"><span class="oi oi-pencil"></span></a>
+                <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.GenerateScores" asp-route-id="@Model.Id" class="btn btn-primary"><span class="oi oi-clipboard"></span></a>
             }
         }
 

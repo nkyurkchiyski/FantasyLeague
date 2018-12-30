@@ -8,6 +8,9 @@
         public const string AddPlayerStats = "AddPlayerStats";
         public const string AddMatchdayResults = "AddMatchdayResults";
         public const string Error = "Error";
+        public const string GenerateScores = "GenerateScores";
+
+        
 
     }
 }

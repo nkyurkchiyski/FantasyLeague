@@ -11,9 +11,9 @@ namespace FantasyLeague.Services.Contracts
             Guid fixtureId,
             ScoreViewModel model);
 
-        Task<IServiceResult> Edit(
-            Guid scoreId,
-            ScoreViewModel model);
+        //Task<IServiceResult> Edit(
+        //    Guid scoreId,
+        //    ScoreViewModel model);
 
         Task<IServiceResult> Delete(Guid scoreId);
 

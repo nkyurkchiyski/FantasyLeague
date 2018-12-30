@@ -45,7 +45,7 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
         {
             var matchday = this.matchdayService
                 .GetMatchday<MatchdayDetailsViewModel>(id);
-
+            
             return View(matchday);
         }
 

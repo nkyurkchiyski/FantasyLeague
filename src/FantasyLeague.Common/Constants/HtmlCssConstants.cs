@@ -8,8 +8,10 @@
         public const string FormControl = " form-control";
         public const string ColMd4 = " col-md-4";
         public const string Disabled = " disabled";
+        public const string None = " d-none";
 
-        
+        public const string BtnPrimary = " btn-primary";
+        public const string BtnOutlinePrimary = " btn-outline-primary";
         
     }
 }

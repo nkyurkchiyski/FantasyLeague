@@ -33,7 +33,7 @@ namespace FantasyLeague.Generators
                                                     x.Position != PlayerPosition.Goalkeeper &&
                                                     x.PlayedMinutes == ScoreConstants.MaxPlayedMinutesValue)
                                              .ToList();
-            var subbedPlayers = models.Where(x => x.Position != PlayerPosition.Goalkeeper).ToList();
+            var subbedPlayers = models.Where(x => x.Position == PlayerPosition.Goalkeeper).ToList();
 
             while (subs > 0)
             {
@@ -53,7 +53,6 @@ namespace FantasyLeague.Generators
 
                     subbedPlayers.Add(notSubbedPlayers[playerToken]);
                     notSubbedPlayers.RemoveAt(playerToken);
-
                 }
 
                 subs--;
@@ -82,7 +81,7 @@ namespace FantasyLeague.Generators
         private static void GenerateRedCards(Random random, ScoreViewModel model)
         {
             model.RedCards = 0;
-            if (random.Next(0, 2) == 0)
+            if (random.Next(0, ScoreConstants.RedCardChance) == 0)
             {
                 model.RedCards = 1;
             }
@@ -91,7 +90,7 @@ namespace FantasyLeague.Generators
         private static void GenerateYellowCards(Random random, ScoreViewModel model)
         {
             model.YellowCards = 0;
-            if (random.Next(0, 4) == 0)
+            if (random.Next(0, ScoreConstants.YellowCardChance) == 0)
             {
                 model.YellowCards = 1;
             }
@@ -151,16 +150,33 @@ namespace FantasyLeague.Generators
 
         private static void GenerateGoalAssisters(Random random, int assists, List<ScoreViewModel> models)
         {
+            int loopCap = 0;
             while (assists > 0)
             {
+                if (loopCap == ScoreConstants.LoopCap)
+                {
+                    models[random.Next(models.Count)].Assists++;
+                    assists--;
+                    loopCap = 0;
+                    continue;
+                }
+
                 for (int i = 0; i < models.Count; i++)
                 {
                     if (random.Next(0, (int)models[i].Position) == 0)
                     {
                         models[i].Assists++;
                         assists--;
+
+                        if (assists == 0)
+                        {
+                            return;
+                        }
                     }
                 }
+
+                loopCap++;
+
             }
         }
 
@@ -169,16 +185,34 @@ namespace FantasyLeague.Generators
             int goals,
             List<ScoreViewModel> models)
         {
+            int loopCap = 0;
+
             while (goals > 0)
             {
+                if (loopCap == ScoreConstants.LoopCap)
+                {
+                    models[random.Next(models.Count)].Goals++;
+                    goals--;
+                    loopCap = 0;
+                    continue;
+                }
+
                 for (int i = 0; i < models.Count; i++)
                 {
                     if (random.Next(0, (int)models[i].Position) == 0)
                     {
                         models[i].Goals++;
                         goals--;
+
+                        if (goals == 0)
+                        {
+                            return;
+                        }
                     }
                 }
+
+                loopCap++;
+
             }
         }
 
@@ -204,7 +238,8 @@ namespace FantasyLeague.Generators
                     {
                         PlayerId = pl.Id,
                         PlayedMinutes = ScoreConstants.MaxPlayedMinutesValue,
-                        Position = pl.Position
+                        Position = pl.Position,
+                        TeamId = pl.TeamId
                     });
                 }
                 teamModels.AddRange(models);
@@ -240,9 +275,17 @@ namespace FantasyLeague.Generators
             {
                 var player = playersForPosition[random.Next(playersCount)];
 
+                int loopCap = 0;
                 while (selecetedPlayers.Exists(x => x.Id == player.Id))
                 {
+                    loopCap++;
                     player = playersForPosition[random.Next(playersCount)];
+
+                    if (loopCap == ScoreConstants.LoopCap)
+                    {
+                        player = playersForPosition.First(x => selecetedPlayers.Exists(y => x.Id != y.Id));
+                        break;
+                    }
                 }
 
                 selecetedPlayers.Add(player);

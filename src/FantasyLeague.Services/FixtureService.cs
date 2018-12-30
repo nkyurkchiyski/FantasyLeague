@@ -16,15 +16,15 @@ namespace FantasyLeague.Services
     public class FixtureService : BaseService, IFixtureService
     {
         private readonly IRepository<Fixture> fixtureRepository;
-        private readonly IScoreService scoreService;
+        private readonly IRepository<Score> scoreRepository;
 
         public FixtureService(
             IRepository<Fixture> fixtureRepository,
-            IScoreService scoreService,
+            IRepository<Score> scoreRepository,
             IMapper mapper) : base(mapper)
         {
             this.fixtureRepository = fixtureRepository;
-            this.scoreService = scoreService;
+            this.scoreRepository = scoreRepository;
         }
 
         private MatchResult GetWinner(int homeTeamGoals, int awayTeamGoals)
@@ -41,6 +41,58 @@ namespace FantasyLeague.Services
             {
                 return MatchResult.Draw;
             }
+        }
+
+        private int GetGoalsConceded(Guid teamId, Fixture fixture)
+        {
+            if (teamId == fixture.HomeTeamId)
+            {
+                return fixture.AwayTeamGoals.Value;
+            }
+            else
+            {
+                return fixture.HomeTeamGoals.Value;
+            }
+        }
+
+        private bool? GetFixtureOutcome(Guid teamId, Fixture fixture)
+        {
+            if (teamId == fixture.HomeTeamId)
+            {
+                return fixture.Winner == MatchResult.HomeTeam;
+            }
+            else if (teamId == fixture.HomeTeamId)
+            {
+                return fixture.Winner == MatchResult.AwayTeam;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private Score CreateScore(Fixture fixture, ScoreViewModel model)
+        {
+            int goalsConceded = this.GetGoalsConceded(model.TeamId, fixture);
+            bool? winner = this.GetFixtureOutcome(model.TeamId, fixture);
+
+            var score = new Score
+            {
+                FixtureId = fixture.Id,
+                PlayerId = model.PlayerId,
+                Shots = model.Shots,
+                Assists = model.Assists,
+                Goals = model.Goals,
+                Tackles = model.Tackles,
+                YellowCards = model.YellowCards,
+                RedCards = model.RedCards,
+                PlayedMinutes = model.PlayedMinutes,
+                GoalsConceded = goalsConceded,
+                CleanSheet = goalsConceded == 0,
+                IsWiner = winner
+            };
+
+            return score;
         }
 
         public ICollection<T> All<T>()
@@ -103,6 +155,8 @@ namespace FantasyLeague.Services
                 fixture.Winner = MatchResult.Unknown;
             }
 
+            this.scoreRepository.DeleteRange(fixture.Scores.ToArray());
+
             await fixtureRepository.SaveChangesAsync();
 
             result.Success = true;
@@ -110,15 +164,13 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        private IServiceResult AddPlayerScores(
+        private async Task<IServiceResult> AddPlayerScores(
             Guid fixtureId,
             ICollection<ScoreViewModel> models)
         {
             var result = new ServiceResult { Success = false };
 
-            var fixture = this.fixtureRepository.GetByIdAsync(fixtureId)
-                .GetAwaiter()
-                .GetResult();
+            var fixture = await this.fixtureRepository.GetByIdAsync(fixtureId);
 
             if (fixture == null)
             {
@@ -129,18 +181,11 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            foreach (var scoreModel in models.Where(x => x.PlayedMinutes > 0))
-            {
-                var createResult = this.scoreService.Create(fixtureId, scoreModel)
-                    .GetAwaiter()
-                    .GetResult();
+            var scores = models.Where(x => x.PlayedMinutes > 0)
+                .Select(x => CreateScore(fixture, x))
+                .ToArray();
 
-                if (!createResult.Success)
-                {
-                    result.Error = createResult.Error;
-                    return result;
-                }
-            }
+            this.scoreRepository.AddRange(scores);
 
             result.Success = true;
             return result;
@@ -151,10 +196,18 @@ namespace FantasyLeague.Services
         {
             var result = new ServiceResult { Success = false };
 
-            var fixtures = this.fixtureRepository
-                 .All()
-                 .Where(x => x.MatchdayId == matchdayId);
+            var fixtures = this.fixtureRepository.All()
+                 .Where(x => x.MatchdayId == matchdayId &&
+                             x.Status == FixtureStatus.Finished &&
+                             !x.Scores.Any());
 
+            if (!fixtures.Any())
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.AlreadyGeneratedException,
+                    matchdayId);
+                return result;
+            }
 
             foreach (var f in fixtures)
             {
@@ -173,11 +226,11 @@ namespace FantasyLeague.Services
                 }
                 catch (Exception e)
                 {
-                    result.Error = e.Source + "\n-----" + e.StackTrace + "\n-----" + e.Message;
+                    result.Error = e.Message;
                     return result;
                 }
 
-                var addResult = this.AddPlayerScores(f.Id, scores);
+                var addResult = await this.AddPlayerScores(f.Id, scores);
 
                 if (!addResult.Success)
                 {
@@ -185,6 +238,8 @@ namespace FantasyLeague.Services
                     return result;
                 }
             }
+
+            await this.scoreRepository.SaveChangesAsync();
 
             result.Success = true;
             return result;

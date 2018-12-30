@@ -31,7 +31,7 @@ namespace FantasyLeague.Data.Seeding
 
             foreach (var item in deserializedTeams)
             {
-                var teamImage = new TeamImage
+                var teamImage = new Image
                 {
                     PublicId = item.PublicId,
                     Url = item.Url,

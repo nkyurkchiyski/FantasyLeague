@@ -13,9 +13,13 @@ namespace FantasyLeague.Data.Repositories.Contracts
 
         void Add(TEntity entity);
 
+        void AddRange(params TEntity[] entities);
+
         void Update(TEntity entity);
 
         void Delete(TEntity entity);
+
+        void DeleteRange(params TEntity[] entities);
 
         Task<int> SaveChangesAsync();
     }

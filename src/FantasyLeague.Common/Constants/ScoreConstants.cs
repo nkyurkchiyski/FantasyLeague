@@ -13,13 +13,14 @@
         public const string Formation = "Formation";
         public const int PlayerPosParam = 3;
 
-        public const int YellowCardChance = 20;
-        public const int RedCardChance = 50;
+        public const int YellowCardChance = 14;
+        public const int RedCardChance = 35;
 
         public const int MaxYellowCards = 1;
         public const int CardParam = 2;
         public const int MaxRedsCards = 1;
 
         public const int ScoreBonus = 2;
+        public const int LoopCap = 3;
     }
 }

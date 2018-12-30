@@ -2,6 +2,12 @@
     @model MatchdayDetailsViewModel
     ViewData["Title"] = $"{GlobalConstants.MatchdayName} {Model.Week}";
     ViewData["ActivePage"] = PagesConstants.Matchdays;
+
+    string disableGenerator = Model.Fixtures
+        .Where(x=>x.Status == FixtureStatus.Finished)
+        .All(x=>x.ScoresAdded)?
+        HtmlCssConstants.None:
+        null;
 }
 
 <h1>Matchday @Model.Week</h1>
@@ -15,7 +21,7 @@
             if (User.IsInRole(RoleConstants.AdminRoleName))
             {
                 <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Edit" asp-route-id="@Model.Id" class="btn btn-primary"><span class="oi oi-pencil"></span></a>
-                <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.GenerateScores" asp-route-id="@Model.Id" class="btn btn-primary"><span class="oi oi-clipboard"></span></a>
+                <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.GenerateScores" asp-route-id="@Model.Id" class="btn btn-primary @disableGenerator"><span class="oi oi-clipboard"></span></a>
             }
         }
 

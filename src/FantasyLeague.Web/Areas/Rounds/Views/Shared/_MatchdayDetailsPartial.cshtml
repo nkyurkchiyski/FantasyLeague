@@ -18,8 +18,8 @@
             {
                 <tr class="row">
                     <td class="col-md-1">@(index++)</td>
-                    <td class="col-md-3">@fixture.HomeTeam</td>
-                    <td class="col-md-3">@fixture.AwayTeam</td>
+                    <td class="col-md-3">@fixture.HomeTeamName</td>
+                    <td class="col-md-3">@fixture.AwayTeamName</td>
                     <td class="col-md-2">@fixture.Status</td>
                     <td class="col-md-1 text-danger font-weight-bold">
                         @{
@@ -43,17 +43,12 @@
                                 @{
                                     string disabled = fixture.Status == FixtureStatus.Finished && 
                                                       fixture.ScoresAdded ?
-                                                      null :
-                                                      HtmlCssConstants.Disabled;
+                                                      HtmlCssConstants.BtnPrimary :
+                                                      HtmlCssConstants.Disabled +
+                                                      HtmlCssConstants.BtnOutlinePrimary;
                                     
-                                    <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.Details" asp-route-id="@fixture.Id" role="button" class="btn btn-outline-primary @disabled"><span class="oi oi-info"></span></a>
-
-                                    if (User.IsInRole(RoleConstants.AdminRoleName) && 
-                                        fixture.Status == FixtureStatus.Finished &&
-                                        !fixture.ScoresAdded)
-                                    {
-                                        <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.AddPlayerStats" asp-route-id="@fixture.Id" class="btn btn-primary"><span class="oi oi-plus"></span></a>
-                                    }
+                                    <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.Details" asp-route-id="@fixture.Id" role="button" class="btn @disabled"><span class="oi oi-info"></span></a>
+                                    
                                 }
 
                             </div>

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using FantasyLeague.Common.Constants;
 using FantasyLeague.Services.Contracts;
@@ -14,19 +12,20 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
     [Authorize]
     public class FixturesController : Controller
     {
-        private readonly IScoreService scoreService;
         private readonly IFixtureService fixtureService;
 
-        public FixturesController(IScoreService scoreService, IFixtureService fixtureService)
+        public FixturesController(IFixtureService fixtureService)
         {
-            this.scoreService = scoreService;
             this.fixtureService = fixtureService;
         }
 
         [HttpGet]
         public IActionResult Details(Guid id)
         {
-            return View();
+            var stats = this.fixtureService
+                .GetFixture<FixtureStatsViewModel>(id);
+
+            return View(stats);
         }
 
         [HttpGet]
@@ -43,7 +42,10 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
                        new { area = "", errorMessage = result.Error });
             }
 
-            return RedirectToAction(actionName: nameof(Details), routeValues: new { id });
+            return RedirectToAction(
+                controllerName: PagesConstants.Matchdays,
+                actionName: nameof(Details),
+                routeValues: new { id });
         }
 
     }

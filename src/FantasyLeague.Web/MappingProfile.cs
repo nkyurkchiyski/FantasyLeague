@@ -2,6 +2,7 @@
 using System.Linq;
 using AutoMapper;
 using FantasyLeague.Models;
+using FantasyLeague.Models.Abstract;
 using FantasyLeague.ViewModels.Fixture;
 using FantasyLeague.ViewModels.Matchday;
 using FantasyLeague.ViewModels.Player;
@@ -23,10 +24,10 @@ namespace FantasyLeague.Web
         {
             CreateMap<Fixture, FixtureViewModel>()
                 .ForMember(
-                    f => f.HomeTeam,
+                    f => f.HomeTeamName,
                     opt => opt.MapFrom(src => src.HomeTeam.Name))
                 .ForMember(
-                    f => f.AwayTeam,
+                    f => f.AwayTeamName,
                     opt => opt.MapFrom(src => src.AwayTeam.Name))
                 .ForMember(
                     f => f.HomeTeamGoals,
@@ -41,13 +42,7 @@ namespace FantasyLeague.Web
             CreateMap<Fixture, FixtureStatsViewModel>()
                 .ForMember(
                     f => f.Scores,
-                    opt => opt.MapFrom(src => src.Scores))
-                .ForMember(
-                    f => f.HomePlayers,
-                    opt => opt.MapFrom(src => src.HomeTeam.Players))
-                .ForMember(
-                    f => f.AwayPlayers,
-                    opt => opt.MapFrom(src => src.AwayTeam.Players));
+                    opt => opt.MapFrom(src => src.Scores));
         }
 
         private void CreatePlayerMappings()
@@ -76,6 +71,17 @@ namespace FantasyLeague.Web
         private void CreateScoreMappings()
         {
             CreateMap<Score, ScoreViewModel>();
+
+            CreateMap<Score, ScorePlayerViewModel>()
+                .ForMember(
+                    f => f.PlayerName,
+                    opt => opt.MapFrom(src => src.Player.Name))
+                .ForMember(
+                    f => f.PlayerImage,
+                    opt => opt.MapFrom(src => src.Player.PlayerImage.Url))
+                    .ForMember(
+                    f => f.TeamId,
+                    opt => opt.MapFrom(src => src.Player.TeamId));
         }
     }
 }

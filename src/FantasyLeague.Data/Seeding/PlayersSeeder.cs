@@ -44,7 +44,7 @@ namespace FantasyLeague.Data.Seeding
 
                 if (isValidPosition)
                 {
-                    var playerImage = new PlayerImage
+                    var playerImage = new Image
                     {
                         ImageType = GlobalConstants.PlayerName,
                         PublicId = TemplatePlayerImagePublicId,

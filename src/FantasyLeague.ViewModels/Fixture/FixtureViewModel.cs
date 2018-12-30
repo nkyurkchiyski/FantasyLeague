@@ -8,9 +8,9 @@ namespace FantasyLeague.ViewModels.Fixture
     {
         public Guid Id { get; set; }
 
-        public string HomeTeam { get; set; }
+        public string HomeTeamName { get; set; }
 
-        public string AwayTeam { get; set; }
+        public string AwayTeamName { get; set; }
 
         public int HomeTeamGoals { get; set; }
 

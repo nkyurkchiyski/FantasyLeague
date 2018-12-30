@@ -6,10 +6,12 @@
 
         public const string CreateUserException = "Create user was unsuccessful.";
 
-        public const string AddUserToRoleException = "Add user to role was unsuccessful.s";
+        public const string AddUserToRoleException = "Add user to role was unsuccessful.";
 
         public const string NotFoundException = "{0} was not found.";
 
-        public const string InvalidEnumException = "Invalid type for {0}";
+        public const string InvalidEnumException = "Invalid type for {0}.";
+
+        public const string AlreadyGeneratedException = "Player Scores for the matchday({0}) are already generated.";
     }
 }

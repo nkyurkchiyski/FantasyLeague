@@ -67,7 +67,6 @@ namespace FantasyLeague.Web
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             //Services
-            services.AddScoped<IScoreService, ScoreService>();
             services.AddScoped<IFixtureService, FixtureService>();
             services.AddScoped<IMatchdayService, MatchdayService>();
 

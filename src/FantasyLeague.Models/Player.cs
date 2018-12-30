@@ -36,7 +36,7 @@ namespace FantasyLeague.Models
         public virtual Team Team { get; set; }
 
         public Guid PlayerImageId { get; set; }
-        public virtual PlayerImage PlayerImage { get; set; }
+        public virtual Image PlayerImage { get; set; }
 
         public bool Active { get; set; }
 

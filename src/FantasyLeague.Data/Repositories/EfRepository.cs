@@ -25,6 +25,11 @@ namespace FantasyLeague.Data.Repositories
             this.dbSet.Add(entity);
         }
 
+        public virtual void AddRange(params TEntity[] entities)
+        {
+            this.dbSet.AddRange(entities);
+        }
+
         public virtual void Update(TEntity entity)
         {
             var entry = this.context.Entry(entity);
@@ -39,6 +44,11 @@ namespace FantasyLeague.Data.Repositories
         public virtual void Delete(TEntity entity)
         {
             this.dbSet.Remove(entity);
+        }
+
+        public virtual void DeleteRange(params TEntity[] entities)
+        {
+            this.dbSet.RemoveRange(entities);
         }
 
         public Task<int> SaveChangesAsync() => this.context.SaveChangesAsync();

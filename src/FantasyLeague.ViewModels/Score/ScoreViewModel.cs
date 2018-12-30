@@ -1,9 +1,7 @@
 ﻿using FantasyLeague.Common.Constants;
 using FantasyLeague.Models.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace FantasyLeague.ViewModels.Score
 {
@@ -11,6 +9,8 @@ namespace FantasyLeague.ViewModels.Score
     {
         [Required]
         public Guid PlayerId { get; set; }
+
+        public Guid TeamId { get; set; }
 
         public PlayerPosition Position { get; set; }
 

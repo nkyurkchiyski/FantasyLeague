@@ -26,7 +26,7 @@ namespace FantasyLeague.Models
         public string Initials { get; set; }
         
         public Guid TeamImageId { get; set; }
-        public virtual TeamImage TeamImage { get; set; }
+        public virtual Image TeamImage { get; set; }
 
         public virtual ICollection<Player> Players { get; set; }
         public virtual ICollection<User> Fans { get; set; }

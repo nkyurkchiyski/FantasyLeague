@@ -23,8 +23,8 @@
                 {
                     <tr class="row">
                         <td class="col-md-1">@(i + 1)</td>
-                        <td class="col-md-2">@Model.Fixtures[i].HomeTeam</td>
-                        <td class="col-md-2">@Model.Fixtures[i].AwayTeam</td>
+                        <td class="col-md-2">@Model.Fixtures[i].HomeTeamName</td>
+                        <td class="col-md-2">@Model.Fixtures[i].AwayTeamName</td>
                         <td class="col-md-3">
                             @Html.EditorFor(
                                         o => o.Fixtures[i].Date,

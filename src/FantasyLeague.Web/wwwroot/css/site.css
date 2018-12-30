@@ -317,3 +317,8 @@ html {
     .page-link:hover {
         color: rgb(142, 7, 19);
     }
+
+.mini-image {
+    object-fit: contain;
+    height: 40px;
+}

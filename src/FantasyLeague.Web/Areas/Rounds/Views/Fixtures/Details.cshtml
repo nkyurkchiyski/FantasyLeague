@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    @model FixtureStatsViewModel
+
+    ViewData["Title"] = $"{ActionConstants.Details} {GlobalConstants.FixtureName}";
+    ViewData["ActivePage"] = PagesConstants.Matchdays;
+
+    var homeTeamStats = Model.Scores.Where(x => x.TeamId == Model.HomeTeamId).ToList();
+    var awayTeamStats = Model.Scores.Where(x => x.TeamId == Model.AwayTeamId).ToList();
 }
+
+<h1>Details Fixture</h1>
+<h4>
+    Status: <span class="text-uppercase font-italic">@Model.Status</span>
+</h4>
+<a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details"  class="btn btn-outline-primary"><span class="oi oi-share-boxed"></span></a>
+<hr />
+
+<div class="bundesliga-box-shadow p-3 rounded">
+    <h2>@Model.HomeTeamName @Model.HomeTeamGoals</h2>
+    <hr />
+    <partial name="~/Areas/Rounds/Views/Shared/_TeamScoresPartial.cshtml" model="@homeTeamStats" />
+</div>
+
+<hr class="bg-danger" />
+<div class="bundesliga-box-shadow p-3 rounded">
+    <h2>@Model.AwayTeamName @Model.AwayTeamGoals</h2>
+    <hr />
+    <partial name="~/Areas/Rounds/Views/Shared/_TeamScoresPartial.cshtml" model="@awayTeamStats" />
+</div>
+

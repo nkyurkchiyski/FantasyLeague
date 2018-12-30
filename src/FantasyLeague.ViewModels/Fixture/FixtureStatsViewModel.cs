@@ -7,9 +7,10 @@ namespace FantasyLeague.ViewModels.Fixture
 {
     public class FixtureStatsViewModel : FixtureViewModel
     {
-        public IList<PlayerViewModel> HomePlayers { get; set; }
-        public IList<PlayerViewModel> AwayPlayers { get; set; }
-
-        public IList<ScoreViewModel> Scores { get; set; }
+        public Guid HomeTeamId { get; set; }
+        public Guid AwayTeamId { get; set; }
+        
+        public IList<ScorePlayerViewModel> Scores { get; set; }
+        
     }
 }

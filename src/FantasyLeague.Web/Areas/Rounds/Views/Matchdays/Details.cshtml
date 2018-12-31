@@ -3,6 +3,8 @@
     ViewData["Title"] = $"{GlobalConstants.MatchdayName} {Model.Week}";
     ViewData["ActivePage"] = PagesConstants.Matchdays;
 
+    ViewData[GlobalConstants.MatchdayId] = Model.Id;
+
     string disableGenerator = Model.Fixtures
         .Where(x=>x.Status == FixtureStatus.Finished)
         .All(x=>x.ScoresAdded)?

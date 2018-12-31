@@ -1,29 +1,37 @@
 ﻿@{
     @model FixtureStatsViewModel
 
-    ViewData["Title"] = $"{ActionConstants.Details} {GlobalConstants.FixtureName}";
+    ViewData["Title"] = $"{GlobalConstants.FixtureName} {ActionConstants.Details}";
     ViewData["ActivePage"] = PagesConstants.Matchdays;
 
     var homeTeamStats = Model.Scores.Where(x => x.TeamId == Model.HomeTeamId).ToList();
     var awayTeamStats = Model.Scores.Where(x => x.TeamId == Model.AwayTeamId).ToList();
 }
 
-<h1>Details Fixture</h1>
+<h1>Fixture Details</h1>
 <h4>
     Status: <span class="text-uppercase font-italic">@Model.Status</span>
 </h4>
-<a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details"  class="btn btn-outline-primary"><span class="oi oi-share-boxed"></span></a>
+<a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details" asp-route-id="@Model.MatchdayId" class="btn btn-outline-primary"><span class="oi oi-share-boxed"></span></a>
 <hr />
 
-<div class="bundesliga-box-shadow p-3 rounded">
-    <h2>@Model.HomeTeamName @Model.HomeTeamGoals</h2>
+<div class="bundesliga-box-shadow p-3 rounded table-responsive">
+    <h2>
+        <span class="glyphicon glyphicon-star text-warning @(Model.HomeTeamGoals > Model.AwayTeamGoals ? null : HtmlCssConstants.None)">
+        </span>
+        @Model.HomeTeamName: @Model.HomeTeamGoals
+    </h2>
     <hr />
     <partial name="~/Areas/Rounds/Views/Shared/_TeamScoresPartial.cshtml" model="@homeTeamStats" />
 </div>
 
 <hr class="bg-danger" />
-<div class="bundesliga-box-shadow p-3 rounded">
-    <h2>@Model.AwayTeamName @Model.AwayTeamGoals</h2>
+<div class="bundesliga-box-shadow p-3 rounded table-responsive">
+    <h2>
+        <span class="glyphicon glyphicon-star text-warning @(Model.AwayTeamGoals > Model.HomeTeamGoals ? null : HtmlCssConstants.None)">
+        </span>
+        @Model.AwayTeamName: @Model.AwayTeamGoals
+    </h2>
     <hr />
     <partial name="~/Areas/Rounds/Views/Shared/_TeamScoresPartial.cshtml" model="@awayTeamStats" />
 </div>

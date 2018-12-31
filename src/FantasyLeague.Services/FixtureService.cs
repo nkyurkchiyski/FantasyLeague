@@ -226,7 +226,7 @@ namespace FantasyLeague.Services
                 }
                 catch (Exception e)
                 {
-                    result.Error = e.Message;
+                    result.Error = e.Message+"\n-----"+e.StackTrace + "\n-----" + e.Source;
                     return result;
                 }
 

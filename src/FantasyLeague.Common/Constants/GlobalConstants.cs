@@ -26,5 +26,9 @@
         public const int MatchdaysPageSize = 9;
 
         public const string FixtureStatusEnum = "FixtureStatus";
+        public const string MatchdayId = "matchdayId";
+
+
+        
     }
 }

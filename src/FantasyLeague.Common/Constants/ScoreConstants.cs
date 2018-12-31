@@ -10,11 +10,14 @@
 
         public const int MaxFormations = 5;
         public const int MaxSubs = 3;
+
         public const string Formation = "Formation";
+        public const string DefaultFormation = "Formation352";
+
         public const int PlayerPosParam = 3;
 
-        public const int YellowCardChance = 14;
-        public const int RedCardChance = 35;
+        public const int YellowCardChance = 10;
+        public const int RedCardChance = 30;
 
         public const int MaxYellowCards = 1;
         public const int CardParam = 2;

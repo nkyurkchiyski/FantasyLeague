@@ -42,7 +42,11 @@ namespace FantasyLeague.Web
             CreateMap<Fixture, FixtureStatsViewModel>()
                 .ForMember(
                     f => f.Scores,
-                    opt => opt.MapFrom(src => src.Scores));
+                    opt => opt.MapFrom(src => src.Scores))
+                .ForMember(
+                    f => f.MatchdayId,
+                    opt => opt.MapFrom(src => src.MatchdayId));
+
         }
 
         private void CreatePlayerMappings()
@@ -79,9 +83,12 @@ namespace FantasyLeague.Web
                 .ForMember(
                     f => f.PlayerImage,
                     opt => opt.MapFrom(src => src.Player.PlayerImage.Url))
-                    .ForMember(
+                .ForMember(
                     f => f.TeamId,
-                    opt => opt.MapFrom(src => src.Player.TeamId));
+                    opt => opt.MapFrom(src => src.Player.TeamId))
+                 .ForMember(
+                    f => f.Position,
+                    opt => opt.MapFrom(src => src.Player.Position));
         }
     }
 }

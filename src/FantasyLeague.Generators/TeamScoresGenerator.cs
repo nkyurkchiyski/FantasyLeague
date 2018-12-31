@@ -16,15 +16,14 @@ namespace FantasyLeague.Generators
             var random = new Random();
 
             int subs = random.Next(ScoreConstants.MaxSubs + 1);
-            var teamLayout = GetRandomTeamLayout(random);
-            teamLayout = AddSubs(random, subs, teamLayout);
+            var teamLayout = GetRandomTeamLayout(random, team);
 
-            var models = CreateScoreViewModels(random, teamLayout, team);
+            var models = CreateScoreViewModels(random, teamLayout, subs, team);
 
             GenerateScoreViewModels(random, goals, goalsConceded, models);
             models = GenerateSubs(random, subs, models);
 
-            return models;
+            return models.Distinct().ToList();
         }
 
         private static List<ScoreViewModel> GenerateSubs(Random random, int subs, List<ScoreViewModel> models)
@@ -219,9 +218,11 @@ namespace FantasyLeague.Generators
         private static List<ScoreViewModel> CreateScoreViewModels(
             Random random,
             int[] teamLayout,
+            int subs,
             Team team)
         {
             var teamModels = new List<ScoreViewModel>();
+            var selectedPlayers = new List<Player>();
 
             for (int i = teamLayout.Length; i > 0; i--)
             {
@@ -243,21 +244,55 @@ namespace FantasyLeague.Generators
                     });
                 }
                 teamModels.AddRange(models);
+                selectedPlayers.AddRange(playerForPosition);
             }
+
+            var subModels = new List<ScoreViewModel>();
+            var subPlayers = GetSubPlayers(random, subs, selectedPlayers, team);
+
+            foreach (var pl in subPlayers)
+            {
+                subModels.Add(new ScoreViewModel
+                {
+                    PlayerId = pl.Id,
+                    PlayedMinutes = ScoreConstants.MaxPlayedMinutesValue,
+                    Position = pl.Position,
+                    TeamId = pl.TeamId
+                });
+            }
+            teamModels.AddRange(subModels);
 
             return teamModels;
         }
 
-        private static int[] AddSubs(
-            Random random,
-            int subs,
-            int[] layout)
+        private static IEnumerable<Player> GetSubPlayers(Random random, int subs, List<Player> selectedPlayers, Team team)
         {
-            for (int i = 0; i < subs; i++)
+            var remainingPlayers = team.Players.Except(selectedPlayers).ToList();
+            var playersCount = remainingPlayers.Count;
+
+            var selecetedPlayers = new List<Player>();
+
+            for (int i = 0; i < (subs > playersCount ? playersCount : subs); i++)
             {
-                layout[random.Next(1, layout.Length)]++;
+                var player = remainingPlayers[random.Next(playersCount)];
+
+                int loopCap = 0;
+                while (selecetedPlayers.Exists(x => x.Id == player.Id))
+                {
+                    loopCap++;
+                    player = remainingPlayers[random.Next(playersCount)];
+
+                    if (loopCap == ScoreConstants.LoopCap)
+                    {
+                        player = remainingPlayers.Except(selecetedPlayers).First();
+                        break;
+                    }
+                }
+
+                selecetedPlayers.Add(player);
             }
-            return layout;
+
+            return selecetedPlayers;
         }
 
         private static IEnumerable<Player> GetRandomPlayersForPosition(
@@ -283,7 +318,8 @@ namespace FantasyLeague.Generators
 
                     if (loopCap == ScoreConstants.LoopCap)
                     {
-                        player = playersForPosition.First(x => selecetedPlayers.Exists(y => x.Id != y.Id));
+                        var notSelectedPlayers = playersForPosition.Except(selecetedPlayers);
+                        player = notSelectedPlayers.First();
                         break;
                     }
                 }
@@ -301,8 +337,12 @@ namespace FantasyLeague.Generators
             return team.Players.Where(x => x.Position == playerPosition && x.Active);
         }
 
-        private static int[] GetRandomTeamLayout(Random random)
+        private static int[] GetRandomTeamLayout(Random random, Team team)
         {
+            int defendersCount = GetPlayersForPosition(team, PlayerPosition.Defender).Count();
+            int attackersCount = GetPlayersForPosition(team, PlayerPosition.Attacker).Count();
+            int halfsCount = GetPlayersForPosition(team, PlayerPosition.Midfielder).Count();
+
             string[] allFormations = Enum.GetNames(typeof(Formation));
             string formation = allFormations[random.Next(0, ScoreConstants.MaxFormations)];
 
@@ -310,6 +350,17 @@ namespace FantasyLeague.Generators
 
             layout.AddRange(formation.Replace(ScoreConstants.Formation, "").ToCharArray()
                  .Select(n => int.Parse(n.ToString())));
+
+            if (layout[1] > defendersCount ||
+                layout[2] > halfsCount ||
+                layout[3] > attackersCount)
+            {
+                layout = new List<int> { 1 };
+                layout.AddRange(ScoreConstants.DefaultFormation
+                                              .Replace(ScoreConstants.Formation, "")
+                                              .ToCharArray()
+                                              .Select(n => int.Parse(n.ToString())));
+            }
 
             return layout.ToArray();
         }

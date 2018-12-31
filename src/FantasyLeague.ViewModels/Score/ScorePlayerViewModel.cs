@@ -5,5 +5,7 @@
         public string PlayerName { get; set; }
 
         public string PlayerImage { get; set; }
+        
+        public string PositionName { get; set; }
     }
 }

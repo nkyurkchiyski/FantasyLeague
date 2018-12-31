@@ -24,7 +24,7 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
         {
             var stats = this.fixtureService
                 .GetFixture<FixtureStatsViewModel>(id);
-
+            
             return View(stats);
         }
 

@@ -3,19 +3,20 @@
 
 }
 
-<table id="table_@Model.First().TeamId" class="table table-hover">
+<table id="table_@Model.First().TeamId" class="table table-hover text-center">
     <thead>
         <tr>
             <th>#</th>
             <th>Image</th>
             <th>Name</th>
-            <th>G</th>
-            <th>A</th>
-            <th>S</th>
-            <th>T</th>
-            <th>YC</th>
-            <th>RC</th>
-            <th>PM</th>
+            <th>Position</th>
+            <th>Goals</th>
+            <th>Assist</th>
+            <th>Shots</th>
+            <th>Tackles</th>
+            <th>Yellow cards</th>
+            <th>Red cards</th>
+            <th>Minutes</th>
         </tr>
     </thead>
     <tbody>
@@ -24,9 +25,12 @@
             {
         <tr>
             <td>@(i + 1)</td>
-            <td><img class="mini-image" src="@Model[i].PlayerImage"/></td>
+            <td><img class="mini-image" src="@Model[i].PlayerImage" /></td>
             <td>
                 @Model[i].PlayerName
+            </td>
+            <td>
+                @Model[i].Position
             </td>
             <td>
                 @Model[i].Goals

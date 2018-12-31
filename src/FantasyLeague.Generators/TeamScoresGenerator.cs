@@ -267,7 +267,11 @@ namespace FantasyLeague.Generators
 
         private static IEnumerable<Player> GetSubPlayers(Random random, int subs, List<Player> selectedPlayers, Team team)
         {
-            var remainingPlayers = team.Players.Except(selectedPlayers).ToList();
+            var remainingPlayers = team.Players
+                .Except(selectedPlayers)
+                .Where(x=>x.Position!=PlayerPosition.Goalkeeper)
+                .ToList();
+
             var playersCount = remainingPlayers.Count;
 
             var selecetedPlayers = new List<Player>();

@@ -32,7 +32,10 @@ namespace FantasyLeague.Generators
                                                     x.Position != PlayerPosition.Goalkeeper &&
                                                     x.PlayedMinutes == ScoreConstants.MaxPlayedMinutesValue)
                                              .ToList();
-            var subbedPlayers = models.Where(x => x.Position == PlayerPosition.Goalkeeper).ToList();
+
+            var subbedPlayers = models.Where(x => x.Position == PlayerPosition.Goalkeeper ||
+                                                  x.RedCards == 1)
+                                             .ToList();
 
             while (subs > 0)
             {
@@ -83,6 +86,7 @@ namespace FantasyLeague.Generators
             if (random.Next(0, ScoreConstants.RedCardChance) == 0)
             {
                 model.RedCards = 1;
+                model.PlayedMinutes = random.Next(1, ScoreConstants.MaxPlayedMinutesValue);
             }
         }
 
@@ -269,7 +273,7 @@ namespace FantasyLeague.Generators
         {
             var remainingPlayers = team.Players
                 .Except(selectedPlayers)
-                .Where(x=>x.Position!=PlayerPosition.Goalkeeper)
+                .Where(x => x.Position != PlayerPosition.Goalkeeper)
                 .ToList();
 
             var playersCount = remainingPlayers.Count;

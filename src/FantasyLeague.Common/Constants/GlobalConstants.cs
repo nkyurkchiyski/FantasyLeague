@@ -27,8 +27,9 @@
 
         public const string FixtureStatusEnum = "FixtureStatus";
         public const string MatchdayId = "matchdayId";
-
-
         
+        public const int MaxPlayerPrice = 25;
+        public const int MinPlayerPrice = 1;
+
     }
 }

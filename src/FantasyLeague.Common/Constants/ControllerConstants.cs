@@ -5,6 +5,6 @@
         public const string RoundsAreaName = "Rounds";
         public const string ClubAreaName = "Club";
         public const string CompetitionAreaName = "Competition";
-        public const string LeaguesAreaName = "Leagues";
+        public const string LeaderboardAreaName = "Leaderboard";
     }
 }

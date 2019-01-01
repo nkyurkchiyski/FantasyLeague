@@ -38,6 +38,8 @@ namespace FantasyLeague.Data.Seeding
 
             var players = new List<Player>();
 
+            var random = new Random();
+
             foreach (var pl in deserializedSquad.Players)
             {
                 var isValidPosition = Enum.TryParse(pl.Position, out PlayerPosition position);
@@ -58,7 +60,8 @@ namespace FantasyLeague.Data.Seeding
                         Nationality = pl.Nationality,
                         Position = position,
                         PlayerImageId = playerImage.Id,
-                        PlayerImage = playerImage
+                        PlayerImage = playerImage,
+                        Price = random.Next(GlobalConstants.MinPlayerPrice, GlobalConstants.MaxPlayerPrice)
                     };
 
                     players.Add(player);

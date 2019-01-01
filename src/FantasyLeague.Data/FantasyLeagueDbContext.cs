@@ -20,11 +20,7 @@ namespace FantasyLeague.Data
         public DbSet<Fixture> Fixtures { get; set; }
 
         public DbSet<Image> Images { get; set; }
-
-        public DbSet<League> Leagues { get; set; }
-
-        public DbSet<UserLeague> UsersLeagues { get; set; }
-
+        
         public DbSet<Matchday> Matchdays { get; set; }
 
         public DbSet<Player> Players { get; set; }
@@ -48,11 +44,9 @@ namespace FantasyLeague.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new FixtureConfiguration());
-            builder.ApplyConfiguration(new LeagueConfiguration());
             builder.ApplyConfiguration(new PlayerConfiguration());
             builder.ApplyConfiguration(new TeamConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
-            builder.ApplyConfiguration(new InviteConfiguration());
             builder.ApplyConfiguration(new ImageConfiguration());
             base.OnModelCreating(builder);
         }

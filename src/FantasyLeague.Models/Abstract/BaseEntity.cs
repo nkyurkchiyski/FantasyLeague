@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FantasyLeague.Models.Abstract
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntity : IComparable<BaseEntity>
     {
         public BaseEntity()
         {
@@ -12,5 +10,14 @@ namespace FantasyLeague.Models.Abstract
         }
 
         public Guid Id { get; set; }
+
+        public int CompareTo(BaseEntity other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+            return Id.CompareTo(other.Id);
+        }
     }
 }

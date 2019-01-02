@@ -279,6 +279,10 @@ html {
     background-color: #d00614;
 }
 
+.bundesliga-color {
+    color: #d00614;
+}
+
 .bundesliga-secondary-bg-color {
     background-color: #D8D31c;
 }
@@ -322,4 +326,13 @@ html {
 .mini-image {
     object-fit: contain;
     height: 40px;
+}
+
+.flip-icon {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }

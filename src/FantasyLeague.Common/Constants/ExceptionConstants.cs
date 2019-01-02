@@ -13,5 +13,8 @@
         public const string InvalidEnumException = "Invalid type for {0}.";
 
         public const string AlreadyGeneratedException = "Player Scores for the matchday({0}) are already generated.";
+
+        public const string AlreadyTakenClubNameException = "Club name '{0}' is already taken.";
+        
     }
 }

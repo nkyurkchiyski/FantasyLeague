@@ -8,6 +8,7 @@
     <Compile Remove="Migrations\20181230181904_IndexesFixed.cs" />
     <Compile Remove="Migrations\20181230200739_ImageFix.cs" />
     <Compile Remove="Migrations\20181230202424_ImageFix.cs" />
+    <Compile Remove="Migrations\20190102093746_Edited-Points.cs" />
   </ItemGroup>
 
   <ItemGroup>

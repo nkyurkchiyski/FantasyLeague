@@ -41,14 +41,14 @@
                         <div class="button-holder d-flex justify-content-center">
                             <div>
                                 @{
-                                    string disabled = fixture.Status == FixtureStatus.Finished && 
+                                    string disabled = fixture.Status == FixtureStatus.Finished &&
                                                       fixture.ScoresAdded ?
                                                       HtmlCssConstants.BtnPrimary :
                                                       HtmlCssConstants.Disabled +
                                                       HtmlCssConstants.BtnOutlinePrimary;
-                                    
+
                                     <a asp-controller="@PagesConstants.Fixtures" asp-action="@ActionConstants.Details" asp-route-id="@fixture.Id" role="button" class="btn @disabled"><span class="oi oi-info"></span></a>
-                                    
+
                                 }
 
                             </div>
@@ -61,5 +61,5 @@
 </table>
 
 <script>
-    
+
 </script>

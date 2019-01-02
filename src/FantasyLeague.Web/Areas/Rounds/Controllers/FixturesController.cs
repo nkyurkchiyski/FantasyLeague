@@ -12,9 +12,9 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
     [Authorize]
     public class FixturesController : Controller
     {
-        private readonly IFixtureService fixtureService;
+        private readonly IFixturesService fixtureService;
 
-        public FixturesController(IFixtureService fixtureService)
+        public FixturesController(IFixturesService fixtureService)
         {
             this.fixtureService = fixtureService;
         }
@@ -34,7 +34,7 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
         {
             var result = await this.fixtureService.GenerateScores(id);
 
-            if (!result.Success)
+            if (!result.Succeeded)
             {
                 return RedirectToAction(
                        ActionConstants.Error,

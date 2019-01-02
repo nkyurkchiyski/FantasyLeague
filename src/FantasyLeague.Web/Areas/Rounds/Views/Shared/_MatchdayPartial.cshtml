@@ -5,7 +5,7 @@
         <h5 class="my-0 text-white">Matchday @Model.Week</h5>
     </div>
     <div class="card-body">
-        <p class="card-text">@Model.StartDate.ToShortDateString() ÷ @Model.EndDate.ToShortDateString()</p>
+        <p class="card-text">@Model.StartDate.ToString(GlobalConstants.Date, CultureInfo.CreateSpecificCulture(GlobalConstants.DateTimeFormat)) ÷ @Model.EndDate.ToString(GlobalConstants.Date, CultureInfo.CreateSpecificCulture(GlobalConstants.DateTimeFormat))</p>
         <p class="card-text text-uppercase font-italic">@Model.Status</p>
         <a asp-area="@ControllerConstants.RoundsAreaName" asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details" asp-route-id="@Model.Id" class="btn btn-outline-primary">Details</a>
     </div>

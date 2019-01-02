@@ -28,10 +28,10 @@
     <Folder Include="Areas\Competition\Data\" />
     <Folder Include="Areas\Competition\Models\" />
     <Folder Include="Areas\Competition\Views\" />
-    <Folder Include="Areas\Leagues\Controllers\" />
-    <Folder Include="Areas\Leagues\Data\" />
-    <Folder Include="Areas\Leagues\Models\" />
-    <Folder Include="Areas\Leagues\Views\" />
+    <Folder Include="Areas\Leaderboard\Controllers\" />
+    <Folder Include="Areas\Leaderboard\Data\" />
+    <Folder Include="Areas\Leaderboard\Models\" />
+    <Folder Include="Areas\Leaderboard\Views\" />
   </ItemGroup>
 
 </Project>

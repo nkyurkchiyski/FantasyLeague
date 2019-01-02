@@ -5,10 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="League\" />
     <Folder Include="Transfer\" />
     <Folder Include="Roster\" />
-    <Folder Include="Team\" />
   </ItemGroup>
 
   <ItemGroup>

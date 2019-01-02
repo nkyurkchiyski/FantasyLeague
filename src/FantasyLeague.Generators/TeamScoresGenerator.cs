@@ -11,14 +11,14 @@ namespace FantasyLeague.Generators
 {
     public static class TeamScoresGenerator
     {
-        public static List<ScoreViewModel> GenerateTeamPlayerScores(int goals, int goalsConceded, Team team)
+        public static List<ScoreViewModel> GenerateTeamPlayerScores(int matchdayWeek, int goals, int goalsConceded, Team team)
         {
             var random = new Random();
 
             int subs = random.Next(ScoreConstants.MaxSubs + 1);
-            var teamLayout = GetRandomTeamLayout(random, team);
+            var teamLayout = GetRandomTeamLayout(random, matchdayWeek, team);
 
-            var models = CreateScoreViewModels(random, teamLayout, subs, team);
+            var models = CreateScoreViewModels(random, matchdayWeek, teamLayout, subs, team);
 
             GenerateScoreViewModels(random, goals, goalsConceded, models);
             models = GenerateSubs(random, subs, models);
@@ -69,8 +69,7 @@ namespace FantasyLeague.Generators
             int goalsConceded,
             List<ScoreViewModel> models)
         {
-            GenerateGoalScorers(random, goals, models);
-            GenerateGoalAssisters(random, goals, models);
+            GenerateGoalStats(random, goals, models);
             foreach (var model in models)
             {
                 GenerateShots(random, goals, model);
@@ -145,87 +144,90 @@ namespace FantasyLeague.Generators
                     model.Shots++;
                     break;
                 case PlayerPosition.Defender:
-                case PlayerPosition.Goalkeeper:
                     model.Shots = Math.Abs(--shots);
                     break;
             }
-        }
 
-        private static void GenerateGoalAssisters(Random random, int assists, List<ScoreViewModel> models)
-        {
-            int loopCap = 0;
-            while (assists > 0)
+            if (model.Position == PlayerPosition.Goalkeeper)
             {
-                if (loopCap == ScoreConstants.LoopCap)
-                {
-                    models[random.Next(models.Count)].Assists++;
-                    assists--;
-                    loopCap = 0;
-                    continue;
-                }
-
-                for (int i = 0; i < models.Count; i++)
-                {
-                    if (random.Next(0, (int)models[i].Position) == 0)
-                    {
-                        models[i].Assists++;
-                        assists--;
-
-                        if (assists == 0)
-                        {
-                            return;
-                        }
-                    }
-                }
-
-                loopCap++;
-
+                model.Shots = 0;
             }
         }
 
-        private static void GenerateGoalScorers(
+        private static ScoreViewModel GenerateGoalAssister(
             Random random,
-            int goals,
             List<ScoreViewModel> models)
         {
             int loopCap = 0;
 
-            while (goals > 0)
+            while (true)
             {
                 if (loopCap == ScoreConstants.LoopCap)
                 {
-                    models[random.Next(models.Count)].Goals++;
-                    goals--;
-                    loopCap = 0;
-                    continue;
+                    return models[random.Next(models.Count)];
                 }
 
-                for (int i = 0; i < models.Count; i++)
+                for (int i = models.Count - 1; i >= 0; i--)
                 {
                     if (random.Next(0, (int)models[i].Position) == 0)
                     {
-                        models[i].Goals++;
-                        goals--;
-
-                        if (goals == 0)
-                        {
-                            return;
-                        }
+                        return models[i];
                     }
                 }
-
                 loopCap++;
+            }
+        }
+
+        private static ScoreViewModel GenerateGoalScorer(
+            Random random,
+            List<ScoreViewModel> models)
+        {
+            int loopCap = 0;
+
+            while (true)
+            {
+                if (loopCap == ScoreConstants.LoopCap)
+                {
+                    return models[random.Next(models.Count)];
+                }
+
+                for (int i = models.Count - 1; i >= 0; i--)
+                {
+                    if (random.Next(0, (int)models[i].Position) == 0)
+                    {
+                        return models[i];
+                    }
+                }
+                loopCap++;
+            }
+        }
+
+        private static void GenerateGoalStats(
+            Random random,
+            int goals,
+            List<ScoreViewModel> models)
+        {
+
+            for (int i = 0; i < goals; i++)
+            {
+                var goalScorer = GenerateGoalScorer(random, models);
+                var goalAssister = GenerateGoalAssister(random, models.Where(x => x.PlayerId != goalScorer.PlayerId).ToList());
+
+                models.Find(x => x.PlayerId == goalScorer.PlayerId).Goals++;
+                models.Find(x => x.PlayerId == goalAssister.PlayerId).Assists++;
 
             }
         }
 
+
         private static List<ScoreViewModel> CreateScoreViewModels(
             Random random,
+            int matchdayWeek,
             int[] teamLayout,
             int subs,
             Team team)
         {
-            var teamModels = new List<ScoreViewModel>();
+            var playerModels = new List<ScoreViewModel>();
             var selectedPlayers = new List<Player>();
 
             for (int i = teamLayout.Length; i > 0; i--)
@@ -233,6 +235,7 @@ namespace FantasyLeague.Generators
                 var models = new List<ScoreViewModel>();
                 var playerForPosition = GetRandomPlayersForPosition(
                                                 random,
+                                                matchdayWeek,
                                                 teamLayout[teamLayout.Length - i],
                                                 team,
                                                 (PlayerPosition)(i + ScoreConstants.PlayerPosParam));
@@ -247,7 +250,7 @@ namespace FantasyLeague.Generators
                         TeamId = pl.TeamId
                     });
                 }
-                teamModels.AddRange(models);
+                playerModels.AddRange(models);
                 selectedPlayers.AddRange(playerForPosition);
             }
 
@@ -264,9 +267,9 @@ namespace FantasyLeague.Generators
                     TeamId = pl.TeamId
                 });
             }
-            teamModels.AddRange(subModels);
+            playerModels.AddRange(subModels);
 
-            return teamModels;
+            return playerModels;
         }
 
         private static IEnumerable<Player> GetSubPlayers(Random random, int subs, List<Player> selectedPlayers, Team team)
@@ -305,12 +308,13 @@ namespace FantasyLeague.Generators
 
         private static IEnumerable<Player> GetRandomPlayersForPosition(
             Random random,
+            int matchdayWeek,
             int neededPlayers,
             Team team,
             PlayerPosition playerPosition)
         {
-            var playersForPosition = GetPlayersForPosition(team, playerPosition).ToList();
-            int playersCount = GetPlayersForPosition(team, playerPosition).Count();
+            var playersForPosition = GetPlayersForPosition(matchdayWeek, team, playerPosition).ToList();
+            int playersCount = playersForPosition.Count;
 
             var selecetedPlayers = new List<Player>();
 
@@ -339,17 +343,42 @@ namespace FantasyLeague.Generators
         }
 
         private static IEnumerable<Player> GetPlayersForPosition(
+            int matchdayWeek,
             Team team,
             PlayerPosition playerPosition)
         {
-            return team.Players.Where(x => x.Position == playerPosition && x.Active);
+            var allPlayers = team.Players.Where(x => x.Position == playerPosition &&
+                                                     x.Active);
+
+            if (matchdayWeek == 1 || allPlayers.All(x => x.Scores.All(y => y.RedCards == 0)))
+            {
+                return allPlayers;
+            }
+
+            var eligiblePlayers = new List<Player>();
+
+            foreach (var player in allPlayers)
+            {
+                var scorePreviousMatchday = player.Scores
+                    .FirstOrDefault(x => x.Fixture.Matchday.Week == matchdayWeek - 1);
+
+                if (scorePreviousMatchday == null)
+                {
+                    eligiblePlayers.Add(player);
+                }
+                else if (scorePreviousMatchday.RedCards == 0)
+                {
+                    eligiblePlayers.Add(player);
+                }
+            }
+            return eligiblePlayers;
         }
 
-        private static int[] GetRandomTeamLayout(Random random, Team team)
+        private static int[] GetRandomTeamLayout(Random random, int matchdayWeek, Team team)
         {
-            int defendersCount = GetPlayersForPosition(team, PlayerPosition.Defender).Count();
-            int attackersCount = GetPlayersForPosition(team, PlayerPosition.Attacker).Count();
-            int halfsCount = GetPlayersForPosition(team, PlayerPosition.Midfielder).Count();
+            int defendersCount = GetPlayersForPosition(matchdayWeek, team, PlayerPosition.Defender).Count();
+            int attackersCount = GetPlayersForPosition(matchdayWeek, team, PlayerPosition.Attacker).Count();
+            int halfsCount = GetPlayersForPosition(matchdayWeek, team, PlayerPosition.Midfielder).Count();
 
             string[] allFormations = Enum.GetNames(typeof(Formation));
             string formation = allFormations[random.Next(0, ScoreConstants.MaxFormations)];

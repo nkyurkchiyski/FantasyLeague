@@ -53,7 +53,7 @@ namespace FantasyLeague.Models
         [Required]
         [Range(minimum: 0, maximum: ScoreConstants.MaxPlayedMinutesValue)]
         public int PlayedMinutes { get; set; }
-
+        
         public int GetScore()
         {
             var position = this.Player.Position;
@@ -93,9 +93,6 @@ namespace FantasyLeague.Models
 
             return result;
         }
-
-
-
-
+        
     }
 }

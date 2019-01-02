@@ -4,7 +4,7 @@ namespace FantasyLeague.Services
 {
     public class ServiceResult : IServiceResult
     {
-        public bool Success { get; set; }
+        public bool Succeeded { get; set; }
 
         public string Error { get; set; }
     }

@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using FantasyLeague.Services.Contracts;
 
 namespace FantasyLeague.Web.Areas.Identity.Pages.Account
 {
@@ -18,16 +19,19 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
+        private readonly IUsersService _usersService;
         private readonly ILogger<ExternalLoginModel> _logger;
 
         public ExternalLoginModel(
             SignInManager<User> signInManager,
             UserManager<User> userManager,
+            IUsersService usersService,
             ILogger<ExternalLoginModel> logger)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _logger = logger;
+            _usersService = usersService;
         }
 
         [BindProperty]
@@ -45,6 +49,13 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+
+            [Required]
+            public string Username { get; set; }
+
+            [Required]
+            [Display(Name = "Club Name")]
+            public string ClubName { get; set; }
         }
 
         public IActionResult OnGetAsync()
@@ -66,7 +77,7 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
             if (remoteError != null)
             {
                 ErrorMessage = $"Error from external provider: {remoteError}";
-                return RedirectToPage("./Login", new {ReturnUrl = returnUrl });
+                return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
@@ -76,7 +87,7 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
             }
 
             // Sign in the user with this external login provider if the user already has a login.
-            var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor : true);
+            var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
             if (result.Succeeded)
             {
                 _logger.LogInformation("{Name} logged in with {LoginProvider} provider.", info.Principal.Identity.Name, info.LoginProvider);
@@ -115,9 +126,22 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = Input.Email, Email = Input.Email };
-                var result = await _userManager.CreateAsync(user);
-                if (result.Succeeded)
+                var user = new User
+                {
+                    UserName = Input.Username,
+                    Email = Input.Email
+                };
+                
+                var clubNameResult = _usersService.ClubNameTaken(Input.ClubName);
+                var result = new IdentityResult();
+
+                if (clubNameResult.Succeeded)
+                {
+                    user.ClubName = Input.ClubName;
+                    result = await _userManager.CreateAsync(user);
+                }
+
+                if (result.Succeeded && clubNameResult.Succeeded)
                 {
                     result = await _userManager.AddLoginAsync(user, info);
                     if (result.Succeeded)
@@ -127,9 +151,15 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
+                }
+
+                if (!clubNameResult.Succeeded)
+                {
+                    ModelState.AddModelError(string.Empty, clubNameResult.Error);
                 }
             }
 

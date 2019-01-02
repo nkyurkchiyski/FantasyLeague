@@ -32,16 +32,15 @@ namespace FantasyLeague.Models
 
         public virtual ICollection<RosterPlayer> Players { get; set; }
         public virtual ICollection<Transfer> Transfers { get; set; }
+        
+        public int Points => this.Players
+            .Where(x => !x.IsSub)
+            .Sum(x => x.Player.Scores
+                       .First(y => this.Matchday.Fixtures.Contains(y.Fixture))
+                       .GetScore());
 
         [NotMapped]
-        public int Points => this.Players
-                                 .Sum(x =>
-                                      x.Player
-                                       .Scores
-                                       .First(y =>
-                                              this.Matchday
-                                              .Fixtures
-                                              .Contains(y.Fixture))
-                                       .GetScore());
+        public bool IsValid => this.Players.Count == GlobalConstants.RosterSize &&
+                               this.Transfers.Count<= GlobalConstants.MaxTransfers;
     }
 }

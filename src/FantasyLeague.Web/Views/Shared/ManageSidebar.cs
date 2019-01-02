@@ -21,7 +21,7 @@ namespace FantasyLeague.Web.Views.Shared
         public static string MatchdaysNavClass(ViewContext viewContext) => PageNavClass(viewContext, PagesConstants.Matchdays);
         public static string RosterNavClass(ViewContext viewContext) => PageNavClass(viewContext, PagesConstants.Roster);
         public static string TeamsNavClass(ViewContext viewContext) => PageNavClass(viewContext, PagesConstants.Teams);
-        public static string LeaguesNavClass(ViewContext viewContext) => PageNavClass(viewContext, PagesConstants.Leaderboard);
+        public static string LeaderboardNavClass(ViewContext viewContext) => PageNavClass(viewContext, PagesConstants.Leaderboard);
         public static string AccountNavClass(ViewContext viewContext) => ParentPageNavClass(viewContext, AccountPages);
         public static string RegisterNavClass(ViewContext viewContext) => PageNavClass(viewContext, PagesConstants.Register);
         public static string LoginNavClass(ViewContext viewContext) => PageNavClass(viewContext, PagesConstants.Login);

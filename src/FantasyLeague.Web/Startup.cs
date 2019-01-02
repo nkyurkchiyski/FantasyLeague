@@ -48,13 +48,19 @@ namespace FantasyLeague.Web
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 1;
+                options.SignIn.RequireConfirmedEmail = false;
+                options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider;
             })
                 .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<FantasyLeagueDbContext>();
 
-            services.Configure<IdentityOptions>(options =>
-               options.SignIn.RequireConfirmedEmail = false
-           );
+            //ExternalLogin Setup
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
 
             //AutoMapper
             var mappingConfig = new MapperConfiguration(mc =>
@@ -67,8 +73,11 @@ namespace FantasyLeague.Web
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             //Services
-            services.AddScoped<IFixtureService, FixtureService>();
-            services.AddScoped<IMatchdayService, MatchdayService>();
+
+            services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<ITeamsService, TeamsService>();
+            services.AddScoped<IFixturesService, FixturesService>();
+            services.AddScoped<IMatchdaysService, MatchdaysService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

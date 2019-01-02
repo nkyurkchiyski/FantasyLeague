@@ -4,15 +4,15 @@
     ViewData["Title"] = $"{GlobalConstants.FixtureName} {ActionConstants.Details}";
     ViewData["ActivePage"] = PagesConstants.Matchdays;
 
-    var homeTeamStats = Model.Scores.Where(x => x.TeamId == Model.HomeTeamId).ToList();
-    var awayTeamStats = Model.Scores.Where(x => x.TeamId == Model.AwayTeamId).ToList();
+    var homeTeamStats = Model.Scores.Where(x => x.TeamId == Model.HomeTeamId).OrderByDescending(x => x.Position).ToList();
+    var awayTeamStats = Model.Scores.Where(x => x.TeamId == Model.AwayTeamId).OrderByDescending(x => x.Position).ToList();
 }
 
 <h1>Fixture Details</h1>
 <h4>
     Status: <span class="text-uppercase font-italic">@Model.Status</span>
 </h4>
-<a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details" asp-route-id="@Model.MatchdayId" class="btn btn-outline-primary"><span class="oi oi-share-boxed"></span></a>
+<a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details" asp-route-id="@Model.MatchdayId" class="btn btn-outline-primary"><span class="oi oi-share-boxed flip-icon"></span></a>
 <hr />
 
 <div class="bundesliga-box-shadow p-3 rounded table-responsive">

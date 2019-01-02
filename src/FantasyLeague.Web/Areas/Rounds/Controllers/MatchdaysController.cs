@@ -14,12 +14,12 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
     [Authorize]
     public class MatchdaysController : Controller
     {
-        private readonly IMatchdayService matchdayService;
-        private readonly IFixtureService fixtureService;
+        private readonly IMatchdaysService matchdayService;
+        private readonly IFixturesService fixtureService;
 
         public MatchdaysController(
-            IMatchdayService matchdayService,
-            IFixtureService fixtureService)
+            IMatchdaysService matchdayService,
+            IFixturesService fixtureService)
         {
             this.matchdayService = matchdayService;
             this.fixtureService = fixtureService;
@@ -72,7 +72,7 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
                     fixture.HomeTeamGoals,
                     fixture.AwayTeamGoals);
 
-                if (!result.Success)
+                if (!result.Succeeded)
                 {
                     return RedirectToAction(
                         ActionConstants.Error,

@@ -6,10 +6,12 @@
     ViewData[GlobalConstants.MatchdayId] = Model.Id;
 
     string disableGenerator = Model.Fixtures
-        .Where(x=>x.Status == FixtureStatus.Finished)
-        .All(x=>x.ScoresAdded)?
-        HtmlCssConstants.None:
+        .Where(x => x.Status == FixtureStatus.Finished)
+        .All(x => x.ScoresAdded) ?
+        HtmlCssConstants.None :
         null;
+
+    var fixtures = Model.Fixtures.OrderBy(x => x.Date).ToList();
 }
 
 <h1>Matchday @Model.Week</h1>
@@ -19,7 +21,7 @@
 <div class="button-holder d-flex justify-content-start">
     <div>
         @{
-            <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.All" class="btn btn-outline-primary"><span class="oi oi-share-boxed"></span></a>
+            <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.All" class="btn btn-outline-primary"><span class="oi oi-share-boxed flip-icon"></span></a>
             if (User.IsInRole(RoleConstants.AdminRoleName))
             {
                 <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Edit" asp-route-id="@Model.Id" class="btn btn-primary"><span class="oi oi-pencil"></span></a>
@@ -33,6 +35,6 @@
 
 <div class="d-flex justify-content-center">
     <div class="w-75 text-center">
-        <partial name="~/Areas/Rounds/Views/Shared/_MatchdayDetailsPartial.cshtml" model="Model.Fixtures" />
+        <partial name="~/Areas/Rounds/Views/Shared/_MatchdayDetailsPartial.cshtml" model="fixtures" />
     </div>
 </div>

@@ -2,7 +2,7 @@
 {
     public interface IServiceResult
     {
-        bool Success { get; }
+        bool Succeeded { get; }
 
         string Error { get; }
     }

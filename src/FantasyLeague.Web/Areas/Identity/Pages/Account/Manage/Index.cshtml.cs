@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using FantasyLeague.Models;
+using FantasyLeague.Services.Contracts;
+using FantasyLeague.ViewModels.Team;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -16,21 +18,29 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly IEmailSender _emailSender;
+        private readonly ITeamsService _teamsService;
+        private readonly IUsersService _usersService;
 
         public IndexModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
-            IEmailSender emailSender)
+            ITeamsService teamsService,
+            IUsersService usersService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _emailSender = emailSender;
+            _teamsService = teamsService;
+            _usersService = usersService;
         }
 
         public string Username { get; set; }
+        
+        [Display(Name = "Club Name")]
+        public string ClubName { get; set; }
 
         public bool IsEmailConfirmed { get; set; }
+
+        public ICollection<TeamViewModel> BundesligaTeams { get; set; }
 
         [TempData]
         public string StatusMessage { get; set; }
@@ -47,6 +57,9 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Display(Name = "Favourite Team")]
+            public string FavouriteTeamName { get; set; }
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -60,16 +73,27 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account.Manage
             var userName = await _userManager.GetUserNameAsync(user);
             var email = await _userManager.GetEmailAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            var clubName = await _usersService.GetClubNameAsync(user.Id);
+            var favouriteTeam = await _usersService.GetFavouriteTeamAsync(user.Id);
 
             Username = userName;
+            ClubName = clubName;
 
             Input = new InputModel
             {
                 Email = email,
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
             };
 
+            if (favouriteTeam!=null)
+            {
+                Input.FavouriteTeamName = favouriteTeam.Name;
+            }
+
             IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
+
+            BundesligaTeams = this._teamsService
+                .All<TeamViewModel>();
 
             return Page();
         }
@@ -78,6 +102,8 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account.Manage
         {
             if (!ModelState.IsValid)
             {
+                BundesligaTeams = this._teamsService
+                .All<TeamViewModel>();
                 return Page();
             }
 
@@ -109,6 +135,19 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account.Manage
                 }
             }
 
+            var favouriteTeam = await _usersService.GetFavouriteTeamAsync(user.Id);
+            
+            if ((favouriteTeam == null && Input.FavouriteTeamName != null)||
+                Input.FavouriteTeamName != favouriteTeam.Name)
+            {
+                var setFavouriteTeamResult = await _usersService.SetFavouriteTeamAsync(user.Id, Input.FavouriteTeamName);
+                if (!setFavouriteTeamResult.Succeeded)
+                {
+                    var userId = await _userManager.GetUserIdAsync(user);
+                    throw new InvalidOperationException($"Unexpected error occurred setting favourite team for user with ID '{userId}'.");
+                }
+            }
+
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();
@@ -130,18 +169,6 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account.Manage
 
             var userId = await _userManager.GetUserIdAsync(user);
             var email = await _userManager.GetEmailAsync(user);
-            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var callbackUrl = Url.Page(
-                "/Account/ConfirmEmail",
-                pageHandler: null,
-                values: new { userId = userId, code = code },
-                protocol: Request.Scheme);
-            await _emailSender.SendEmailAsync(
-                email,
-                "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
-
-            StatusMessage = "Verification email sent. Please check your email.";
             return RedirectToPage();
         }
     }

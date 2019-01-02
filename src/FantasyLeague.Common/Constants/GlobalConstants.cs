@@ -20,14 +20,17 @@
         public const string DateTime = "g";
         public const string DateTimeFormat = "de-DE";
 
-        public const int TeamNumber = 18;
+        public const int TeamsCount = 18;
+
         public const double Budget = 150;
+        public const int RosterSize = 15;
+        public const int MaxTransfers = 6;
 
         public const int MatchdaysPageSize = 9;
 
         public const string FixtureStatusEnum = "FixtureStatus";
         public const string MatchdayId = "matchdayId";
-        
+
         public const int MaxPlayerPrice = 25;
         public const int MinPlayerPrice = 1;
 

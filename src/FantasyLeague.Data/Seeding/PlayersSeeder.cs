@@ -22,7 +22,7 @@ namespace FantasyLeague.Data.Seeding
         {
             if (!context.Players.Any())
             {
-                for (int i = 1; i <= GlobalConstants.TeamNumber; i++)
+                for (int i = 1; i <= GlobalConstants.TeamsCount; i++)
                 {
                     string jsonString = File.ReadAllText(string.Format(TeamJsonPath, i));
                     this.SeedTeam(context, jsonString);

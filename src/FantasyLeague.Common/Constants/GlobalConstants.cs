@@ -12,6 +12,7 @@
         public const string LeagueName = "League";
         public const string ScoreName = "Score";
         public const string TransferWindowStatusName = "TransferWindowStatus";
+        public const string TypeName = "Type";
 
         public const string Unknown = "N/A";
 
@@ -36,5 +37,10 @@
         public const int MaxPlayerPrice = 25;
         public const int MinPlayerPrice = 1;
 
+        public const string PlayersFolderPath = "FantasyLeague/Players";
+        public const string TeamsFolderPath = "FantasyLeague/Teams";
+
+        public const string TemplatePlayerImagePublicId = "FantasyLeague/Players/default.png";
+        public const string TemplatePlayerImageUrl = @"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png";
     }
 }

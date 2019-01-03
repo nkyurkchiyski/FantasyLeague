@@ -15,6 +15,7 @@ using FantasyLeague.Data.Repositories;
 using FantasyLeague.Services.Contracts;
 using FantasyLeague.Services;
 using AutoMapper;
+using CloudinaryDotNet;
 
 namespace FantasyLeague.Web
 {
@@ -55,6 +56,14 @@ namespace FantasyLeague.Web
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<FantasyLeagueDbContext>();
 
+            //SetUp Cloudinary
+            var account = new Account(
+               Configuration["Authentication:Cloudinary:CloudName"],
+               Configuration["Authentication:Cloudinary:APIKey"],
+               Configuration["Authentication:Cloudinary:APISecret"]);
+
+            var cloudinary = new Cloudinary(account);
+
             //ExternalLogin Setup
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
@@ -73,6 +82,7 @@ namespace FantasyLeague.Web
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             //Services
+            services.AddScoped<IPlayersService, PlayersService>();
             services.AddScoped<IRostersService, RostersService>();
             services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<ITeamsService, TeamsService>();

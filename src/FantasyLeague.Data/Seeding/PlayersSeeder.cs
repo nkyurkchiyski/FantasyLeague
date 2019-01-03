@@ -15,9 +15,7 @@ namespace FantasyLeague.Data.Seeding
     public class PlayersSeeder : ISeeder
     {
         private const string TeamJsonPath = @"..\FantasyLeague.Common\Datasets\squads\{0}.json";
-        private const string TemplatePlayerImagePublicId = "FantasyLeague/Players/default.png";
-        private const string TemplatePlayerImageUrl = @"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png";
-
+        
         public void Seed(FantasyLeagueDbContext context, IServiceProvider serviceProvider)
         {
             if (!context.Players.Any())
@@ -49,8 +47,8 @@ namespace FantasyLeague.Data.Seeding
                     var playerImage = new Image
                     {
                         ImageType = GlobalConstants.PlayerName,
-                        PublicId = TemplatePlayerImagePublicId,
-                        Url = TemplatePlayerImageUrl
+                        PublicId = GlobalConstants.TemplatePlayerImagePublicId,
+                        Url = GlobalConstants.TemplatePlayerImageUrl
                     };
 
                     var player = new Player

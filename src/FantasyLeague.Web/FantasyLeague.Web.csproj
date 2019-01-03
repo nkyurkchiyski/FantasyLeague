@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
@@ -25,8 +26,6 @@
     <Folder Include="Areas\Club\Controllers\" />
     <Folder Include="Areas\Club\Views\" />
     <Folder Include="Areas\Competition\Controllers\" />
-    <Folder Include="Areas\Competition\Data\" />
-    <Folder Include="Areas\Competition\Models\" />
     <Folder Include="Areas\Competition\Views\" />
     <Folder Include="Areas\Leaderboard\Controllers\" />
     <Folder Include="Areas\Leaderboard\Data\" />

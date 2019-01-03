@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FantasyLeague.Common.Constants;
 using FantasyLeague.Common.Pagination;
 using FantasyLeague.Services.Contracts;
+using FantasyLeague.ViewModels.Fixture;
 using FantasyLeague.ViewModels.Matchday;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -45,7 +47,7 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
         {
             var matchday = this.matchdayService
                 .GetMatchday<MatchdayDetailsViewModel>(id);
-            
+
             return View(matchday);
         }
 
@@ -80,7 +82,7 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
                         new { area = "", errorMessage = result.Error });
                 }
             }
-            
+
             return RedirectToAction(nameof(Details), new { id = matchday.Id });
         }
     }

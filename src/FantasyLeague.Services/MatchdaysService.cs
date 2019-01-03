@@ -41,7 +41,7 @@ namespace FantasyLeague.Services
 
         public T GetMatchday<T>(Guid matchdayId)
         {
-            var matchday =  this.matchdaysRepository
+            var matchday = this.matchdaysRepository
                 .GetByIdAsync(matchdayId)
                 .GetAwaiter()
                 .GetResult();
@@ -60,7 +60,7 @@ namespace FantasyLeague.Services
 
             return model;
         }
-        
+
         public async Task<IServiceResult> SetCurrentMatchday(int week, TransferWindowStatus transferWindowStatus)
         {
             var result = new ServiceResult { Succeeded = false };
@@ -76,7 +76,7 @@ namespace FantasyLeague.Services
                     GlobalConstants.MatchdayName);
                 return result;
             }
-            
+
             currentMatchday.MatchdayStatus = MatchdayStatus.Current;
             currentMatchday.TransferWindowStatus = transferWindowStatus;
 
@@ -100,5 +100,6 @@ namespace FantasyLeague.Services
 
             return result;
         }
+        
     }
 }

@@ -95,6 +95,19 @@ namespace FantasyLeague.Services
             return score;
         }
 
+        private bool IsEdited(
+            Fixture fixture,
+            DateTime date,
+            FixtureStatus status,
+            int homeTeamGoals,
+            int awayTeamGoals)
+        {
+            return fixture.Date != date ||
+                   fixture.Status != status ||
+                   fixture.HomeTeamGoals != homeTeamGoals ||
+                   fixture.AwayTeamGoals != awayTeamGoals;
+        }
+
         public ICollection<T> All<T>()
         {
             var fixtures = this.fixturesRepository.All();
@@ -133,6 +146,12 @@ namespace FantasyLeague.Services
                 result.Error = string.Format(
                     ExceptionConstants.NotFoundException,
                     GlobalConstants.FixtureName);
+                return result;
+            }
+
+            if (!IsEdited(fixture, date, status, homeTeamGoals, awayTeamGoals))
+            {
+                result.Succeeded = true;
                 return result;
             }
 

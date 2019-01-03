@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using FantasyLeague.Services.Contracts;
 using FantasyLeague.ViewModels.Team;
 using System.Linq;
+using FantasyLeague.Common.Constants;
 
 namespace FantasyLeague.Web.Areas.Identity.Pages.Account
 {
@@ -100,14 +101,16 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
 
                 var clubNameResult = _usersService.ClubNameTaken(Input.ClubName);
                 var result = new IdentityResult();
+                var addRoleResult = new IdentityResult();
 
                 if (clubNameResult.Succeeded)
                 {
                     user.ClubName = Input.ClubName;
                     result = await _userManager.CreateAsync(user, Input.Password);
+                    addRoleResult = await this._userManager.AddToRoleAsync(user, RoleConstants.UserRoleName);
                 }
 
-                if (result.Succeeded && clubNameResult.Succeeded)
+                if (result.Succeeded && clubNameResult.Succeeded && addRoleResult.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
 
@@ -116,6 +119,11 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
                 }
 
                 foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+
+                foreach (var error in addRoleResult.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }

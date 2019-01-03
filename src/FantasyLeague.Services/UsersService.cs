@@ -3,6 +3,7 @@ using FantasyLeague.Common.Constants;
 using FantasyLeague.Data.Repositories.Contracts;
 using FantasyLeague.Models;
 using FantasyLeague.Services.Contracts;
+using FantasyLeague.ViewModels.Roster;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,13 +51,23 @@ namespace FantasyLeague.Services
 
             return user.ClubName;
         }
-
+        
         public async Task<Team> GetFavouriteTeamAsync(string userId)
         {
             var user = await this.usersRepository
                 .GetByIdAsync(userId);
 
             return user.FavouriteTeam;
+        }
+
+        public T GetUser<T>(string username)
+        {
+            var user = this.usersRepository.All()
+                .FirstOrDefault(x => x.UserName == username);
+
+            var model = this.mapper.Map<T>(user);
+
+            return model;
         }
 
         public async Task<IServiceResult> SetFavouriteTeamAsync(string userId, string teamName)

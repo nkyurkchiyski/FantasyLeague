@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FantasyLeague.Models.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FantasyLeague.ViewModels.Matchday
@@ -15,5 +16,7 @@ namespace FantasyLeague.ViewModels.Matchday
         public int Week { get; set; }
         
         public string Status { get; set; }
+        
+        public TransferWindowStatus TransferWindowStatus { get; set; }
     }
 }

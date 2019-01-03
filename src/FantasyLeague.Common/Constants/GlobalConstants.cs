@@ -26,6 +26,8 @@
         public const int RosterSize = 15;
         public const int MaxTransfers = 6;
 
+        public const int TotalMatchdays = 34;
+
         public const int MatchdaysPageSize = 9;
 
         public const string FixtureStatusEnum = "FixtureStatus";

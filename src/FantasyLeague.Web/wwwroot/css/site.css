@@ -328,6 +328,11 @@ html {
     height: 40px;
 }
 
+.player-image {
+    object-fit: contain;
+    max-height: 40px;
+}
+
 .flip-icon {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -335,4 +340,42 @@ html {
     transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH";
+}
+
+.pitch {
+    /* The image used */
+    background-image: url("https://res.cloudinary.com/nkyurkchiyski/image/upload/v1546506435/FantasyLeague/Resources/pitch.png");
+    /* Full height */
+    object-fit: contain;
+    height: 600px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 740px) {
+    .pitch {
+        height: 500px;
+    }
+
+    .form-matchday {
+        display: block;
+    }
+}
+
+@media (max-width: 1024px) and (min-device-width : 740px) {
+    .pitch {
+        height: 600px;
+    }
+
+    .dashboard-item {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .form-matchday {
+        display:block;
+    }
 }

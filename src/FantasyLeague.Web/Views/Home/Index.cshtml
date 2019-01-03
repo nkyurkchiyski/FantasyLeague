@@ -1,16 +1,183 @@
 ﻿@{
     ViewData["Title"] = PagesConstants.Home;
     ViewData["ActivePage"] = PagesConstants.Home;
+
+    @model IndexViewModel;
+
+    var matchdayWeeks = Enumerable.Range(1, GlobalConstants.TotalMatchdays).ToList();
+    var transferWindowStatuses = Enum.GetNames(typeof(TransferWindowStatus));
 }
 
-<div class="jumbotron text-center bundesliga-box-shadow p-4">
-    <h1 class="display-4">Bundesliga Fantasy League</h1>
-    <h3 class="lead">Create your dream team and compete with your friends!</h3>
-    <hr class="my-4">
-    <p>Earn points based on the performance of the Bundesliga's stars in actual games.</p>
-    <div class="text-center">
-        <img class="bundesliga-banner" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1546011034/FantasyLeague/Resources/banner.jpg" />
-    </div>
-    <a class="btn btn-primary btn-lg mt-4" asp-area="Identity" asp-page="/Account/Register">JOIN NOW!</a>
-</div>
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Welcome back, <span class="font-italic">@User.Identity.Name</span></h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 dashboard-item">
+            <div class="card bundesliga-box-shadow mb-3">
+                <h5 class="card-header bundesliga-bg-color text-white">Current Roster</h5>
+                <div class="pitch card-body">
+                    <div class="mt-4 text-center lineup">
+                        <div class="d-flex justify-content-around mb-2">
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around mb-2">
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-1"><small>10 points</small></p>
+                                </div>
+                            </div>
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around mb-2">
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around mb-2">
+                            <div class="card text-center p-2">
+                                <h5>Player</h5>
+                                <div class="p-1">
+                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
+                                    <p class="m-0"><small>10 points</small></p>
+                                </div>
+                            </div>
+                        </div>
 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 dashboard-item">
+            <div class="card bundesliga-box-shadow mb-3">
+                <h5 class="card-header bundesliga-bg-color text-white">Accumulated Points</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Current points: <span class="font-weight-bold">@Model.User.CurrentPoints</span></li>
+                    <li class="list-group-item">Total points: <span class="font-weight-bold">@Model.User.TotalPoints</span></li>
+                </ul>
+                <div class="card-body p-3">
+                    <div class="d-flex justify-content-end">
+                        <a href="#" class="btn btn-primary">Leaderboard</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card bundesliga-box-shadow">
+                <h5 class="card-header bundesliga-bg-color text-white">Matchday</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Current week: <span class="font-weight-bold">@Model.MarchdayWeek</span></li>
+                    <li class="list-group-item">Transfer window status: <span class="font-weight-bold">@Model.TransferWindowStatus</span></li>
+                </ul>
+                <div class="card-body p-3">
+                    <div class="d-flex justify-content-end">
+                        <a href="#" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    if (User.IsInRole(RoleConstants.AdminRoleName))
+    {
+        <h2>Manage Matchday</h2>
+        <hr />
+
+        <form class="form-inline form-matchday" asp-controller="@PagesConstants.Home" asp-action="@ActionConstants.SetCurrentMatchday">
+
+            <div class="form-group">
+                <label class="mr-3">Select Matchday:</label>
+                @Html.DropDownListFor(
+                           x=>x.MarchdayWeek,
+                           new SelectList(matchdayWeeks),
+                           new { @class = HtmlCssConstants.FormControl+ HtmlCssConstants.Mr3 })
+            </div>
+            <div class="form-group">
+                <label class="mr-3">Select Transfer Window Status:</label>
+                @Html.DropDownListFor(
+                           x=>x.TransferWindowStatus,
+                           new SelectList(transferWindowStatuses),
+                           new { @class = HtmlCssConstants.FormControl + HtmlCssConstants.Mr3 })
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+
+    }
+
+}
+else
+{
+    <div class="jumbotron-fluid text-center bundesliga-box-shadow p-4">
+        <h1 class="display-4">Bundesliga Fantasy League</h1>
+        <h3 class="lead">Create your dream team and compete with your friends!</h3>
+        <hr class="my-4">
+        <p>Earn points based on the performance of the Bundesliga's stars in actual games.</p>
+        <div class="text-center">
+            <img class="img-fluid bundesliga-banner" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1546011034/FantasyLeague/Resources/banner.jpg" />
+        </div>
+        <a class="btn btn-primary btn-lg mt-4" asp-area="Identity" asp-page="/Account/Register">JOIN NOW!</a>
+    </div>
+}

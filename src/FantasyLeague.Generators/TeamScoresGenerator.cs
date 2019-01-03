@@ -5,7 +5,6 @@ using FantasyLeague.ViewModels.Score;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FantasyLeague.Generators
 {
@@ -350,7 +349,7 @@ namespace FantasyLeague.Generators
             var allPlayers = team.Players.Where(x => x.Position == playerPosition &&
                                                      x.Active);
 
-            if (matchdayWeek == 1 || allPlayers.All(x => x.Scores.All(y => y.RedCards == 0)))
+            if (matchdayWeek == 1)
             {
                 return allPlayers;
             }
@@ -366,10 +365,12 @@ namespace FantasyLeague.Generators
                 {
                     eligiblePlayers.Add(player);
                 }
-                else if (scorePreviousMatchday.RedCards == 0)
+                else if (scorePreviousMatchday != null &&
+                         scorePreviousMatchday.RedCards == 0)
                 {
                     eligiblePlayers.Add(player);
                 }
+                
             }
             return eligiblePlayers;
         }
@@ -388,15 +389,34 @@ namespace FantasyLeague.Generators
             layout.AddRange(formation.Replace(ScoreConstants.Formation, "").ToCharArray()
                  .Select(n => int.Parse(n.ToString())));
 
-            if (layout[1] > defendersCount ||
-                layout[2] > halfsCount ||
-                layout[3] > attackersCount)
+            if (layout[1] > defendersCount)
             {
                 layout = new List<int> { 1 };
-                layout.AddRange(ScoreConstants.DefaultFormation
-                                              .Replace(ScoreConstants.Formation, "")
-                                              .ToCharArray()
-                                              .Select(n => int.Parse(n.ToString())));
+
+                int remainingPlayersCount = ScoreConstants.OutfieldPlayers - defendersCount;
+                int mids = remainingPlayersCount / 2;
+
+                layout.AddRange(new[] { defendersCount, mids, remainingPlayersCount - mids });
+
+            }
+            else if (layout[2] > halfsCount)
+            {
+                layout = new List<int> { 1 };
+
+                int remainingPlayersCount = ScoreConstants.OutfieldPlayers - halfsCount;
+                int attackers = remainingPlayersCount / 2;
+
+                layout.AddRange(new[] { remainingPlayersCount - attackers, halfsCount, attackers });
+            }
+            else if (layout[3] > attackersCount)
+            {
+                layout = new List<int> { 1 };
+
+                int remainingPlayersCount = ScoreConstants.OutfieldPlayers - attackersCount;
+                int defenders = remainingPlayersCount / 2;
+
+                layout.AddRange(new[] { defenders, remainingPlayersCount - defenders, attackersCount });
+
             }
 
             return layout.ToArray();

@@ -10,8 +10,11 @@
         public const string Disabled = " disabled";
         public const string None = " d-none";
 
+        public const string Mr3 = " mr-3";
+        
         public const string BtnPrimary = " btn-primary";
         public const string BtnOutlinePrimary = " btn-outline-primary";
+
         
     }
 }

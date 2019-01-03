@@ -13,11 +13,12 @@
 
         public const string Formation = "Formation";
         public const string DefaultFormation = "Formation352";
-
+        public const int OutfieldPlayers = 10;
+        
         public const int PlayerPosParam = 3;
 
         public const int YellowCardChance = 10;
-        public const int RedCardChance = 50;
+        public const int RedCardChance = 100;
 
         public const int MaxYellowCards = 1;
         public const int CardParam = 2;

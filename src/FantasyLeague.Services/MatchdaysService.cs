@@ -60,8 +60,8 @@ namespace FantasyLeague.Services
 
             return model;
         }
-
-        public async Task<IServiceResult> SetCurrentMatchday(int week)
+        
+        public async Task<IServiceResult> SetCurrentMatchday(int week, TransferWindowStatus transferWindowStatus)
         {
             var result = new ServiceResult { Succeeded = false };
 
@@ -76,18 +76,21 @@ namespace FantasyLeague.Services
                     GlobalConstants.MatchdayName);
                 return result;
             }
-
+            
             currentMatchday.MatchdayStatus = MatchdayStatus.Current;
+            currentMatchday.TransferWindowStatus = transferWindowStatus;
 
             foreach (var m in matchdays)
             {
                 if (m.Week < week)
                 {
                     m.MatchdayStatus = MatchdayStatus.Past;
+                    m.TransferWindowStatus = TransferWindowStatus.Closed;
                 }
                 else if (m.Week > week)
                 {
                     m.MatchdayStatus = MatchdayStatus.Upcoming;
+                    m.TransferWindowStatus = TransferWindowStatus.Closed;
                 }
             }
 
@@ -95,39 +98,6 @@ namespace FantasyLeague.Services
 
             result.Succeeded = true;
 
-            return result;
-        }
-
-        public async Task<IServiceResult> SetTransferWindowStatus(string transferWindowStatus)
-        {
-            var result = new ServiceResult { Succeeded = false };
-
-            bool isValid = Enum.TryParse(transferWindowStatus, out TransferWindowStatus status);
-
-            if (!isValid)
-            {
-                result.Error = string.Format(
-                    ExceptionConstants.InvalidEnumException,
-                    GlobalConstants.TransferWindowStatusName);
-                return result;
-            }
-
-            var currentMatchday = this.matchdaysRepository.All()
-                .First(x => x.MatchdayStatus == MatchdayStatus.Current);
-
-            if (currentMatchday == null)
-            {
-                result.Error = string.Format(
-                    ExceptionConstants.NotFoundException,
-                    GlobalConstants.MatchdayName);
-                return result;
-            }
-
-            currentMatchday.TransferWindowStatus = status;
-
-            await this.matchdaysRepository.SaveChangesAsync();
-
-            result.Succeeded = true;
             return result;
         }
     }

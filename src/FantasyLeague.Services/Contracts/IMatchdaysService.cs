@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FantasyLeague.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,11 +13,8 @@ namespace FantasyLeague.Services.Contracts
 
         int Count();
 
-        Task<IServiceResult> SetCurrentMatchday(int week);
-
-        Task<IServiceResult> SetTransferWindowStatus(
-            string transferWindowStatus);
-
+        Task<IServiceResult> SetCurrentMatchday(int week, TransferWindowStatus transferWindowStatus);
+        
         T GetCurrentMatchday<T>();
 
     }

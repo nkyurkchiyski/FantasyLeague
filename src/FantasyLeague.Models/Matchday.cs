@@ -13,9 +13,17 @@ namespace FantasyLeague.Models
         {
             this.Fixtures = new HashSet<Fixture>();
             this.Rosters = new HashSet<Roster>();
-
-            this.MatchdayStatus = MatchdayStatus.Upcoming;
             this.TransferWindowStatus = TransferWindowStatus.Closed;
+
+            if (this.Week == 1)
+            {
+                this.MatchdayStatus = MatchdayStatus.Current;
+            }
+            else
+            {
+                this.MatchdayStatus = MatchdayStatus.Upcoming;
+
+            }
         }
 
         [Required]

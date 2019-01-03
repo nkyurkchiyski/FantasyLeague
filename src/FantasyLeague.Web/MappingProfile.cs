@@ -6,8 +6,10 @@ using FantasyLeague.Models.Abstract;
 using FantasyLeague.ViewModels.Fixture;
 using FantasyLeague.ViewModels.Matchday;
 using FantasyLeague.ViewModels.Player;
+using FantasyLeague.ViewModels.Roster;
 using FantasyLeague.ViewModels.Score;
 using FantasyLeague.ViewModels.Team;
+using FantasyLeague.ViewModels.User;
 
 namespace FantasyLeague.Web
 {
@@ -15,11 +17,31 @@ namespace FantasyLeague.Web
     {
         public MappingProfile()
         {
+            this.CreateRosterMappings();
             this.CreateScoreMappings();
             this.CreateMatchdayMappings();
             this.CreateFixtureMappings();
             this.CreatePlayerMappings();
             this.CreateTeamMappings();
+            this.CreateUserMappings();
+        }
+
+        private void CreateRosterMappings()
+        {
+            CreateMap<Roster, RosterViewModel>();
+
+            CreateMap<RosterPlayer, RosterPlayerViewModel>()
+                .ForMember(
+                    f => f.PlayerName,
+                    opt => opt.MapFrom(src => src.Player.Name))
+                .ForMember(
+                    f => f.PlayerImage,
+                    opt => opt.MapFrom(src => src.Player.PlayerImage.Url));
+        }
+
+        private void CreateUserMappings()
+        {
+            CreateMap<User, UserViewModel>();
         }
 
         private void CreateTeamMappings()
@@ -88,7 +110,7 @@ namespace FantasyLeague.Web
         private void CreateScoreMappings()
         {
             CreateMap<Score, ScoreViewModel>();
-
+            
             CreateMap<Score, ScorePlayerViewModel>()
                 .ForMember(
                     f => f.PlayerName,

@@ -64,6 +64,8 @@ namespace FantasyLeague.Web
 
             var cloudinary = new Cloudinary(account);
 
+            services.AddSingleton(new Cloudinary(account));
+
             //ExternalLogin Setup
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
@@ -82,6 +84,7 @@ namespace FantasyLeague.Web
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             //Services
+            services.AddScoped<IImagesService, ImagesService>();
             services.AddScoped<IPlayersService, PlayersService>();
             services.AddScoped<IRostersService, RostersService>();
             services.AddScoped<IUsersService, UsersService>();

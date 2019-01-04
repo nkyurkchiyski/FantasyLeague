@@ -6,6 +6,7 @@
         public const string Matchdays = "Matchdays";
         public const string Fixtures = "Fixtures";
         public const string Teams = "Teams";
+        public const string Players = "Players";
         public const string Leaderboard = "Leaderboard";
         public const string Roster = "Roster";
         public const string Register = "Register";

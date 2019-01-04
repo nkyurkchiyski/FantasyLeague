@@ -4,7 +4,7 @@ namespace FantasyLeague.Models.Abstract
 {
     public abstract class BaseEntity : IComparable<BaseEntity>
     {
-        public BaseEntity()
+        protected BaseEntity()
         {
             this.Id = Guid.NewGuid();
         }

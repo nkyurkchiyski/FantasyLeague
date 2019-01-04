@@ -21,10 +21,9 @@ namespace FantasyLeague.Services
 
         public ICollection<T> All<T>()
         {
-            var teams = this.teamsRepository.All();
+            var teams = this.teamsRepository.All().ToList();
 
-            var models = teams.Select(x => this.mapper.Map<T>(x))
-                .ToList();
+            var models = teams.Select(x => this.mapper.Map<T>(x)).ToList();
 
             return models;
         }

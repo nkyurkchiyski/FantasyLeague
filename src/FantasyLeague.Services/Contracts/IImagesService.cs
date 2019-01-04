@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
+﻿using CloudinaryDotNet.Actions;
+using FantasyLeague.Models;
+using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
 namespace FantasyLeague.Services.Contracts
@@ -8,6 +9,8 @@ namespace FantasyLeague.Services.Contracts
     {
         IImageUploadResult Upload(IFormFile file, string type);
 
-        Task<IServiceResult> Create(string type, Guid entityId, string publicId, string url);
+        Task<Image> Create(string type, string publicId, string url);
+
+        DelResResult Delete(string publicId);
     }
 }

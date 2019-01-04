@@ -3,6 +3,9 @@
     public static class ActionConstants
     {
         public const string Details = "Details";
+        public const string Create = "Create";
+        public const string Archive = "Archive";
+        public const string Restore = "Restore";
         public const string Edit = "Edit";
         public const string All = "All";
         public const string AddPlayerStats = "AddPlayerStats";

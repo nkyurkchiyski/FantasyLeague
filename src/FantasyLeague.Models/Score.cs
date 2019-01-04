@@ -53,32 +53,33 @@ namespace FantasyLeague.Models
         [Required]
         [Range(minimum: 0, maximum: ScoreConstants.MaxPlayedMinutesValue)]
         public int PlayedMinutes { get; set; }
-        
+
         public int GetScore()
         {
-            var position = this.Player.Position;
+            int position = (int)this.Player.Position;
 
             int result = 0;
 
-            //Attacking Stats
-            result += this.Goals * (int)position;
-            result += this.Assists * ((int)position - ScoreConstants.AssistParam);
-            result += this.Shots * ((int)position - ScoreConstants.ShotParam);
+            //Primary Stats
+            result += this.Goals * ScoreConstants.GoalParam;
+            result += this.Assists * (position - ScoreConstants.SecondaryParam);
+            result += this.Shots * (position - ScoreConstants.PrimaryParam);
 
             //Defensive stats
-            result += this.Tackles;
+            result += this.Tackles * (ScoreConstants.MaxPlayerPosition - position + ScoreConstants.SecondaryParam);
 
-            if ((int)position > (int)PlayerPosition.Midfielder)
+            if (this.CleanSheet)
             {
-                if (this.CleanSheet)
-                {
-                    result += ScoreConstants.CleanSheetParam;
-                }
-                else
-                {
-                    result -= this.GoalsConceded;
-                }
-                result += (int)position;
+                result += ScoreConstants.PrimaryParam;
+            }
+            else
+            {
+                result -= this.GoalsConceded;
+            }
+
+            if (position == (int)PlayerPosition.Goalkeeper)
+            {
+                result += position;
             }
 
             //Other stats
@@ -88,11 +89,11 @@ namespace FantasyLeague.Models
 
             if (IsWiner.HasValue)
             {
-                result += this.IsWiner.Value ? 1 : -2;
+                result += this.IsWiner.Value ? ScoreConstants.OutcomeBonus : -ScoreConstants.OutcomeBonus;
             }
 
             return result;
         }
-        
+
     }
 }

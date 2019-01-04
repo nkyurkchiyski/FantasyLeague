@@ -42,5 +42,7 @@
 
         public const string TemplatePlayerImagePublicId = "FantasyLeague/Players/default.png";
         public const string TemplatePlayerImageUrl = @"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png";
+
+        public const string PageIndex = "PageIndex";
     }
 }

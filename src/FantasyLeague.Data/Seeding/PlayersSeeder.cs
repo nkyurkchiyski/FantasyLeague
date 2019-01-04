@@ -15,7 +15,7 @@ namespace FantasyLeague.Data.Seeding
     public class PlayersSeeder : ISeeder
     {
         private const string TeamJsonPath = @"..\FantasyLeague.Common\Datasets\squads\{0}.json";
-        
+
         public void Seed(FantasyLeagueDbContext context, IServiceProvider serviceProvider)
         {
             if (!context.Players.Any())
@@ -44,21 +44,12 @@ namespace FantasyLeague.Data.Seeding
 
                 if (isValidPosition)
                 {
-                    var playerImage = new Image
-                    {
-                        ImageType = GlobalConstants.PlayerName,
-                        PublicId = GlobalConstants.TemplatePlayerImagePublicId,
-                        Url = GlobalConstants.TemplatePlayerImageUrl
-                    };
-
                     var player = new Player
                     {
                         TeamId = team.Id,
                         Name = pl.Name,
                         Nationality = pl.Nationality,
                         Position = position,
-                        PlayerImageId = playerImage.Id,
-                        PlayerImage = playerImage,
                         Price = random.Next(GlobalConstants.MinPlayerPrice, GlobalConstants.MaxPlayerPrice)
                     };
 

@@ -25,7 +25,6 @@
   <ItemGroup>
     <Folder Include="Areas\Club\Controllers\" />
     <Folder Include="Areas\Club\Views\" />
-    <Folder Include="Areas\Competition\Views\Shared\" />
     <Folder Include="Areas\Leaderboard\Controllers\" />
     <Folder Include="Areas\Leaderboard\Data\" />
     <Folder Include="Areas\Leaderboard\Models\" />

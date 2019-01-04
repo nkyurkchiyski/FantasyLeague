@@ -8,7 +8,6 @@ namespace FantasyLeague.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Player> builder)
         {
-            
         }
     }
 }

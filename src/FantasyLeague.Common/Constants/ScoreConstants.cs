@@ -3,9 +3,10 @@
     public static class ScoreConstants
     {
         public const int MaxPlayedMinutesValue = 90;
-        public const int CleanSheetParam = 3;
-        public const int AssistParam = 1;
-        public const int ShotParam = 3;
+        public const int PrimaryParam = 3;
+        public const int GoalParam = 4;
+        public const int AssistParam = 2;
+        public const int SecondaryParam = 1;
         public const int PlayedMinutesDivider = 30;
 
         public const int MaxFormations = 5;
@@ -14,7 +15,7 @@
         public const string Formation = "Formation";
         public const string DefaultFormation = "Formation352";
         public const int OutfieldPlayers = 10;
-        
+
         public const int PlayerPosParam = 3;
 
         public const int YellowCardChance = 10;
@@ -26,5 +27,10 @@
 
         public const int ScoreBonus = 2;
         public const int LoopCap = 3;
+
+        public const int OutcomeBonus = 2;
+
+        public const int MaxPlayerPosition = 7;
+
     }
 }

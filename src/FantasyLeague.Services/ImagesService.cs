@@ -25,10 +25,8 @@ namespace FantasyLeague.Services
             this.cloudinary = cloudinary;
         }
 
-        public async Task<IServiceResult> Create(string type, Guid entityId, string publicId, string url)
+        public async Task<Image> Create(string type, string publicId, string url)
         {
-            var result = new ServiceResult { Succeeded = false };
-
             var image = new Image
             {
                 Url = url,
@@ -36,28 +34,17 @@ namespace FantasyLeague.Services
                 PublicId = publicId
             };
 
-            if (type == GlobalConstants.PlayerName)
-            {
-                image.PlayerId = entityId;
-            }
-            else if (type == GlobalConstants.PlayerName)
-            {
-                image.TeamId = entityId;
-            }
-            else
-            {
-                result.Error = string.Format(
-                    ExceptionConstants.UnknownValueException,
-                    type, GlobalConstants.TypeName);
-                return result;
-            }
-
             this.imageRepository.Add(image);
             await this.imageRepository.SaveChangesAsync();
 
-            result.Succeeded = true;
-            return result;
+            return image;
 
+        }
+
+        public DelResResult Delete(string publicId)
+        {
+            var result = this.cloudinary.DeleteResources(publicId);
+            return result;
         }
 
         public IImageUploadResult Upload(IFormFile file, string type)
@@ -82,7 +69,7 @@ namespace FantasyLeague.Services
                 return null;
             }
 
-            ImageUploadResult uploadResult = null;
+            ImageUploadResult uploadResult = new ImageUploadResult();
 
             var result = this.cloudinary.Upload(uploadParams);
 

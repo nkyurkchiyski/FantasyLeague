@@ -9,6 +9,9 @@
     <Compile Remove="Migrations\20181230200739_ImageFix.cs" />
     <Compile Remove="Migrations\20181230202424_ImageFix.cs" />
     <Compile Remove="Migrations\20190102093746_Edited-Points.cs" />
+    <Compile Remove="Migrations\20190104101122_test.cs" />
+    <Compile Remove="Migrations\20190104105021_ImageRelationsFix.cs" />
+    <Compile Remove="Migrations\20190104185927_Test.cs" />
   </ItemGroup>
 
   <ItemGroup>

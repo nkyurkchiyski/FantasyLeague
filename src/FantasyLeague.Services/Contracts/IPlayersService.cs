@@ -20,6 +20,8 @@ namespace FantasyLeague.Services.Contracts
 
         Task<IServiceResult> Edit(PlayerDetailedViewModel model);
 
-        Task<IServiceResult> Delete(Guid playerId);
+        Task<IServiceResult> Archive(Guid playerId);
+
+        Task<IServiceResult> Restore(Guid playerId);
     }
 }

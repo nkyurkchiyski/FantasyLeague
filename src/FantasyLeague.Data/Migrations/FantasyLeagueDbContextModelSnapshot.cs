@@ -109,7 +109,7 @@ namespace FantasyLeague.Data.Migrations
                     b.Property<string>("Nationality")
                         .IsRequired();
 
-                    b.Property<Guid>("PlayerImageId");
+                    b.Property<Guid?>("PlayerImageId");
 
                     b.Property<int>("Position");
 
@@ -120,7 +120,8 @@ namespace FantasyLeague.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("PlayerImageId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[PlayerImageId] IS NOT NULL");
 
                     b.HasIndex("TeamId");
 
@@ -222,12 +223,13 @@ namespace FantasyLeague.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
-                    b.Property<Guid>("TeamImageId");
+                    b.Property<Guid?>("TeamImageId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TeamImageId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[TeamImageId] IS NOT NULL");
 
                     b.ToTable("Teams");
                 });

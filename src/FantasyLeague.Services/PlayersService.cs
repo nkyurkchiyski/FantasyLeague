@@ -46,68 +46,7 @@ namespace FantasyLeague.Services
             return models;
         }
 
-        public async Task<IServiceResult> Create(PlayerDetailedViewModel model)
-        {
-            var result = new ServiceResult { Succeeded = false };
-
-            var player = new Player
-            {
-                Name = model.Name,
-                TeamId = model.TeamId,
-                Price = model.Price,
-                Nationality = model.Nationality,
-                Position = model.Position
-            };
-
-            this.playerRepository.Add(player);
-
-            if (model.Image == null)
-            {
-                var createResult = await this.imagesService.Create(
-                      GlobalConstants.PlayerName,
-                      player.Id,
-                      GlobalConstants.TemplatePlayerImagePublicId,
-                      GlobalConstants.TemplatePlayerImageUrl);
-
-                if (!createResult.Succeeded)
-                {
-                    result.Error = createResult.Error;
-                    return result;
-                }
-
-            }
-            else
-            {
-                var uploadResult = this.imagesService.Upload(
-                    model.Image,
-                    GlobalConstants.PlayerName);
-
-                if (uploadResult == null)
-                {
-                    result.Error = ExceptionConstants.FailedUploadException;
-                    return result;
-                }
-
-                var createResult = await this.imagesService.Create(
-                      GlobalConstants.PlayerName,
-                      player.Id,
-                      GlobalConstants.TemplatePlayerImagePublicId,
-                      GlobalConstants.TemplatePlayerImageUrl);
-
-                if (!createResult.Succeeded)
-                {
-                    result.Error = createResult.Error;
-                    return result;
-                }
-            }
-
-            await this.playerRepository.SaveChangesAsync();
-
-            result.Succeeded = true;
-            return result;
-        }
-
-        public async Task<IServiceResult> Delete(Guid playerId)
+        public async Task<IServiceResult> Archive(Guid playerId)
         {
             var result = new ServiceResult { Succeeded = false };
 
@@ -123,8 +62,49 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            this.playerRepository.Delete(player);
+            player.Active = false;
             await this.playerRepository.SaveChangesAsync();
+
+            result.Succeeded = true;
+            return result;
+        }
+
+        public async Task<IServiceResult> Create(PlayerDetailedViewModel model)
+        {
+            var result = new ServiceResult { Succeeded = false };
+
+            var player = new Player
+            {
+                Name = model.Name,
+                TeamId = model.TeamId,
+                Price = model.Price,
+                Nationality = model.Nationality,
+                Position = model.Position
+            };
+
+            if (model.Image != null)
+            {
+                var uploadResult = this.imagesService.Upload(
+                    model.Image,
+                    GlobalConstants.PlayerName);
+
+                if (uploadResult == null)
+                {
+                    result.Error = ExceptionConstants.FailedUploadException;
+                    return result;
+                }
+
+                var image = await this.imagesService.Create(
+                      GlobalConstants.PlayerName,
+                      uploadResult.PublicId,
+                      uploadResult.Url);
+
+                player.PlayerImage = image;
+            }
+
+            this.playerRepository.Add(player);
+            await this.playerRepository.SaveChangesAsync();
+
 
             result.Succeeded = true;
             return result;
@@ -154,6 +134,11 @@ namespace FantasyLeague.Services
 
             if (model.Image != null)
             {
+                if (player.PlayerImage != null)
+                {
+                    this.imagesService.Delete(player.PlayerImage.PublicId);
+                }
+
                 var uploadResult = this.imagesService.Upload(
                     model.Image,
                     GlobalConstants.PlayerName);
@@ -164,17 +149,12 @@ namespace FantasyLeague.Services
                     return result;
                 }
 
-                var createResult = await this.imagesService.Create(
+                var image = await this.imagesService.Create(
                       GlobalConstants.PlayerName,
-                      player.Id,
-                      GlobalConstants.TemplatePlayerImagePublicId,
-                      GlobalConstants.TemplatePlayerImageUrl);
+                      uploadResult.PublicId,
+                      uploadResult.Url);
 
-                if (!createResult.Succeeded)
-                {
-                    result.Error = createResult.Error;
-                    return result;
-                }
+                player.PlayerImage = image;
             }
 
             await this.playerRepository.SaveChangesAsync();
@@ -191,6 +171,29 @@ namespace FantasyLeague.Services
             var model = this.mapper.Map<T>(player);
 
             return model;
+        }
+
+        public async Task<IServiceResult> Restore(Guid playerId)
+        {
+            var result = new ServiceResult { Succeeded = false };
+
+            var player = await this.playerRepository
+                .GetByIdAsync(playerId);
+
+            if (player == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.PlayerName);
+
+                return result;
+            }
+
+            player.Active = true;
+            await this.playerRepository.SaveChangesAsync();
+
+            result.Succeeded = true;
+            return result;
         }
     }
 }

@@ -1,0 +1,94 @@
+﻿@{
+    @model IList<PlayerStatsViewModel>
+
+    bool isAdmin = User.IsInRole(RoleConstants.AdminRoleName);
+    bool activePlayers = Model.FirstOrDefault(x => x.Active) != null;
+    var teamId = activePlayers ? Model.First().TeamId : Guid.NewGuid();
+}
+
+<table id="table_@teamId" class="table table-hover text-center">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>Position</th>
+            <th>Price</th>
+            <th>Goals</th>
+            <th>Assist</th>
+            <th>TP</th>
+            @if (isAdmin)
+            {
+                <th>Actions</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td><img class="mini-image" src="@Model[i].PlayerImage" /></td>
+                    <td>
+                        @Model[i].Name
+                    </td>
+                    <td>
+                        @Model[i].Nationality
+                    </td>
+                    <td>
+                        @Model[i].Position
+                    </td>
+                    <td>
+                        @Model[i].Price
+                    </td>
+                    <td>
+                        @Model[i].Goals
+                    </td>
+                    <td>
+                        @Model[i].Assists
+                    </td>
+                    <td>
+                        @Model[i].TotalPoints
+                    </td>
+                    @if (isAdmin)
+                    {
+                        <td>
+                            <div class="button-holder d-flex justify-content-around">
+                                @if (activePlayers)
+                                {
+                                    <a asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Edit" asp-route-id="@Model[i].Id" role="button" class="btn btn-primary">
+                                        <span class="oi oi-pencil"></span>
+                                    </a>
+                                    <a asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Archive" asp-route-playerId="@Model[i].Id" asp-route-teamId="@Model[i].TeamId" role="button" class="btn btn-outline-primary">
+                                        <span class="oi oi-minus"></span>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Restore" asp-route-playerId="@Model[i].Id" asp-route-teamId="@Model[i].TeamId" role="button" class="btn btn-outline-primary">
+                                        <span class="oi oi-plus"></span>
+                                    </a>
+                                }
+                            </div>
+                        </td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#table_@teamId').DataTable({
+            responsive: true
+        });
+    });
+</script>

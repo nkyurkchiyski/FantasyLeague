@@ -16,12 +16,9 @@ namespace FantasyLeague.Data.Configurations
             builder.HasOne(e => e.Player)
                    .WithOne(i => i.PlayerImage)
                    .HasForeignKey<Player>(e => e.PlayerImageId)
-                   .OnDelete(DeleteBehavior.Restrict); ;
+                   .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasDiscriminator<string>("ImageType");
-            
-
-
         }
     }
 }

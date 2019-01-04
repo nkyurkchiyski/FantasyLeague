@@ -1,16 +1,18 @@
 ﻿@{
     @model MatchdayViewModel
-    string visible = (User.IsInRole(RoleConstants.UserRoleName) &&
-                      Model.Status == Enum.GetName(typeof(MatchdayStatus), MatchdayStatus.Upcoming)) ?
-                      HtmlCssConstants.None : null;
+    bool isHidden = (User.IsInRole(RoleConstants.UserRoleName) &&
+                      Model.Status == Enum.GetName(typeof(MatchdayStatus), MatchdayStatus.Upcoming));
 }
 <div class="card text-center bundesliga-box-shadow">
     <div class="card-header bundesliga-bg-color">
         <h5 class="my-0 text-white">Matchday @Model.Week</h5>
     </div>
-    <div class="card-body">
+    <div class="py-3">
         <p class="card-text">@Model.StartDate.ToString(GlobalConstants.Date, CultureInfo.CreateSpecificCulture(GlobalConstants.DateTimeFormat)) ÷ @Model.EndDate.ToString(GlobalConstants.Date, CultureInfo.CreateSpecificCulture(GlobalConstants.DateTimeFormat))</p>
         <p class="card-text text-uppercase font-italic">@Model.Status</p>
-        <a asp-area="@ControllerConstants.RoundsAreaName" asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details" asp-route-id="@Model.Id" class="btn btn-outline-primary @visible">Details</a>
+        @if (!isHidden)
+        {
+            <a asp-area="@ControllerConstants.RoundsAreaName" asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details" asp-route-id="@Model.Id" class="btn btn-outline-primary">Details</a>
+        }
     </div>
 </div>

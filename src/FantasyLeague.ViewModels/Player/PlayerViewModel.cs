@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace FantasyLeague.ViewModels.Player
 {
@@ -8,6 +9,8 @@ namespace FantasyLeague.ViewModels.Player
 
         public Guid TeamId { get; set; }
 
+        [Required]
+        [DataType(DataType.Text)]
         public string Name { get; set; }
     }
 }

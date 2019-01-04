@@ -66,6 +66,8 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#table_@Model.First().TeamId').DataTable();
+        $('#table_@Model.First().TeamId').DataTable({
+            responsive: true
+        });
     });
 </script>

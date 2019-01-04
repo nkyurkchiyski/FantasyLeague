@@ -1,5 +1,61 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    @model PlayerDetailedViewModel
+    ViewData["Title"] = $"{ActionConstants.Edit} {GlobalConstants.PlayerName}";
+    ViewData["ActivePage"] = PagesConstants.Teams;
+    var selectListTeam = (List<SelectListItem>)ViewData[PagesConstants.Teams];
+    var selectListPoition = new SelectList(Enum.GetNames(typeof(PlayerPosition)));
 }
+
+<h1>@ActionConstants.Edit @Model.Name</h1>
+@{
+    <a asp-controller="@PagesConstants.Teams" asp-action="@ActionConstants.Details" asp-route-id="@Model.TeamId" class="btn btn-outline-primary"><span class="oi oi-share-boxed flip-icon"></span></a>
+}
+<hr>
+<form class="w-80" asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Edit" method="post" enctype="multipart/form-data">
+    <h4>General information</h4>
+    <hr />
+    <div class="row">
+        <div class="col form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="col form-group">
+            <label asp-for="Nationality"></label>
+            <input class="form-control" asp-for="Nationality" />
+            <span asp-validation-for="Nationality" class="text-danger"></span>
+        </div>
+    </div>
+    <h4>Team information</h4>
+    <hr />
+    <div class="row">
+        <div class="col form-group">
+            <label asp-for="Position"></label>
+            <select class="form-control" asp-for="Position" asp-items="selectListPoition">
+            </select>
+            <span asp-validation-for="Position" class="text-danger"></span>
+        </div>
+        <div class="col form-group">
+            <label>Team:</label>
+            <select class="form-control" asp-for="TeamId" asp-items="selectListTeam">
+            </select>
+            <span asp-validation-for="TeamId" class="text-danger"></span>
+        </div>
+    </div>
+    <h4>Other</h4>
+    <hr />
+    <div class="row">
+        <div class="col form-group">
+            <label asp-for="Image"></label>
+            <input type="file" class="form-control-file" asp-for="Image" />
+        </div>
+        <div class="col form-group">
+            <label asp-for="Price"></label>
+            <input class="form-control" asp-for="Price" step="0.01" min="1" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="button-holder d-flex justify-content-center my-5">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
+</form>

@@ -1,0 +1,15 @@
+﻿@{
+    @model TeamImageViewModel
+
+}
+<div class="card text-center bundesliga-box-shadow">
+    <div class="card-header bundesliga-bg-color">
+        <h5 class="my-0 text-white">@Model.Name</h5>
+    </div>
+    <div class="py-3">
+        <div>
+            <img class="card-img img-fluid img-badge" src="@Model.TeamImage">
+        </div>
+        <a asp-area="@ControllerConstants.CompetitionAreaName" asp-controller="@PagesConstants.Teams" asp-action="@ActionConstants.Details" asp-route-id="@Model.Id" class="btn btn-outline-primary mt-3">Details</a>
+    </div>
+</div>

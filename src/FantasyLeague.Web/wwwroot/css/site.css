@@ -354,6 +354,13 @@ html {
     background-size: cover;
 }
 
+.img-badge {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    max-width: 150px;
+    height: auto;
+}
+
 @media (max-width: 740px) {
     .pitch {
         height: 500px;

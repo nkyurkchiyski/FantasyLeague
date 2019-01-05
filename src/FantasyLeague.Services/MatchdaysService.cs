@@ -61,21 +61,11 @@ namespace FantasyLeague.Services
             return model;
         }
 
-        public async Task<IServiceResult> SetCurrentMatchday(int week, TransferWindowStatus transferWindowStatus)
+        public async Task<Matchday> SetCurrentMatchday(int week, TransferWindowStatus transferWindowStatus)
         {
-            var result = new ServiceResult { Succeeded = false };
-
             var matchdays = this.matchdaysRepository.All();
 
             var currentMatchday = matchdays.First(x => x.Week == week);
-
-            if (currentMatchday == null)
-            {
-                result.Error = string.Format(
-                    ExceptionConstants.NotFoundException,
-                    GlobalConstants.MatchdayName);
-                return result;
-            }
 
             currentMatchday.MatchdayStatus = MatchdayStatus.Current;
             currentMatchday.TransferWindowStatus = transferWindowStatus;
@@ -93,13 +83,10 @@ namespace FantasyLeague.Services
                     m.TransferWindowStatus = TransferWindowStatus.Closed;
                 }
             }
-
+            
             await this.matchdaysRepository.SaveChangesAsync();
-
-            result.Succeeded = true;
-
-            return result;
+            
+            return currentMatchday;
         }
-        
     }
 }

@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Transfer\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FantasyLeague.Common\FantasyLeague.Common.csproj" />
     <ProjectReference Include="..\FantasyLeague.Models\FantasyLeague.Models.csproj" />
   </ItemGroup>

@@ -11,6 +11,6 @@ namespace FantasyLeague.Services.Contracts
 
         Task<Image> Create(string type, string publicId, string url);
 
-        DelResResult Delete(string publicId);
+        DelResResult Delete(Image image);
     }
 }

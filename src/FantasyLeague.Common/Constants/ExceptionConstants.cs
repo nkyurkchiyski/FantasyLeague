@@ -20,5 +20,7 @@
 
         public const string UnknownValueException = "{0} is not recognised as valid {1}.";
 
+        public const string InvalidRosterException = "Invalid Roster information.";
+
     }
 }

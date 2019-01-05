@@ -33,8 +33,6 @@ namespace FantasyLeague.Data
 
         public DbSet<Team> Teams { get; set; }
 
-        public DbSet<Transfer> Transfers { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder

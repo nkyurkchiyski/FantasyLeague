@@ -41,9 +41,11 @@ namespace FantasyLeague.Services
 
         }
 
-        public DelResResult Delete(string publicId)
+        public DelResResult Delete(Image image)
         {
-            var result = this.cloudinary.DeleteResources(publicId);
+            var result = this.cloudinary.DeleteResources(image.PublicId);
+            this.imageRepository.Delete(image);
+
             return result;
         }
 

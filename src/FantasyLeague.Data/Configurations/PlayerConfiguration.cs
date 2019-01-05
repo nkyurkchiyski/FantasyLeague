@@ -8,6 +8,9 @@ namespace FantasyLeague.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Player> builder)
         {
+            builder.HasOne(e => e.Image)
+                  .WithOne(i => i.Player)
+                  .HasForeignKey<Image>(e => e.PlayerId);
         }
     }
 }

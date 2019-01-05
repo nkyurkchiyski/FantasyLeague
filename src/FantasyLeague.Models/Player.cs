@@ -14,7 +14,6 @@ namespace FantasyLeague.Models
         {
             this.Rosters = new HashSet<RosterPlayer>();
             this.Scores = new HashSet<Score>();
-            this.Transfers = new HashSet<Transfer>();
             this.Active = true;
             this.Price = 0;
         }
@@ -35,13 +34,12 @@ namespace FantasyLeague.Models
         public Guid TeamId { get; set; }
         public virtual Team Team { get; set; }
 
-        public Guid? PlayerImageId { get; set; }
-        public virtual Image PlayerImage { get; set; }
+        public Guid? ImageId { get; set; }
+        public virtual Image Image { get; set; }
 
         public bool Active { get; set; }
 
         public virtual ICollection<RosterPlayer> Rosters { get; set; }
-        public virtual ICollection<Transfer> Transfers { get; set; }
         public virtual ICollection<Score> Scores { get; set; }
     }
 }

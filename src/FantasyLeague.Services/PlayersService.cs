@@ -27,7 +27,7 @@ namespace FantasyLeague.Services
 
         public ICollection<T> All<T>()
         {
-            var players = this.playerRepository.All();
+            var players = this.playerRepository.All().ToList();
 
             var models = players.Select(x => this.mapper.Map<T>(x))
                 .ToList();
@@ -99,7 +99,7 @@ namespace FantasyLeague.Services
                       uploadResult.PublicId,
                       uploadResult.Url);
 
-                player.PlayerImage = image;
+                player.Image = image;
             }
 
             this.playerRepository.Add(player);
@@ -134,9 +134,9 @@ namespace FantasyLeague.Services
 
             if (model.Image != null)
             {
-                if (player.PlayerImage != null)
+                if (player.Image != null)
                 {
-                    this.imagesService.Delete(player.PlayerImage.PublicId);
+                    this.imagesService.Delete(player.Image);
                 }
 
                 var uploadResult = this.imagesService.Upload(
@@ -154,7 +154,7 @@ namespace FantasyLeague.Services
                       uploadResult.PublicId,
                       uploadResult.Url);
 
-                player.PlayerImage = image;
+                player.Image = image;
             }
 
             await this.playerRepository.SaveChangesAsync();

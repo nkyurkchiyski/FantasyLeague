@@ -11,7 +11,10 @@ namespace FantasyLeague.Data.Configurations
             builder.Property(e => e.Initials)
                    .IsRequired()
                    .HasColumnType("NCHAR(3)");
-            
+
+            builder.HasOne(e => e.Image)
+                   .WithOne(i => i.Team)
+                   .HasForeignKey<Image>(e => e.TeamId);
         }
     }
 }

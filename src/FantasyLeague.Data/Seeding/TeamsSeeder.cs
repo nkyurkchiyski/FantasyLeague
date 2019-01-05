@@ -42,8 +42,8 @@ namespace FantasyLeague.Data.Seeding
                 {
                     Name = item.Name,
                     Initials = item.Initials,
-                    TeamImageId = teamImage.Id,
-                    TeamImage = teamImage
+                    ImageId = teamImage.Id,
+                    Image = teamImage
                 };
                 teams.Add(team);
             }

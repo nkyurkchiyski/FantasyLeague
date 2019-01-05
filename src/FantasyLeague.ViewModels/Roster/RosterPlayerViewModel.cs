@@ -5,16 +5,14 @@ namespace FantasyLeague.ViewModels.Roster
 {
     public class RosterPlayerViewModel
     {
-        public Guid PlayerId { get; set; }
+        public Guid Id { get; set; }
 
-        public string PlayerName { get; set; }
+        public string Name { get; set; }
 
-        public string PlayerImage { get; set; }
+        public string Image { get; set; }
 
-        public ScoreViewModel Score { get; set; }
-
-        public int Points { get; set; }
-
+        public int CurrentPoints { get; set; }
+        
         public bool IsSub { get; set; }
     }
 }

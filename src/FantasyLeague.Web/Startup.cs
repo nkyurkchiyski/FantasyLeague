@@ -86,11 +86,11 @@ namespace FantasyLeague.Web
             //Services
             services.AddScoped<IImagesService, ImagesService>();
             services.AddScoped<IPlayersService, PlayersService>();
-            services.AddScoped<IRostersService, RostersService>();
             services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<ITeamsService, TeamsService>();
             services.AddScoped<IFixturesService, FixturesService>();
             services.AddScoped<IMatchdaysService, MatchdaysService>();
+            services.AddScoped<IRostersService, RostersService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

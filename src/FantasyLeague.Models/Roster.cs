@@ -14,7 +14,6 @@ namespace FantasyLeague.Models
         public Roster()
         {
             this.Players = new HashSet<RosterPlayer>();
-            this.Transfers = new HashSet<Transfer>();
             this.Budget = GlobalConstants.Budget;
         }
 
@@ -31,7 +30,6 @@ namespace FantasyLeague.Models
         public virtual Matchday Matchday { get; set; }
 
         public virtual ICollection<RosterPlayer> Players { get; set; }
-        public virtual ICollection<Transfer> Transfers { get; set; }
         
         public int Points => this.Players
             .Where(x => !x.IsSub)
@@ -40,7 +38,6 @@ namespace FantasyLeague.Models
                        .GetScore());
 
         [NotMapped]
-        public bool IsValid => this.Players.Count == GlobalConstants.RosterSize &&
-                               this.Transfers.Count<= GlobalConstants.MaxTransfers;
+        public bool IsValid => this.Players.Count == GlobalConstants.RosterSize;
     }
 }

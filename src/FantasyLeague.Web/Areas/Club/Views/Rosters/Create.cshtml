@@ -1,0 +1,96 @@
+﻿@{
+    @model List<PlayerStatsViewModel>
+    ViewData["Title"] = $"{ActionConstants.Create} {PagesConstants.Roster}";
+    ViewData["ActivePage"] = PagesConstants.Roster;
+}
+
+<h1>Create</h1>
+
+<partial name="~/Areas/Club/Views/Shared/_PlayersPartial.cshtml" model="@Model" />
+
+<form class="my-4">
+    <div>
+        <h2>Roster</h2>
+        <h4 class="m-0">
+            Budget <span id="budget">@GlobalConstants.Budget</span>M
+        </h4>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Keepers: <span id="gks_count">2</span></h3>
+            <div id="gks">
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h3>Defenders: <span id="dfs_count">5</span></h3>
+            <div id="dfs">
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h3>Midfielders: <span id="mfs_count">5</span></h3>
+            <div id="mfs">
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h3>Attackers: <span id="ats_count">3</span></h3>
+            <div id="ats">
+
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-4">Create</button>
+</form>
+<script>
+    function valid() {
+        var gksCount = parseInt(document.getElementById('gks_count').innerHTML);
+        var dfsCount = parseInt(document.getElementById('dfs_count').innerHTML);
+        var mfsCount = parseInt(document.getElementById('mfs_count').innerHTML);
+        var atsCount = parseInt(document.getElementById('ats_count').innerHTML);
+
+        var allPlayersLeft = gksCount + dfsCount + mfsCount + atsCount;
+
+        var budgetLeft = parseFloat(document.getElementById('budget').innerHTML);
+
+        console.log(budgetLeft);
+        console.log(allPlayersLeft);
+
+        if (budgetLeft < 0) {
+            alert("You are over budget!");
+            return false;
+        }
+
+        if (allPlayersLeft != 0) {
+            alert("You have to select @GlobalConstants.RosterSize players!");
+            return false;
+        }
+        return true;
+    }
+
+    $("form").submit(function (event) {
+        event.preventDefault();
+    
+        if (valid())  {
+            var idsTemp = document.getElementsByClassName("@HtmlCssConstants.None ids")
+            var players = [];
+            for (var i = 0; i < idsTemp.length; i++) {
+                players.push(idsTemp[i].innerHTML);
+            }
+            var jsonData = JSON.stringify(players);
+
+            $.ajax({
+                method: 'POST',
+                url: '/Club/Rosters/Create',
+                data: jsonData,
+                contentType: 'application/json',
+                success: function () {
+                    window.location = "/";
+                }
+            });
+        }
+
+    });
+</script>

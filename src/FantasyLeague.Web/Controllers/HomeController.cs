@@ -64,8 +64,11 @@ namespace FantasyLeague.Web.Controllers
         [Authorize(Roles = RoleConstants.AdminRoleName)]
         public async Task<IActionResult> SetCurrentMatchday(IndexViewModel model)
         {
-            var result = await this.matchdaysService
+            var matchday = await this.matchdaysService
                 .SetCurrentMatchday(model.MarchdayWeek, model.TransferWindowStatus);
+
+            var result = await this.rostersService
+                .SetCurrentRosters(matchday.Id);
 
             if (!result.Succeeded)
             {

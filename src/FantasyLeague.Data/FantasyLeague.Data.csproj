@@ -12,6 +12,7 @@
     <Compile Remove="Migrations\20190104101122_test.cs" />
     <Compile Remove="Migrations\20190104105021_ImageRelationsFix.cs" />
     <Compile Remove="Migrations\20190104185927_Test.cs" />
+    <Compile Remove="Migrations\20190104210233_ImagePropertiesRename.cs" />
   </ItemGroup>
 
   <ItemGroup>

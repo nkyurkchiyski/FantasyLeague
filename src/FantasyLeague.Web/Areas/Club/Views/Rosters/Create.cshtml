@@ -1,10 +1,14 @@
 ﻿@{
     @model List<PlayerStatsViewModel>
-    ViewData["Title"] = $"{ActionConstants.Create} {PagesConstants.Roster}";
-    ViewData["ActivePage"] = PagesConstants.Roster;
+    ViewData["Title"] = $"{ActionConstants.Create} {PagesConstants.Rosters}";
+    ViewData["ActivePage"] = PagesConstants.Rosters;
 }
 
-<h1>Create</h1>
+<h1>@ActionConstants.Create New @PagesConstants.Rosters</h1>
+<a asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Index" class="btn btn-outline-primary">
+    <span class="oi oi-arrow-left"></span>
+</a>
+<hr />
 
 <partial name="~/Areas/Club/Views/Shared/_PlayersPartial.cshtml" model="@Model" />
 
@@ -42,7 +46,9 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary mt-4">Create</button>
+    <div class="button-holder d-flex justify-content-center my-5">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
 </form>
 <script>
     function valid() {
@@ -72,7 +78,7 @@
 
     $("form").submit(function (event) {
         event.preventDefault();
-    
+
         if (valid())  {
             var idsTemp = document.getElementsByClassName("@HtmlCssConstants.None ids")
             var players = [];
@@ -87,6 +93,9 @@
                 data: jsonData,
                 contentType: 'application/json',
                 success: function () {
+                    window.location = "/Club/Rosters/Index";
+                },
+                error: function () {
                     window.location = "/";
                 }
             });

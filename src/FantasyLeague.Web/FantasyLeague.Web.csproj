@@ -23,7 +23,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Areas\Club\Views\Transfers\" />
     <Folder Include="Areas\Leaderboard\Controllers\" />
     <Folder Include="Areas\Leaderboard\Data\" />
     <Folder Include="Areas\Leaderboard\Models\" />

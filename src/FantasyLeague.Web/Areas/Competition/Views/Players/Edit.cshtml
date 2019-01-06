@@ -8,7 +8,7 @@
 
 <h1>@ActionConstants.Edit @Model.Name</h1>
 @{
-    <a asp-controller="@PagesConstants.Teams" asp-action="@ActionConstants.Details" asp-route-id="@Model.TeamId" class="btn btn-outline-primary"><span class="oi oi-share-boxed flip-icon"></span></a>
+    <a asp-controller="@PagesConstants.Teams" asp-action="@ActionConstants.Details" asp-route-id="@Model.TeamId" class="btn btn-outline-primary"><span class="oi oi-arrow-left"></span></a>
 }
 <hr>
 <form class="w-80" asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Edit" method="post" enctype="multipart/form-data">
@@ -56,6 +56,6 @@
         </div>
     </div>
     <div class="button-holder d-flex justify-content-center my-5">
-        <button type="submit" class="btn btn-primary">Edit</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </div>
 </form>

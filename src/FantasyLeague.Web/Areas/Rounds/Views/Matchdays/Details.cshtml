@@ -21,7 +21,7 @@
 <div class="button-holder d-flex justify-content-start">
     <div>
         @{
-            <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.All" class="btn btn-outline-primary"><span class="oi oi-share-boxed flip-icon"></span></a>
+            <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.All" class="btn btn-outline-primary"><span class="oi oi-arrow-left"></span></a>
             if (User.IsInRole(RoleConstants.AdminRoleName))
             {
                 <a asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Edit" asp-route-id="@Model.Id" class="btn btn-primary"><span class="oi oi-pencil"></span></a>

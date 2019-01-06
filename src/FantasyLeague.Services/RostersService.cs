@@ -14,6 +14,7 @@ namespace FantasyLeague.Services
 {
     public class RostersService : BaseService, IRostersService
     {
+        private readonly IRepository<RosterPlayer> rosterPlayerRepository;
         private readonly IRepository<Roster> rosterRepository;
         private readonly IRepository<Score> scoreRepository;
         private readonly IRepository<Player> playerRepository;
@@ -25,6 +26,7 @@ namespace FantasyLeague.Services
             IRepository<Score> scoreRepository,
             IRepository<Player> playerRepository,
             IRepository<User> userRepository,
+            IRepository<RosterPlayer> rosterPlayerRepository,
             IMatchdaysService matchdaysService,
             IMapper mapper) : base(mapper)
         {
@@ -33,6 +35,7 @@ namespace FantasyLeague.Services
             this.playerRepository = playerRepository;
             this.userRepository = userRepository;
             this.matchdaysService = matchdaysService;
+            this.rosterPlayerRepository = rosterPlayerRepository;
         }
 
         public async Task<IServiceResult> Create(string username, string[] playerIds)
@@ -57,6 +60,12 @@ namespace FantasyLeague.Services
                     RoleConstants.UserRoleName);
 
                 return result;
+            }
+
+            var previousRoster = user.Rosters.FirstOrDefault(x => x.MatchdayId == matchday.Id);
+            if (previousRoster != null)
+            {
+                user.Rosters.Remove(previousRoster);
             }
 
             var players = new List<RosterPlayer>();
@@ -101,9 +110,52 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        public Task<IServiceResult> Edit(Guid rosterId, ICollection<RosterPlayerViewModel> players)
+        public async Task<IServiceResult> Edit(ICollection<RosterPlayerViewModel> players)
         {
-            throw new NotImplementedException();
+            var result = new ServiceResult { Succeeded = false };
+
+            foreach (var rp in players)
+            {
+                var rosterPlayer = await this.rosterPlayerRepository
+                    .GetByIdAsync(rp.Id);
+
+                if (rosterPlayer == null)
+                {
+                    result.Error = string.Format(
+                        ExceptionConstants.NotFoundException,
+                        GlobalConstants.PlayerName);
+                    return result;
+                }
+                rosterPlayer.Selected = rp.Selected;
+            }
+
+            await this.rosterPlayerRepository.SaveChangesAsync();
+
+            result.Succeeded = true;
+            return result;
+        }
+
+        public async Task<IServiceResult> SetNewFormation(Formation formation, Guid rosterId)
+        {
+            var result = new ServiceResult { Succeeded = false };
+
+            var roster = await this.rosterRepository
+                .GetByIdAsync(rosterId);
+
+            if (roster == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.RosterName);
+                return result;
+            }
+
+            roster.Formation = formation;
+
+            await this.rosterPlayerRepository.SaveChangesAsync();
+
+            result.Succeeded = true;
+            return result;
         }
 
         public ICollection<RosterViewModel> GetAllUserRosters(string username)
@@ -122,15 +174,18 @@ namespace FantasyLeague.Services
                     {
                         var playerScore = this.scoreRepository.All()
                                         .FirstOrDefault(x => x.Fixture.MatchdayId == rosterVM.Matchday.Id &&
-                                                             x.PlayerId == playerVM.Id);
+                                                             x.PlayerId == playerVM.PlayerId);
 
                         if (playerScore != null)
                         {
                             playerVM.CurrentPoints = playerScore.GetScore();
+
+                            if (playerVM.Selected)
+                            {
+                                rosterVM.Points += playerVM.CurrentPoints;
+                            }
                         }
                     }
-
-                    rosterVM.Points = rosterVM.Players.Sum(x => x.CurrentPoints);
                 }
 
             }
@@ -151,16 +206,21 @@ namespace FantasyLeague.Services
                 {
                     var playerScore = this.scoreRepository.All()
                                         .FirstOrDefault(x => x.Fixture.MatchdayId == matchdayId &&
-                                                             x.PlayerId == playerVM.Id);
+                                                             x.PlayerId == playerVM.PlayerId);
 
                     if (playerScore != null)
                     {
                         playerVM.CurrentPoints = playerScore.GetScore();
+
+                        if (playerVM.Selected)
+                        {
+                            model.Points += playerVM.CurrentPoints;
+                        }
                     }
                 }
 
-                model.Points = model.Players.Sum(x => x.CurrentPoints);
             }
+
 
             return model;
         }
@@ -195,7 +255,7 @@ namespace FantasyLeague.Services
 
                     foreach (var player in lastRoster.Players)
                     {
-                        roster.Players.Add(new RosterPlayer { PlayerId = player.PlayerId });
+                        roster.Players.Add(new RosterPlayer { PlayerId = player.PlayerId, Selected = player.Selected });
                     }
 
                     rosters.Add(roster);

@@ -14,100 +14,7 @@
     <hr />
     <div class="row">
         <div class="col-md-8 dashboard-item">
-            <div class="card bundesliga-box-shadow mb-3">
-                <h5 class="card-header bundesliga-bg-color text-white">Current Roster</h5>
-                <div class="pitch card-body">
-                    <div class="mt-4 text-center lineup">
-                        <div class="d-flex justify-content-around mb-2">
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-around mb-2">
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-1"><small>10 points</small></p>
-                                </div>
-                            </div>
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-around mb-2">
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-around mb-2">
-                            <div class="card text-center p-2">
-                                <h5>Player</h5>
-                                <div class="p-1">
-                                    <img class="player-image" src="https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png" alt="Card image cap">
-                                    <p class="m-0"><small>10 points</small></p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
+            <partial name="~/Areas/Club/Views/Shared/_RosterPartial.cshtml" model="@Model.User.Roster" />
         </div>
         <div class="col-md-4 dashboard-item">
             <div class="card bundesliga-box-shadow mb-3">
@@ -135,7 +42,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     if (User.IsInRole(RoleConstants.AdminRoleName))

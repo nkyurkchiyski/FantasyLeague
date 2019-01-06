@@ -44,5 +44,8 @@
         public const string TemplatePlayerImageUrl = @"https://res.cloudinary.com/nkyurkchiyski/image/upload/v1545754511/FantasyLeague/Players/default.png";
 
         public const string PageIndex = "PageIndex";
+
+        public const int LineupSize = 11;
+
     }
 }

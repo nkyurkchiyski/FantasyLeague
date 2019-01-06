@@ -8,7 +8,7 @@ namespace FantasyLeague.Models
     {
         public RosterPlayer()
         {
-            this.IsSub = true;
+            this.Selected = false;
         }
 
         [Required]
@@ -19,6 +19,6 @@ namespace FantasyLeague.Models
         public Guid RosterId { get; set; }
         public virtual Roster Roster { get; set; }
 
-        public bool IsSub { get; set; }
+        public bool Selected { get; set; }
     }
 }

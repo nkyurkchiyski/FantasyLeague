@@ -48,7 +48,9 @@ namespace FantasyLeague.Web.Controllers
                 .GetCurrentUserRoster(User.Identity.Name, currentMatchday.Id);
 
             var allRosters = this.rostersService
-                .GetAllUserRosters(User.Identity.Name);
+                .GetAllUserRosters(User.Identity.Name)
+                .Where(x => x.Matchday.Week <= currentMatchday.Week)
+                .ToList();
 
             if (currentRoster != null && allRosters != null)
             {

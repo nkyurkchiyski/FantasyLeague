@@ -1,7 +1,185 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Edit";
+    @model EditRosterViewModel
+    ViewData["Title"] = ActionConstants.Edit + " " + GlobalConstants.RosterName;
+    ViewData["ActivePage"] = PagesConstants.Rosters;
+
+    var formation = Enum.GetName(typeof(Formation), Model.Formation).Replace(ScoreConstants.Formation, "").ToString();
+    var formationArr = formation.ToCharArray().Select(x => int.Parse(x.ToString())).ToArray();
+
+    var gksCount = 1;
+    var dfsCount = formationArr[0];
+    var mfsCount = formationArr[1];
+    var atsCount = formationArr[2];
 }
 
-<h1>Edit</h1>
+<h1 class="my-2">
+    @ActionConstants.Edit @GlobalConstants.RosterName
+</h1>
+<h5>
+    Formation: @formation
+</h5>
+<a asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Index" class="btn btn-primary">
+    <span class="oi oi-arrow-left"></span>
+</a>
+<hr />
+<form asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Edit">
+    <input asp-for="@Model.Formation" hidden />
+    <div class="card bundesliga-box-shadow mb-3">
+        <h5 class="card-header bundesliga-bg-color text-white">Attacker</h5>
+        <div class="card-body">
+            <div class="d-flex justify-content-around mb-2">
+                @for (int i = 0; i < Model.Attackers.Count; i++)
+                {
+                    <div class="card text-center bundesliga-box-shadow pt-3 pb-3 px-4">
+                        <div>
+                            <h6>@Model.Attackers[i].Name</h6>
+                            <div class="p-1">
+                                <img class="player-lg-image" src="@Model.Attackers[i].Image" alt="Card image cap">
+                                <div class="d-flex justify-content-center">
+                                    <input asp-for="@Model.Attackers[i].RosterId" hidden />
+                                    <input asp-for="@Model.Attackers[i].Id" hidden />
+                                    <div class="custom-checkbox pt-2">
+                                        <input class="@Model.Attackers[i].Position" type="checkbox" asp-for="@(Model.Attackers[i].Selected)" />
+                                    </div>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="card bundesliga-box-shadow mb-3">
+        <h5 class="card-header bundesliga-bg-color text-white">Midfielders</h5>
+        <div class="card-body">
+            <div class="d-flex justify-content-around mb-2">
+                @for (int i = 0; i < Model.Midfielders.Count; i++)
+                {
+                    <div class="card text-center bundesliga-box-shadow pt-3 pb-3 px-4">
+                        <div>
+                            <h6>@Model.Midfielders[i].Name</h6>
+                            <div class="p-1">
+                                <img class="player-lg-image" src="@Model.Midfielders[i].Image" alt="Card image cap">
+                                <div class="d-flex justify-content-center">
+                                    <input asp-for="@Model.Midfielders[i].Id" hidden />
+                                    <div class="custom-checkbox pt-2">
+                                        <input class="@Model.Midfielders[i].Position" type="checkbox" asp-for="@(Model.Midfielders[i].Selected)" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="card bundesliga-box-shadow mb-3">
+        <h5 class="card-header bundesliga-bg-color text-white">Defenders</h5>
+        <div class="card-body">
+            <div class="d-flex justify-content-around mb-2">
+                @for (int i = 0; i < Model.Defenders.Count; i++)
+                {
+                    <div class="card text-center bundesliga-box-shadow pt-3 pb-3 px-4">
+                        <div>
+                            <h6>@Model.Defenders[i].Name</h6>
+                            <div class="p-1">
+                                <img class="player-lg-image" src="@Model.Defenders[i].Image" alt="Card image cap">
+                                <div class="d-flex justify-content-center">
+                                    <input asp-for="@Model.Defenders[i].Id" hidden />
+                                    <div class="custom-checkbox pt-2">
+                                        <input class="@Model.Defenders[i].Position" type="checkbox" asp-for="@(Model.Defenders[i].Selected)" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="card bundesliga-box-shadow mb-3">
+        <h5 class="card-header bundesliga-bg-color text-white">Goalkeepers</h5>
+        <div class="card-body">
+            <div class="d-flex justify-content-around mb-2">
+                @for (int i = 0; i < Model.Goalkeepers.Count; i++)
+                {
+                    <div class="card text-center bundesliga-box-shadow pt-3 pb-3 px-4">
+                        <div>
+                            <h6>@Model.Goalkeepers[i].Name</h6>
+                            <div class="p-1">
+                                <img class="player-lg-image" src="@Model.Goalkeepers[i].Image" alt="Card image cap">
+                                <div class="d-flex justify-content-center">
+                                    <input asp-for="@Model.Goalkeepers[i].Id" hidden />
+                                    <div class="custom-checkbox pt-2">
+                                        <input class="@Model.Goalkeepers[i].Position" type="checkbox" asp-for="@(Model.Goalkeepers[i].Selected)" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </div>
+</form>
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script>
+    function uncheckAll() {
+        var w = document.getElementsByTagName('input');
+        for (var i = 0; i < w.length; i++) {
+            if (w[i].type == 'checkbox') {
+                w[i].checked = false;
+            }
+        }
+    }
+
+    uncheckAll();
+
+    function positionCheckboxes(position, maxPlayers) {
+        $("input." + position).change(function () {
+            var max = maxPlayers;
+            if ($("input." + position+":checked").length == max) {
+                $("input." + position).attr('disabled', 'disabled');
+                $("input." + position+":checked").removeAttr('disabled');
+            } else {
+                $("input." + position).removeAttr('disabled');
+            }
+        })
+    }
+
+    function validPlayersCount() {
+        var attackers = $("input.@PlayerPosition.Attacker:checked").length;
+        var midfielders = $("input.@PlayerPosition.Midfielder:checked").length;
+        var defenders = $("input.@PlayerPosition.Defender:checked").length;
+        var keepers = $("input.@PlayerPosition.Goalkeeper:checked").length;
+
+        if (@GlobalConstants.LineupSize == attackers + midfielders + defenders + keepers) {
+            return true;
+        }
+        alert("You have to select @GlobalConstants.LineupSize players!");
+        return false;
+    }
+
+    positionCheckboxes("@PlayerPosition.Attacker",@atsCount);
+    positionCheckboxes("@PlayerPosition.Midfielder",@mfsCount);
+    positionCheckboxes("@PlayerPosition.Defender",@dfsCount);
+    positionCheckboxes("@PlayerPosition.Goalkeeper",@gksCount);
+
+    $("form").submit(function (event) {
+        if (!validPlayersCount()) {
+            event.preventDefault();
+        }
+    });
+
+</script>

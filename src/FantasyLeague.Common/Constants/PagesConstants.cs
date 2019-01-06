@@ -8,7 +8,7 @@
         public const string Teams = "Teams";
         public const string Players = "Players";
         public const string Leaderboard = "Leaderboard";
-        public const string Roster = "Roster";
+        public const string Rosters = "Rosters";
         public const string Register = "Register";
         public const string Login = "Login";
 

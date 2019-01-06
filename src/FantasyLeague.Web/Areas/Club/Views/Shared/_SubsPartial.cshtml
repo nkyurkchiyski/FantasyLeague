@@ -1,0 +1,16 @@
+﻿@{
+    @model IList<RosterPlayerViewModel>
+}
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    var md = Model[i];
+
+    if (i % 3 == 0 && i != 0)
+    {
+        @Html.Raw(@"</div><div class=""row d-flex justify-content-between"">");
+    }
+    <div class="col-md-4 p-1">
+        <partial name="~/Areas/Club/Views/Shared/_RosterPlayerPartial.cshtml" model="@md" />
+    </div>
+}

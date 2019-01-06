@@ -1,4 +1,5 @@
-﻿using FantasyLeague.ViewModels.Roster;
+﻿using FantasyLeague.Models.Enums;
+using FantasyLeague.ViewModels.Roster;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,11 +13,12 @@ namespace FantasyLeague.Services.Contracts
         ICollection<RosterViewModel> GetAllUserRosters(string username);
 
         Task<IServiceResult> Create(string username, string[] playerIds);
-        
-        Task<IServiceResult> Edit(Guid rosterId,ICollection<RosterPlayerViewModel> players);
+
+        Task<IServiceResult> Edit(ICollection<RosterPlayerViewModel> players);
 
         Task<IServiceResult> SetCurrentRosters(Guid matchdayId);
 
+        Task<IServiceResult> SetNewFormation(Formation formation, Guid rosterId);
 
     }
 }

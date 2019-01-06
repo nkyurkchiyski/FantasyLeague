@@ -32,7 +32,7 @@ namespace FantasyLeague.Models
         public virtual ICollection<RosterPlayer> Players { get; set; }
         
         public int Points => this.Players
-            .Where(x => !x.IsSub)
+            .Where(x => x.Selected)
             .Sum(x => x.Player.Scores
                        .First(y => this.Matchday.Fixtures.Contains(y.Fixture))
                        .GetScore());

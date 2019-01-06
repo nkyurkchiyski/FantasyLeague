@@ -30,18 +30,44 @@ namespace FantasyLeague.Web
 
         private void CreateRosterMappings()
         {
-            CreateMap<Roster, RosterViewModel>();
+            CreateMap<Roster, RosterViewModel>()
+                .ForMember(
+                    f => f.Points,
+                    opt => opt.Ignore())
+                .ForMember(
+                    f => f.Formation,
+                    opt => opt.MapFrom(src => src.Formation))
+                .ForMember(
+                    f => f.Players,
+                    opt => opt.MapFrom(src => src.Players))
+                .ForMember(
+                    f => f.Matchday,
+                    opt => opt.MapFrom(src => src.Matchday));
+
 
             CreateMap<RosterPlayer, RosterPlayerViewModel>()
-                 .ForMember(
+                .ForMember(
                     f => f.Id,
-                    opt => opt.MapFrom(src => src.Player.Id))
+                    opt => opt.MapFrom(src => src.Id))
+                .ForMember(
+                    f => f.PlayerId,
+                    opt => opt.MapFrom(src => src.PlayerId))
+                .ForMember(
+                    f => f.RosterId,
+                    opt => opt.MapFrom(src => src.RosterId))
+                .ForMember(
+                    f => f.Selected,
+                    opt => opt.MapFrom(src => src.Selected))
                 .ForMember(
                     f => f.Name,
                     opt => opt.MapFrom(src => src.Player.Name))
                 .ForMember(
                     f => f.Image,
-                    opt => opt.MapFrom(src => src.Player.Image.Url));
+                    opt => opt.MapFrom(src => src.Player.Image == null ?
+                                              GlobalConstants.TemplatePlayerImageUrl : src.Player.Image.Url))
+                .ForMember(
+                    f => f.Position,
+                    opt => opt.MapFrom(src => src.Player.Position));
 
         }
 
@@ -153,7 +179,7 @@ namespace FantasyLeague.Web
                     opt => opt.MapFrom(src => src.Player.Name))
                 .ForMember(
                     f => f.PlayerImage,
-                    opt => opt.MapFrom(src => src.Player.Image == null ? 
+                    opt => opt.MapFrom(src => src.Player.Image == null ?
                     GlobalConstants.TemplatePlayerImageUrl : src.Player.Image.Url))
                 .ForMember(
                     f => f.TeamId,

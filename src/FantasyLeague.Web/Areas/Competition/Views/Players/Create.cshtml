@@ -9,7 +9,7 @@
 
 <h1>@ActionConstants.Create @GlobalConstants.PlayerName</h1>
 @{
-    <a asp-controller="@PagesConstants.Teams" asp-action="@ActionConstants.Details" asp-route-id="@Model.TeamId" class="btn btn-outline-primary"><span class="oi oi-share-boxed flip-icon"></span></a>
+    <a asp-controller="@PagesConstants.Teams" asp-action="@ActionConstants.Details" asp-route-id="@Model.TeamId" class="btn btn-outline-primary"><span class="oi oi-arrow-left"></span></a>
 }
 <hr>
 <form class="w-80" asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Create" method="post" enctype="multipart/form-data">

@@ -160,11 +160,11 @@ namespace FantasyLeague.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("IsSub");
-
                     b.Property<Guid>("PlayerId");
 
                     b.Property<Guid>("RosterId");
+
+                    b.Property<bool>("Selected");
 
                     b.HasKey("Id");
 

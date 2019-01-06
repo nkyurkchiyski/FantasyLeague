@@ -1,7 +1,54 @@
-﻿
-@{
-    ViewData["Title"] = "Details";
+﻿@{
+    @model UserRosterViewModel
+    ViewData["Title"] = $"{ActionConstants.Details}";
+    ViewData["ActivePage"] = PagesConstants.Rosters;
+
+    var subs = Model.Roster
+        .Players.Where(x => !x.Selected).ToList();
+
 }
 
-<h1>Details</h1>
+<h1 class="my-2">
+    Matchday @(Model.MarchdayWeek)
+</h1>
+<h5>
+    Budget Left: @(Model.Roster.Budget)M
+</h5>
 
+<a asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Index" class="btn btn-primary">
+    <span class="oi oi-arrow-left"></span>
+</a>
+<hr />
+<div class="row">
+    <div class="col-md-8 dashboard-item mb-3">
+        <partial name="~/Areas/Club/Views/Shared/_RosterPartial.cshtml" model="@Model.Roster" />
+    </div>
+    <div class="col-md-4 dashboard-item">
+        <div class="card bundesliga-box-shadow mb-3">
+            <h5 class="card-header bundesliga-bg-color text-white">Substitutions: @subs.Count</h5>
+            <div class="card-body p-3">
+                <div class="row d-flex justify-content-between">
+                    <partial name="~/Areas/Club/Views/Shared/_SubsPartial.cshtml" model="@subs" />
+                </div>
+            </div>
+        </div>
+        <div class="card bundesliga-box-shadow mb-3">
+            <h5 class="card-header bundesliga-bg-color text-white">Previous rosters</h5>
+            <div class="card-body p-3">
+                <form class="form-matchday" asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Details">
+                    <div class="d-flex justify-content-lg-around">
+                        <div class="mr-3">Select Matchday:</div>
+                        @Html.DropDownListFor(
+                                x => x.MarchdayWeek,
+                                new SelectList(Model.RostersWeeks),
+                                new { @class = HtmlCssConstants.FormControl + HtmlCssConstants.Mr3 })
+                        <div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

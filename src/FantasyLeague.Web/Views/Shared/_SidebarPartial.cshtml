@@ -18,8 +18,8 @@
         @if (SignInManager.IsSignedIn(User))
         {
             <li class="nav-item px-3">
-                <a class="nav-link @ManageSidebar.RosterNavClass(ViewContext)" asp-area="Club" asp-controller="Rosters" asp-action="Create">
-                    <span class="oi oi-people" aria-hidden="true"></span>Roster
+                <a class="nav-link @ManageSidebar.RosterNavClass(ViewContext)" asp-area="Club" asp-controller="Rosters" asp-action="Index">
+                    <span class="oi oi-people" aria-hidden="true"></span>Club
                 </a>
             </li>
             <li class="nav-item px-3">

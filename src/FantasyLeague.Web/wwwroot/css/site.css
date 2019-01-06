@@ -340,6 +340,11 @@ html {
     max-height: 40px;
 }
 
+.player-lg-image {
+    object-fit: contain;
+    max-height: 100px;
+}
+
 .flip-icon {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -392,4 +397,19 @@ html {
     .form-matchday {
         display: block;
     }
+}
+
+.custom-checkbox {
+    zoom: 1.5;
+    transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
 }

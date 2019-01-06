@@ -1,0 +1,31 @@
+﻿@{
+    @model RosterPlayerViewModel
+    var names = @Model.Name.Split(new char[] { ' ', '-' }).ToArray();
+    if (names.Length > 2)
+    {
+        var firstRow = string.Join(" ", names.Select(x => x[0] + ".").Take(names.Length - 1));
+        names = new string[] { firstRow, names[names.Length - 1] };
+    }
+}
+<div class="card text-center p-2">
+    <div>
+        @foreach (var name in names)
+        {
+            if (name.Length > 12)
+            {
+                <h7>@name</h7>
+            }
+            else
+            {
+
+                <h6>@name</h6>
+            }
+        }
+        <div class="p-1">
+            <div class="d-flex justify-content-around">
+                <img class="player-image" src="@Model.Image" alt="Card image cap">
+                <p class="m-0 font-weight-bold">@Model.CurrentPoints P</p>
+            </div>
+        </div>
+    </div>
+</div>

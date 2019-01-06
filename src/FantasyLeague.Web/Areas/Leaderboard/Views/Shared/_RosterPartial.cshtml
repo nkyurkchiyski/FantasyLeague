@@ -1,0 +1,60 @@
+﻿@{
+    @model RosterViewModel
+
+    var starting11 = new List<RosterPlayerViewModel>();
+
+    if (Model != null)
+    {
+        starting11 = Model.Players.Where(x => x.Selected).ToList();
+    }
+
+    var keeper = starting11.FirstOrDefault(x => x.Position == PlayerPosition.Goalkeeper);
+
+    var defenders = starting11.Where(x => x.Position == PlayerPosition.Defender).ToList();
+    var midfielders = starting11.Where(x => x.Position == PlayerPosition.Midfielder).ToList();
+    var attackers = starting11.Where(x => x.Position == PlayerPosition.Attacker).ToList();
+}
+
+<div class="card bundesliga-box-shadow mb-3">
+    <h5 class="card-header bundesliga-bg-color text-white">Lineup</h5>
+
+    <div class="pitch card-body">
+        @if (starting11.Count == GlobalConstants.LineupSize)
+        {
+            <div class="mt-4 text-center lineup">
+                <div class="d-flex justify-content-around mb-2">
+                    @foreach (var attacker in attackers)
+                    {
+                        <partial name="~/Areas/Club/Views/Shared/_RosterPlayerPartial.cshtml" model="@attacker" />
+                    }
+
+                </div>
+                <div class="d-flex justify-content-around mb-2">
+                    @foreach (var midfielder in midfielders)
+                    {
+                        <partial name="~/Areas/Club/Views/Shared/_RosterPlayerPartial.cshtml" model="@midfielder" />
+                    }
+                </div>
+                <div class="d-flex justify-content-around mb-2">
+                    @foreach (var defender in defenders)
+                    {
+                        <partial name="~/Areas/Club/Views/Shared/_RosterPlayerPartial.cshtml" model="@defender" />
+                    }
+                </div>
+                <div class="d-flex justify-content-around mb-2">
+                    <partial name="~/Areas/Club/Views/Shared/_RosterPlayerPartial.cshtml" model="@keeper" />
+                </div>
+            </div>
+
+        }
+        else
+        {
+            <div class="container d-flex h-100 justify-content-center">
+                <div class="row align-self-center">
+                    <h1 class="display-2 text-center text-white">Lineup is not selected!</h1>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

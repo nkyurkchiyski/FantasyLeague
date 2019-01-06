@@ -11,9 +11,7 @@ namespace FantasyLeague.Services.Contracts
         ICollection<T> All<T>();
 
         T GetMatchday<T>(Guid matchdayId);
-
-        int Count();
-
+        
         Task<Matchday> SetCurrentMatchday(int week, TransferWindowStatus transferWindowStatus);
         
         T GetCurrentMatchday<T>();

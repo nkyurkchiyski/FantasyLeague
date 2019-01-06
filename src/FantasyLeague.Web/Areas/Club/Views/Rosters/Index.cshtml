@@ -4,10 +4,12 @@
     ViewData["ActivePage"] = PagesConstants.Rosters;
 
     var subs = new List<RosterPlayerViewModel>();
+    int points = 0;
 
     if (Model.Roster != null)
     {
         subs = Model.Roster.Players.Where(x => !x.Selected).ToList();
+        points = Model.Roster.Players.Where(x => x.Selected).Sum(x => x.CurrentPoints);
     }
     var allFormations = Enum.GetNames(typeof(Formation));
     List<SelectListItem> formationsList = new List<SelectListItem>();
@@ -18,7 +20,7 @@
 }
 
 <h1 class="my-2">
-    Club: @Model.ClubName
+    @Model.ClubName
 </h1>
 <h5>
     Budget Left: @(Model.Roster == null ? GlobalConstants.Budget : Model.Roster.Budget)M
@@ -30,11 +32,14 @@
     </a>
 }
 <hr />
+<h4 class="pb-2">
+    Points: @points P
+</h4>
 <div class="row">
     <div class="col-md-8 dashboard-item mb-3">
         <partial name="~/Areas/Club/Views/Shared/_RosterPartial.cshtml" model="@Model.Roster" />
 
-        @if (Model.TransferWindowStatus == TransferWindowStatus.Opened)
+        @if (Model.Roster != null && Model.TransferWindowStatus == TransferWindowStatus.Opened)
         {
             <div class="card bundesliga-box-shadow mb-3">
                 <h5 class="card-header bundesliga-bg-color text-white">Edit Lineup</h5>
@@ -69,9 +74,9 @@
                     <div class="d-flex justify-content-lg-around">
                         <div class="mr-3">Select Matchday:</div>
                         @Html.DropDownListFor(
-                                x => x.MarchdayWeek,
-                                new SelectList(Model.RostersWeeks),
-                                new { @class = HtmlCssConstants.FormControl + HtmlCssConstants.Mr3 })
+                     x => x.MarchdayWeek,
+                     new SelectList(Model.RostersWeeks),
+                     new { @class = HtmlCssConstants.FormControl + HtmlCssConstants.Mr3 })
                         <div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>

@@ -6,6 +6,8 @@
     var subs = Model.Roster
         .Players.Where(x => !x.Selected).ToList();
 
+    int points = Model.Roster.Players.Where(x => x.Selected).Sum(x => x.CurrentPoints);
+
 }
 
 <h1 class="my-2">
@@ -19,6 +21,9 @@
     <span class="oi oi-arrow-left"></span>
 </a>
 <hr />
+<h4 class="pb-2">
+    Points: @points P
+</h4>
 <div class="row">
     <div class="col-md-8 dashboard-item mb-3">
         <partial name="~/Areas/Club/Views/Shared/_RosterPartial.cshtml" model="@Model.Roster" />

@@ -130,7 +130,6 @@ namespace FantasyLeague.Services
             player.Nationality = model.Nationality;
             player.TeamId = model.TeamId;
             player.Price = model.Price;
-            player.Position = model.Position;
 
             if (model.Image != null)
             {

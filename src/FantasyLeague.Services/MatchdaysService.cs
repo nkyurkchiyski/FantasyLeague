@@ -32,13 +32,6 @@ namespace FantasyLeague.Services
             return models;
         }
 
-        public int Count()
-        {
-            int count = this.matchdaysRepository.All().Count();
-
-            return count;
-        }
-
         public T GetMatchday<T>(Guid matchdayId)
         {
             var matchday = this.matchdaysRepository

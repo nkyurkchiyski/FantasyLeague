@@ -1,5 +1,4 @@
 ﻿using FantasyLeague.Models.Enums;
-using FantasyLeague.ViewModels.Score;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

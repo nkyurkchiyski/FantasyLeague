@@ -26,9 +26,13 @@
     <hr />
     <partial name="~/Areas/Competition/Views/Shared/_PlayerStatsPartial.cshtml" model="@activePlayers" />
 </div>
-<hr class="bg-danger" />
-<div class="bundesliga-box-shadow p-3 rounded table-responsive">
-    <h2 class="m-0">Archived players</h2>
-    <hr />
-    <partial name="~/Areas/Competition/Views/Shared/_PlayerStatsPartial.cshtml" model="@archivedPlayers" />
-</div>
+@if (isAdmin)
+{
+    <hr class="bg-danger" />
+    <div class="bundesliga-box-shadow p-3 rounded table-responsive">
+        <h2 class="m-0">Archived players</h2>
+        <hr />
+        <partial name="~/Areas/Competition/Views/Shared/_PlayerStatsPartial.cshtml" model="@archivedPlayers" />
+    </div>
+
+}

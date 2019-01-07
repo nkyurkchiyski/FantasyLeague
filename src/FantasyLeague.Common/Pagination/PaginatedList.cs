@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FantasyLeague.Common.Pagination
 {
@@ -15,7 +14,7 @@ namespace FantasyLeague.Common.Pagination
 
             this.AddRange(items);
         }
-
+        
         public int PageIndex { get; private set; }
 
         public int TotalPages { get; private set; }

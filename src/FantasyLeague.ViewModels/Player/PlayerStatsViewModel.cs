@@ -1,5 +1,4 @@
-﻿using FantasyLeague.Common.Constants;
-using FantasyLeague.Models.Enums;
+﻿using FantasyLeague.Models.Enums;
 
 namespace FantasyLeague.ViewModels.Player
 {

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FantasyLeague.Common.Constants
+﻿namespace FantasyLeague.Common.Constants
 {
     public static class TagConstants
     {
+        //Fixture information
         public const string HomeTeamGoals = "HomeTeamGoals_";
         public const string AwayTeamGoals = "AwayTeamGoals_";
         public const string FixtureStatus = "Status_";
         public const string FixtureDate = "Date_";
 
+        //Player Scores information
         public const string Goals = "Goals_";
         public const string Shots = "Shots_";
         public const string Assists = "Assists_";

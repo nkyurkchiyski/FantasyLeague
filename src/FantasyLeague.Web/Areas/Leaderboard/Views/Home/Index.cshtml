@@ -1,0 +1,10 @@
+﻿@{
+    @model List<UserInfoViewModel>
+    ViewData["Title"] = $"{PagesConstants.Leaderboard}";
+    ViewData["ActivePage"] = PagesConstants.Leaderboard;
+}
+<h1>Leaderboard</h1>
+<h4>Top managers</h4>
+<hr />
+<partial name="~/Areas/Leaderboard/Views/Shared/_LeaderboardPartial.cshtml" model="@Model" />
+

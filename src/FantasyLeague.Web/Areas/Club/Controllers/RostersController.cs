@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FantasyLeague.Common.Constants;
+﻿using FantasyLeague.Common.Constants;
 using FantasyLeague.Models;
 using FantasyLeague.Models.Enums;
 using FantasyLeague.Services.Contracts;
 using FantasyLeague.ViewModels.Matchday;
 using FantasyLeague.ViewModels.Player;
 using FantasyLeague.ViewModels.Roster;
+using FantasyLeague.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FantasyLeague.Web.Areas.Club.Controllers
 {
@@ -43,12 +42,12 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
             var currentRoster = this.rostersService
                .GetCurrentUserRoster(User.Identity.Name, currentMatchday.Id);
 
-            var rostersWeeks = this.rostersService
-              .GetAllUserRosters(User.Identity.Name)
-              .Where(x => x.Matchday.Week <= currentMatchday.Week)
-              .Select(x => x.Matchday.Week)
-              .OrderBy(x => x)
-              .ToArray();
+            var rosters = this.rostersService
+                      .GetAllUserRosters(User.Identity.Name);
+
+            var rostersWeeks = rosters.Where(x => x.Matchday.Status < MatchdayStatus.Upcoming)
+                                      .Select(x => x.Matchday.Week)
+                                      .OrderBy(x => x).ToArray();
 
             var user = this.usersService
                 .GetUser<User>(User.Identity.Name);
@@ -70,13 +69,21 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
             var rosters = this.rostersService
                       .GetAllUserRosters(User.Identity.Name);
 
-            var rostersWeeks = rosters.Select(x => x.Matchday.Week)
+            if (!rosters.Any())
+            {
+                return RedirectToAction(
+                      ActionConstants.Index,
+                      PagesConstants.Rosters);
+            }
+
+            var rostersWeeks = rosters.Where(x => x.Matchday.Status < MatchdayStatus.Upcoming)
+                                      .Select(x => x.Matchday.Week)
                                       .OrderBy(x => x).ToArray();
 
             var roster = rosters.FirstOrDefault(x => x.Matchday.Week == model.MarchdayWeek);
 
             var user = this.usersService
-                .GetUser<User>(User.Identity.Name);
+                .GetUser<UserViewModel>(User.Identity.Name);
 
             var indexRosterViewModel = new UserRosterViewModel
             {
@@ -161,11 +168,17 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] string[] ids)
+        public async Task<string> Create([FromBody] string[] ids)
         {
             var result = await this.rostersService.Create(User.Identity.Name, ids);
 
-            return Ok();
+            string path = $"/{ControllerConstants.ClubAreaName}/{PagesConstants.Rosters}/{ActionConstants.Index}";
+
+            if (!result.Succeeded)
+            {
+                path = $"/{PagesConstants.Home}/{ActionConstants.Error}/?{ExceptionConstants.ErrorMessage}={result.Error}";
+            }
+            return path;
         }
     }
 }

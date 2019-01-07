@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using FantasyLeague.Common.Constants;
+﻿using FantasyLeague.Common.Constants;
 using FantasyLeague.Data.Dtos;
 using FantasyLeague.Data.Seeding.Contracts;
 using FantasyLeague.Models;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace FantasyLeague.Data.Seeding
 {

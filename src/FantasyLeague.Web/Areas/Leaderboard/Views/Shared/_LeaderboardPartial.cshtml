@@ -1,0 +1,56 @@
+﻿@{
+    @model IList<UserInfoViewModel>
+}
+
+<table id="table_users" class="table table-hover text-center">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Username</th>
+            <th>Club Name</th>
+            <th>Supports</th>
+            <th>CP</th>
+            <th>TP</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td>@Model[i].Username</td>
+                    <td>
+                        @Model[i].ClubName
+                    </td>
+                    <td>
+                        @Model[i].Supports
+                    </td>
+                    <td>
+                        @Model[i].CurrentPoints
+                    </td>
+                    <td>
+                        @Model[i].TotalPoints
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+        $('#table_users').DataTable({
+            "scrollY": 400,
+            "responsive": true,
+            "keys": true
+        });
+    });
+    
+</script>

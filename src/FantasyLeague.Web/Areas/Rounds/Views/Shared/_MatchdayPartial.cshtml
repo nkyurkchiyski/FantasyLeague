@@ -1,7 +1,7 @@
 ﻿@{
     @model MatchdayViewModel
     bool isHidden = (User.IsInRole(RoleConstants.UserRoleName) &&
-                      Model.Status == Enum.GetName(typeof(MatchdayStatus), MatchdayStatus.Upcoming));
+                      Model.Status == MatchdayStatus.Upcoming);
 }
 <div class="card text-center bundesliga-box-shadow">
     <div class="card-header bundesliga-bg-color">

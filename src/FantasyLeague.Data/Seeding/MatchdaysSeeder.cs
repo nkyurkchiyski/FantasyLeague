@@ -38,6 +38,12 @@ namespace FantasyLeague.Data.Seeding
                     EndDate = md.EndDate
                 };
 
+                if (md.Week == 1)
+                {
+                    matchday.MatchdayStatus = MatchdayStatus.Current;
+                    matchday.TransferWindowStatus = TransferWindowStatus.Opened;
+                }
+
                 foreach (var f in md.Fixtures)
                 {
                     var homeTeam = context.Teams.FirstOrDefault(x => x.Name == f.HomeTeam);

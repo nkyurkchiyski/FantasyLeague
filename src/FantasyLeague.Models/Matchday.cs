@@ -3,7 +3,6 @@ using FantasyLeague.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace FantasyLeague.Models
 {
@@ -14,16 +13,7 @@ namespace FantasyLeague.Models
             this.Fixtures = new HashSet<Fixture>();
             this.Rosters = new HashSet<Roster>();
             this.TransferWindowStatus = TransferWindowStatus.Closed;
-
-            if (this.Week == 1)
-            {
-                this.MatchdayStatus = MatchdayStatus.Current;
-            }
-            else
-            {
-                this.MatchdayStatus = MatchdayStatus.Upcoming;
-
-            }
+            this.MatchdayStatus = MatchdayStatus.Upcoming;
         }
 
         [Required]

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FantasyLeague.Models.Enums
+﻿namespace FantasyLeague.Models.Enums
 {
     public enum TransferWindowStatus
     {

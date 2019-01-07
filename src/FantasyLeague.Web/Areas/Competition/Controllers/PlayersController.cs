@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using FantasyLeague.Common.Constants;
+﻿using FantasyLeague.Common.Constants;
 using FantasyLeague.Services.Contracts;
 using FantasyLeague.ViewModels.Player;
 using FantasyLeague.ViewModels.Team;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FantasyLeague.Web.Areas.Competition.Controllers
 {

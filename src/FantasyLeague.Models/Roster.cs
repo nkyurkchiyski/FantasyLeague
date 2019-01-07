@@ -33,9 +33,8 @@ namespace FantasyLeague.Models
         
         public int Points => this.Players
             .Where(x => x.Selected)
-            .Sum(x => x.Player.Scores
-                       .First(y => this.Matchday.Fixtures.Contains(y.Fixture))
-                       .GetScore());
+            .Sum(x => x.Player.Scores.FirstOrDefault(y => this.Matchday.Fixtures.Contains(y.Fixture)) == null ? 0 :
+                      x.Player.Scores.FirstOrDefault(y => this.Matchday.Fixtures.Contains(y.Fixture)).GetScore());
 
         [NotMapped]
         public bool IsValid => this.Players.Count == GlobalConstants.RosterSize;

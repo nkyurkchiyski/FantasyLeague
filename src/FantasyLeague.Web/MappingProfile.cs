@@ -1,17 +1,16 @@
-﻿using System;
-using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using FantasyLeague.Common.Constants;
 using FantasyLeague.Models;
-using FantasyLeague.Models.Abstract;
 using FantasyLeague.Models.Enums;
 using FantasyLeague.ViewModels.Fixture;
+using FantasyLeague.ViewModels.Index;
 using FantasyLeague.ViewModels.Matchday;
 using FantasyLeague.ViewModels.Player;
 using FantasyLeague.ViewModels.Roster;
 using FantasyLeague.ViewModels.Score;
 using FantasyLeague.ViewModels.Team;
 using FantasyLeague.ViewModels.User;
+using System.Linq;
 
 namespace FantasyLeague.Web
 {
@@ -73,7 +72,20 @@ namespace FantasyLeague.Web
 
         private void CreateUserMappings()
         {
-            CreateMap<User, UserViewModel>();
+            CreateMap<User, UserViewModel>()
+                .ForMember(
+                    f => f.Roster,
+                    opt => opt.MapFrom(src => src.Rosters
+                    .FirstOrDefault(x=>x.Matchday.MatchdayStatus == MatchdayStatus.Current)));
+
+            CreateMap<User, UserInfoViewModel>()
+                .ForMember(
+                    f => f.Username,
+                    opt => opt.MapFrom(src => src.UserName))
+                .ForMember(
+                    f => f.Supports,
+                    opt => opt.MapFrom(src => src.FavouriteTeam == null ?
+                    GlobalConstants.Unknown : src.FavouriteTeam.Name));
         }
 
         private void CreateTeamMappings()
@@ -166,7 +178,18 @@ namespace FantasyLeague.Web
             CreateMap<Matchday, MatchdayEditViewModel>()
                 .ForMember(
                     f => f.Status,
-                    opt => opt.MapFrom(src => src.MatchdayStatus.ToString()));
+                    opt => opt.MapFrom(src => src.MatchdayStatus));
+
+            CreateMap<Matchday, IndexViewModel>()
+                .ForMember(
+                    f => f.MarchdayId,
+                    opt => opt.MapFrom(src => src.Id))
+                .ForMember(
+                    f => f.MarchdayWeek,
+                    opt => opt.MapFrom(src => src.Week))
+                .ForMember(
+                    f => f.User,
+                    opt => opt.Ignore());
         }
 
         private void CreateScoreMappings()

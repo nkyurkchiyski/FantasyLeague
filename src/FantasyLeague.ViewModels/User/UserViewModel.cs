@@ -8,6 +8,8 @@ namespace FantasyLeague.ViewModels.User
 
         public int CurrentPoints { get; set; }
 
+        public string ClubName { get; set; }
+
         public RosterViewModel Roster { get; set; }
     }
 }

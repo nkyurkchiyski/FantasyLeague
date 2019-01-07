@@ -8,10 +8,12 @@
         public const string Restore = "Restore";
         public const string Edit = "Edit";
         public const string All = "All";
-        public const string AddPlayerStats = "AddPlayerStats";
-        public const string AddMatchdayResults = "AddMatchdayResults";
         public const string Error = "Error";
         public const string Index = "Index";
+
+        public const string AddPlayerStats = "AddPlayerStats";
+        public const string AddMatchdayResults = "AddMatchdayResults";
+        
         public const string GenerateScores = "GenerateScores";
 
         public const string SetCurrentMatchday = "SetCurrentMatchday";

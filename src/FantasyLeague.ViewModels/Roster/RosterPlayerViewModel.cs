@@ -1,6 +1,5 @@
 ﻿using FantasyLeague.Models.Enums;
 using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace FantasyLeague.ViewModels.Roster
 {

@@ -47,5 +47,7 @@
 
         public const int LineupSize = 11;
 
-    }
+        public const string ImageType = "ImageType";
+
+}
 }

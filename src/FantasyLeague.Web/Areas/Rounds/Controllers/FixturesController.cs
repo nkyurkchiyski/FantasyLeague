@@ -1,10 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using FantasyLeague.Common.Constants;
+﻿using FantasyLeague.Common.Constants;
 using FantasyLeague.Services.Contracts;
 using FantasyLeague.ViewModels.Fixture;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace FantasyLeague.Web.Areas.Rounds.Controllers
 {

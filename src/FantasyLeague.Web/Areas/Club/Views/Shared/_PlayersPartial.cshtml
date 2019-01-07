@@ -1,6 +1,5 @@
 ﻿@{
     @model IList<PlayerStatsViewModel>
-    ViewData["players"] = new List<string>();
 }
 
 <table id="table_players" class="table table-hover text-center">
@@ -71,6 +70,7 @@
     
     $(document).ready(function () {
         $('#table_players').DataTable({
+            "responsive": true,
             "scrollY": 400,
             "paging": false,
             "keys": true

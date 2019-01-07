@@ -1,5 +1,3 @@
-using System;
-
 namespace FantasyLeague.Web.Models
 {
     public class ErrorViewModel

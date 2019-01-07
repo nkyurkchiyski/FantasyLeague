@@ -1,4 +1,5 @@
-﻿using FantasyLeague.Models;
+﻿using FantasyLeague.Common.Constants;
+using FantasyLeague.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,7 +9,7 @@ namespace FantasyLeague.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Image> builder)
         {
-            builder.HasDiscriminator<string>("ImageType");
+            builder.HasDiscriminator<string>(GlobalConstants.ImageType);
         }
     }
 }

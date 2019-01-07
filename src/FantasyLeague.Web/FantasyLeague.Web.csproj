@@ -21,9 +21,4 @@
     <ProjectReference Include="..\FantasyLeague.Services\FantasyLeague.Services.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Areas\Leaderboard\Views\Leaderboard\" />
-  </ItemGroup>
-
 </Project>

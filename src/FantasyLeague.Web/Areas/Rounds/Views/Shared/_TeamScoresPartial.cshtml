@@ -3,7 +3,7 @@
 
 }
 
-<table id="table_@Model.First().TeamId" class="table table-hover text-center">
+<table id="table_@Model.First().TeamId" class="table table-hover text-center collapsed" style="max-width: 100%;">
     <thead>
         <tr>
             <th>#</th>
@@ -23,37 +23,37 @@
         @{
             for (int i = 0; i < Model.Count; i++)
             {
-        <tr>
-            <td>@(i + 1)</td>
-            <td><img class="mini-image" src="@Model[i].PlayerImage" /></td>
-            <td>
-                @Model[i].PlayerName
-            </td>
-            <td>
-                @Model[i].Position
-            </td>
-            <td>
-                @Model[i].Goals
-            </td>
-            <td>
-                @Model[i].Assists
-            </td>
-            <td>
-                @Model[i].Shots
-            </td>
-            <td>
-                @Model[i].Tackles
-            </td>
-            <td>
-                @Model[i].YellowCards
-            </td>
-            <td>
-                @Model[i].RedCards
-            </td>
-            <td>
-                @Model[i].PlayedMinutes
-            </td>
-        </tr>
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td><img class="mini-image" src="@Model[i].PlayerImage" /></td>
+                    <td>
+                        @Model[i].PlayerName
+                    </td>
+                    <td>
+                        @Model[i].Position
+                    </td>
+                    <td>
+                        @Model[i].Goals
+                    </td>
+                    <td>
+                        @Model[i].Assists
+                    </td>
+                    <td>
+                        @Model[i].Shots
+                    </td>
+                    <td>
+                        @Model[i].Tackles
+                    </td>
+                    <td>
+                        @Model[i].YellowCards
+                    </td>
+                    <td>
+                        @Model[i].RedCards
+                    </td>
+                    <td>
+                        @Model[i].PlayedMinutes
+                    </td>
+                </tr>
             }
         }
     </tbody>
@@ -67,7 +67,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('#table_@Model.First().TeamId').DataTable({
-            responsive: true
+            "responsive": true
         });
     });
 </script>

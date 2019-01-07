@@ -1,6 +1,5 @@
 ﻿using FantasyLeague.Models;
-using FantasyLeague.ViewModels.Roster;
-using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace FantasyLeague.Services.Contracts
@@ -16,6 +15,8 @@ namespace FantasyLeague.Services.Contracts
         Task<IServiceResult> SetFavouriteTeamAsync(string userId, string teamName);
 
         T GetUser<T>(string username);
-        
+
+        ICollection<T> GetLeaderboard<T>();
+
     }
 }

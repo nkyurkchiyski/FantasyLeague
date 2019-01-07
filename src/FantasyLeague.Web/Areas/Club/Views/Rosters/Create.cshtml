@@ -1,5 +1,5 @@
 ﻿@{
-    @model List<PlayerStatsViewModel>
+    @model IList<PlayerStatsViewModel>
     ViewData["Title"] = $"{ActionConstants.Create} {PagesConstants.Rosters}";
     ViewData["ActivePage"] = PagesConstants.Rosters;
 }
@@ -92,11 +92,9 @@
                 url: '/Club/Rosters/Create',
                 data: jsonData,
                 contentType: 'application/json',
-                success: function () {
-                    window.location = "/Club/Rosters/Index";
-                },
-                error: function () {
-                    window.location = "/";
+                 success: function (data) {
+                    window.location.href = data;
+
                 }
             });
         }

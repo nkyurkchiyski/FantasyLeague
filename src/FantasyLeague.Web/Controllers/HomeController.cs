@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using FantasyLeague.Web.Models;
-using FantasyLeague.ViewModels.Index;
+﻿using FantasyLeague.Common.Constants;
 using FantasyLeague.Services.Contracts;
-using FantasyLeague.ViewModels.Matchday;
-using FantasyLeague.ViewModels.Roster;
-using FantasyLeague.Common.Constants;
-using Microsoft.AspNetCore.Authorization;
+using FantasyLeague.ViewModels.Index;
 using FantasyLeague.ViewModels.User;
+using FantasyLeague.Web.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace FantasyLeague.Web.Controllers
 {
@@ -20,7 +15,6 @@ namespace FantasyLeague.Web.Controllers
         private readonly IMatchdaysService matchdaysService;
         private readonly IUsersService usersService;
         private readonly IRostersService rostersService;
-
 
         public HomeController(
             IMatchdaysService matchdaysService,
@@ -34,31 +28,20 @@ namespace FantasyLeague.Web.Controllers
 
         public IActionResult Index()
         {
-            var currentMatchday = this.matchdaysService
-                .GetCurrentMatchday<MatchdayViewModel>();
+            var indexViewModel = this.matchdaysService
+                .GetCurrentMatchday<IndexViewModel>();
+            
+            var user = this.usersService
+                .GetUser<UserViewModel>(User.Identity.Name);
 
-            var indexViewModel = new IndexViewModel
+            if (user != null)
             {
-                MarchdayWeek = currentMatchday.Week,
-                TransferWindowStatus = currentMatchday.TransferWindowStatus,
-                User = new UserViewModel()
-            };
+                var currentRoster = this.rostersService
+                    .GetCurrentUserRoster(User.Identity.Name, indexViewModel.MarchdayId);
 
-            var currentRoster = this.rostersService
-                .GetCurrentUserRoster(User.Identity.Name, currentMatchday.Id);
-
-            var allRosters = this.rostersService
-                .GetAllUserRosters(User.Identity.Name)
-                .Where(x => x.Matchday.Week <= currentMatchday.Week)
-                .ToList();
-
-            if (currentRoster != null && allRosters != null)
-            {
-                indexViewModel.User.TotalPoints = allRosters.Sum(x => x.Points);
-                indexViewModel.User.CurrentPoints = currentRoster.Points;
-                indexViewModel.User.Roster = currentRoster;
+                user.Roster = currentRoster;
+                indexViewModel.User = user;
             }
-
             return View(indexViewModel);
         }
 
@@ -82,7 +65,7 @@ namespace FantasyLeague.Web.Controllers
 
             return RedirectToAction(controllerName: PagesConstants.Home, actionName: ActionConstants.Index);
         }
-        
+
         public IActionResult Privacy()
         {
             return View();

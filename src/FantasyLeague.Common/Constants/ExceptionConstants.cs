@@ -22,5 +22,7 @@
 
         public const string InvalidRosterException = "Invalid Roster information.";
 
+        public const string ErrorMessage = "errorMessage";
+
     }
 }

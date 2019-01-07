@@ -15,7 +15,7 @@ namespace FantasyLeague.ViewModels.Matchday
         [Range(minimum: 0, maximum: int.MaxValue)]
         public int Week { get; set; }
         
-        public string Status { get; set; }
+        public MatchdayStatus Status { get; set; }
         
         public TransferWindowStatus TransferWindowStatus { get; set; }
     }

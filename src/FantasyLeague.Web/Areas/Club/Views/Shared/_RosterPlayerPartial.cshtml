@@ -8,6 +8,7 @@
     }
 }
 <div class="card text-center p-2">
+
     <div>
         @foreach (var name in names)
         {
@@ -20,12 +21,18 @@
 
                 <h6>@name</h6>
             }
+
         }
-        <div class="p-1">
-            <div class="d-flex justify-content-around">
-                <img class="player-image" src="@Model.Image" alt="Card image cap">
-                <p class="m-0 font-weight-bold">@Model.CurrentPoints P</p>
-            </div>
+        @if (names.Length == 1)
+        {
+            <h6>&nbsp;</h6>
+        }
+    </div>
+    <div class="p-1">
+        <div class="d-flex justify-content-around">
+            <img class="player-image" src="@Model.Image" alt="Card image cap">
+            <p class="m-0 font-weight-bold">@Model.CurrentPoints P</p>
         </div>
     </div>
+
 </div>

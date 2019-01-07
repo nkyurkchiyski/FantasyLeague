@@ -25,7 +25,7 @@
                 </ul>
                 <div class="card-body p-3">
                     <div class="d-flex justify-content-end">
-                        <a href="#" class="btn btn-primary">Leaderboard</a>
+                        <a asp-area="@ControllerConstants.LeaderboardAreaName" asp-controller="@PagesConstants.Home" asp-action="@ActionConstants.Index" class="btn btn-primary">Leaderboard</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 </ul>
                 <div class="card-body p-3">
                     <div class="d-flex justify-content-end">
-                        <a asp-area="@ControllerConstants.RoundsAreaName" asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details" asp-route-id="@Model.User.Roster.Matchday.Id" class="btn btn-primary">Details</a>
+                        <a asp-area="@ControllerConstants.RoundsAreaName" asp-controller="@PagesConstants.Matchdays" asp-action="@ActionConstants.Details" asp-route-id="@Model.MarchdayId" class="btn btn-primary">Details</a>
                     </div>
                 </div>
             </div>

@@ -1,21 +1,21 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
+﻿using AutoMapper;
+using CloudinaryDotNet;
+using FantasyLeague.Data;
+using FantasyLeague.Data.Repositories;
+using FantasyLeague.Data.Repositories.Contracts;
+using FantasyLeague.Models;
+using FantasyLeague.Services;
+using FantasyLeague.Services.Contracts;
+using FantasyLeague.Web.Middlewares.MiddlewareExtensions;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using FantasyLeague.Data;
-using FantasyLeague.Models;
-using FantasyLeague.Web.Middlewares.MiddlewareExtensions;
-using FantasyLeague.Data.Repositories.Contracts;
-using FantasyLeague.Data.Repositories;
-using FantasyLeague.Services.Contracts;
-using FantasyLeague.Services;
-using AutoMapper;
-using CloudinaryDotNet;
 
 namespace FantasyLeague.Web
 {

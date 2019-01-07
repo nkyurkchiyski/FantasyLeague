@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FantasyLeague.Common.Constants;
+﻿using FantasyLeague.Common.Constants;
 using FantasyLeague.Common.Pagination;
 using FantasyLeague.Services.Contracts;
-using FantasyLeague.ViewModels.Fixture;
 using FantasyLeague.ViewModels.Matchday;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FantasyLeague.Web.Areas.Rounds.Controllers
 {

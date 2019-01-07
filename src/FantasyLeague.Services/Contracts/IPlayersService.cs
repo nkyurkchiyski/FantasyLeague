@@ -1,9 +1,6 @@
-﻿using FantasyLeague.Models.Enums;
-using FantasyLeague.ViewModels.Player;
-using Microsoft.AspNetCore.Http;
+﻿using FantasyLeague.ViewModels.Player;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FantasyLeague.Services.Contracts

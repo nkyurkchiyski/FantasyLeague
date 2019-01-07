@@ -19,12 +19,8 @@
     }
 }
 
-<h1 class="my-2">
-    @Model.ClubName
-</h1>
-<h5>
-    Budget Left: @(Model.Roster == null ? GlobalConstants.Budget : Model.Roster.Budget)M
-</h5>
+<h1>@Model.ClubName</h1>
+<h4>Manage your team</h4>
 @if (Model.TransferWindowStatus == TransferWindowStatus.Opened)
 {
     <a asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Create" class="btn btn-primary">
@@ -32,9 +28,14 @@
     </a>
 }
 <hr />
-<h4 class="pb-2">
-    Points: @points P
-</h4>
+<div class="d-flex justify-content-between">
+    <h4 class="pb-2">
+        Points: @points P
+    </h4>
+    <h4>
+        Budget Left: @(Model.Roster == null ? GlobalConstants.Budget : Model.Roster.Budget)M
+    </h4>
+</div>
 <div class="row">
     <div class="col-md-8 dashboard-item mb-3">
         <partial name="~/Areas/Club/Views/Shared/_RosterPartial.cshtml" model="@Model.Roster" />

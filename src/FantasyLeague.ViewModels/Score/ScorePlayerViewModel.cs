@@ -1,6 +1,4 @@
-﻿using FantasyLeague.Common.Constants;
-
-namespace FantasyLeague.ViewModels.Score
+﻿namespace FantasyLeague.ViewModels.Score
 {
     public class ScorePlayerViewModel:ScoreViewModel
     {

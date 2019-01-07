@@ -30,7 +30,7 @@ namespace FantasyLeague.Web.Controllers
         {
             var indexViewModel = this.matchdaysService
                 .GetCurrentMatchday<IndexViewModel>();
-            
+
             var user = this.usersService
                 .GetUser<UserViewModel>(User.Identity.Name);
 
@@ -50,10 +50,18 @@ namespace FantasyLeague.Web.Controllers
         public async Task<IActionResult> SetCurrentMatchday(IndexViewModel model)
         {
             var matchday = await this.matchdaysService
-                .SetCurrentMatchday(model.MarchdayWeek, model.TransferWindowStatus);
+                .SetCurrentMatchdayAsync(model.MarchdayWeek, model.TransferWindowStatus);
+
+            if (matchday == null)
+            {
+                return RedirectToAction(
+                       ActionConstants.Error,
+                       PagesConstants.Home,
+                       new { area = "", errorMessage = ExceptionConstants.SetCurrentMatchdayException });
+            }
 
             var result = await this.rostersService
-                .SetCurrentRosters(matchday.Id);
+                .SetCurrentRostersAsync(matchday.Id);
 
             if (!result.Succeeded)
             {

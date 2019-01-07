@@ -65,7 +65,7 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
         {
             foreach (var fixture in matchday.Fixtures)
             {
-                var result = await this.fixtureService.Edit(
+                var result = await this.fixtureService.EditAsync(
                     fixture.Id,
                     fixture.Date,
                     fixture.Status,

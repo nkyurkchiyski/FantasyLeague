@@ -12,7 +12,7 @@ namespace FantasyLeague.Services.Contracts
 
         T GetMatchday<T>(Guid matchdayId);
         
-        Task<Matchday> SetCurrentMatchday(
+        Task<Matchday> SetCurrentMatchdayAsync(
             int week, 
             TransferWindowStatus transferWindowStatus);
         

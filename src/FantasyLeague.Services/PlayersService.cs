@@ -34,19 +34,8 @@ namespace FantasyLeague.Services
 
             return models;
         }
-
-        public ICollection<T> AllFromTeam<T>(Guid teamId)
-        {
-            var players = this.playerRepository.All()
-                .Where(x => x.TeamId == teamId);
-
-            var models = players.Select(x => this.mapper.Map<T>(x))
-                .ToList();
-
-            return models;
-        }
-
-        public async Task<IServiceResult> Archive(Guid playerId)
+        
+        public async Task<IServiceResult> ArchiveAsync(Guid playerId)
         {
             var result = new ServiceResult { Succeeded = false };
 
@@ -69,9 +58,24 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        public async Task<IServiceResult> Create(PlayerDetailedViewModel model)
+        public async Task<IServiceResult> CreateAsync(PlayerDetailedViewModel model)
         {
             var result = new ServiceResult { Succeeded = false };
+
+            if (model == null)
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidInputException);
+                return result;
+            }
+
+            if (model.TeamId == Guid.Empty ||
+                model.Price <= 0 ||
+                string.IsNullOrEmpty(model.Name) ||
+                string.IsNullOrEmpty(model.Nationality))
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidInputException);
+                return result;
+            }
 
             var player = new Player
             {
@@ -94,7 +98,7 @@ namespace FantasyLeague.Services
                     return result;
                 }
 
-                var image = await this.imagesService.Create(
+                var image = await this.imagesService.CreateAsync(
                       GlobalConstants.PlayerName,
                       uploadResult.PublicId,
                       uploadResult.Url);
@@ -110,9 +114,25 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        public async Task<IServiceResult> Edit(PlayerDetailedViewModel model)
+        public async Task<IServiceResult> EditAsync(PlayerDetailedViewModel model)
         {
             var result = new ServiceResult { Succeeded = false };
+
+            if (model == null)
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidInputException);
+                return result;
+            }
+
+            if (model.Id == Guid.Empty ||
+                model.TeamId == Guid.Empty ||
+                model.Price <= 0 ||
+                string.IsNullOrEmpty(model.Name) ||
+                string.IsNullOrEmpty(model.Nationality))
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidInputException);
+                return result;
+            }
 
             var player = await this.playerRepository
                 .GetByIdAsync(model.Id);
@@ -148,7 +168,7 @@ namespace FantasyLeague.Services
                     return result;
                 }
 
-                var image = await this.imagesService.Create(
+                var image = await this.imagesService.CreateAsync(
                       GlobalConstants.PlayerName,
                       uploadResult.PublicId,
                       uploadResult.Url);
@@ -162,7 +182,7 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        public async Task<T> GetPlayer<T>(Guid playerId)
+        public async Task<T> GetPlayerAsync<T>(Guid playerId)
         {
             var player = await this.playerRepository
                .GetByIdAsync(playerId);
@@ -172,7 +192,7 @@ namespace FantasyLeague.Services
             return model;
         }
 
-        public async Task<IServiceResult> Restore(Guid playerId)
+        public async Task<IServiceResult> RestoreAsync(Guid playerId)
         {
             var result = new ServiceResult { Succeeded = false };
 

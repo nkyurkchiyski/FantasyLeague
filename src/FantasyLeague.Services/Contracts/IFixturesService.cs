@@ -11,13 +11,13 @@ namespace FantasyLeague.Services.Contracts
 
         T GetFixture<T>(Guid fixtureId);
         
-        Task<IServiceResult> Edit(
+        Task<IServiceResult> EditAsync(
             Guid fixtureId,
             DateTime date,
             FixtureStatus status,
             int homeTeamGoals,
             int awayTeamGoals);
 
-        Task<IServiceResult> GenerateScores(Guid matchdayId);
+        Task<IServiceResult> GenerateScoresAsync(Guid matchdayId);
     }
 }

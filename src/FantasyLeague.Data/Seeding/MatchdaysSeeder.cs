@@ -12,7 +12,7 @@ namespace FantasyLeague.Data.Seeding
 {
     public class MatchdaysSeeder : ISeeder
     {
-        private const string MatchdaysJsonPath = @"..\FantasyLeague.Common\Datasets\matchdays.json";
+        private const string MatchdaysJsonPath = @"C:\Users\Nikolay Kyurkchiyski\Documents\Visual Studio 2017\Projects\FantasyLeague\FantasyLeague.Common\Datasets\matchdays.json";
 
         public void Seed(FantasyLeagueDbContext context, IServiceProvider serviceProvider)
         {

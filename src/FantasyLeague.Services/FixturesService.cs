@@ -95,6 +95,34 @@ namespace FantasyLeague.Services
             return score;
         }
 
+        private async Task<IServiceResult> AddPlayerScores(
+            Guid fixtureId,
+            ICollection<ScoreViewModel> models)
+        {
+            var result = new ServiceResult { Succeeded = false };
+
+            var fixture = await this.fixturesRepository.GetByIdAsync(fixtureId);
+
+            if (fixture == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.FixtureName);
+
+                return result;
+            }
+
+            var scores = models.Where(x => x.PlayedMinutes > 0)
+                .Select(x => CreateScore(fixture, x))
+                .ToArray();
+
+            this.scoresRepository.AddRange(scores);
+
+            result.Succeeded = true;
+            return result;
+
+        }
+
         private bool IsEdited(
             Fixture fixture,
             DateTime date,
@@ -130,7 +158,7 @@ namespace FantasyLeague.Services
             return model;
         }
 
-        public async Task<IServiceResult> Edit(
+        public async Task<IServiceResult> EditAsync(
             Guid fixtureId,
             DateTime date,
             FixtureStatus status,
@@ -138,6 +166,15 @@ namespace FantasyLeague.Services
             int awayTeamGoals)
         {
             var result = new ServiceResult { Succeeded = false };
+
+            if (fixtureId == Guid.Empty ||
+                date == null ||
+                homeTeamGoals < 0 ||
+                awayTeamGoals < 0)
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidInputException);
+                return result;
+            }
 
             var fixture = await this.fixturesRepository.GetByIdAsync(fixtureId);
 
@@ -183,35 +220,7 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        private async Task<IServiceResult> AddPlayerScores(
-            Guid fixtureId,
-            ICollection<ScoreViewModel> models)
-        {
-            var result = new ServiceResult { Succeeded = false };
-
-            var fixture = await this.fixturesRepository.GetByIdAsync(fixtureId);
-
-            if (fixture == null)
-            {
-                result.Error = string.Format(
-                    ExceptionConstants.NotFoundException,
-                    GlobalConstants.FixtureName);
-
-                return result;
-            }
-
-            var scores = models.Where(x => x.PlayedMinutes > 0)
-                .Select(x => CreateScore(fixture, x))
-                .ToArray();
-
-            this.scoresRepository.AddRange(scores);
-
-            result.Succeeded = true;
-            return result;
-
-        }
-
-        public async Task<IServiceResult> GenerateScores(Guid matchdayId)
+        public async Task<IServiceResult> GenerateScoresAsync(Guid matchdayId)
         {
             var result = new ServiceResult { Succeeded = false };
 

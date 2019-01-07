@@ -30,7 +30,7 @@ namespace FantasyLeague.Web.Areas.Competition.Controllers
         public async Task<IActionResult> Archive(Guid playerId, Guid teamId)
         {
             var result = await this.playersService
-                .Archive(playerId);
+                .ArchiveAsync(playerId);
 
             if (!result.Succeeded)
             {
@@ -50,7 +50,7 @@ namespace FantasyLeague.Web.Areas.Competition.Controllers
         public async Task<IActionResult> Restore(Guid playerId, Guid teamId)
         {
             var result = await this.playersService
-                .Restore(playerId);
+                .RestoreAsync(playerId);
 
             if (!result.Succeeded)
             {
@@ -88,7 +88,7 @@ namespace FantasyLeague.Web.Areas.Competition.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await this.playersService.Create(model);
+                var result = await this.playersService.CreateAsync(model);
 
                 if (!result.Succeeded)
                 {
@@ -121,7 +121,7 @@ namespace FantasyLeague.Web.Areas.Competition.Controllers
         public async Task<IActionResult> Edit(Guid id)
         {
             var model = await this.playersService
-                .GetPlayer<PlayerDetailedViewModel>(id);
+                .GetPlayerAsync<PlayerDetailedViewModel>(id);
 
             var allTeams = this.teamsService
                 .All<TeamViewModel>();
@@ -143,7 +143,7 @@ namespace FantasyLeague.Web.Areas.Competition.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await this.playersService.Edit(model);
+                var result = await this.playersService.EditAsync(model);
 
                 if (!result.Succeeded)
                 {

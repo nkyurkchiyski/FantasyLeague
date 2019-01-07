@@ -9,7 +9,7 @@ namespace FantasyLeague.Services.Contracts
     {
         IImageUploadResult Upload(IFormFile file, string type);
 
-        Task<Image> Create(string type, string publicId, string url);
+        Task<Image> CreateAsync(string type, string publicId, string url);
 
         DelResResult Delete(Image image);
     }

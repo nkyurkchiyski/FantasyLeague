@@ -38,7 +38,7 @@ namespace FantasyLeague.Services
             this.rosterPlayerRepository = rosterPlayerRepository;
         }
 
-        public async Task<IServiceResult> Create(string username, string[] playerIds)
+        public async Task<IServiceResult> CreateAsync(string username, string[] playerIds)
         {
             var result = new ServiceResult { Succeeded = false };
 
@@ -110,7 +110,7 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        public async Task<IServiceResult> Edit(ICollection<RosterPlayerViewModel> players)
+        public async Task<IServiceResult> EditAsync(ICollection<RosterPlayerViewModel> players)
         {
             var result = new ServiceResult { Succeeded = false };
 
@@ -135,7 +135,7 @@ namespace FantasyLeague.Services
             return result;
         }
 
-        public async Task<IServiceResult> SetNewFormation(Formation formation, Guid rosterId)
+        public async Task<IServiceResult> SetNewFormationAsync(Formation formation, Guid rosterId)
         {
             var result = new ServiceResult { Succeeded = false };
 
@@ -225,7 +225,7 @@ namespace FantasyLeague.Services
             return model;
         }
 
-        public async Task<IServiceResult> SetCurrentRosters(Guid matchdayId)
+        public async Task<IServiceResult> SetCurrentRostersAsync(Guid matchdayId)
         {
             var result = new ServiceResult { Succeeded = false };
 
@@ -247,7 +247,7 @@ namespace FantasyLeague.Services
                 {
                     var roster = new Roster
                     {
-                        Budget = lastRoster.Budget,
+                        Budget = GlobalConstants.Budget - lastRoster.Players.Sum(x => x.Player.Price),
                         MatchdayId = matchdayId,
                         Formation = lastRoster.Formation,
                         User = user

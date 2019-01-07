@@ -12,13 +12,13 @@ namespace FantasyLeague.Services.Contracts
 
         ICollection<RosterViewModel> GetAllUserRosters(string username);
 
-        Task<IServiceResult> Create(string username, string[] playerIds);
+        Task<IServiceResult> CreateAsync(string username, string[] playerIds);
 
-        Task<IServiceResult> Edit(ICollection<RosterPlayerViewModel> players);
+        Task<IServiceResult> EditAsync(ICollection<RosterPlayerViewModel> players);
 
-        Task<IServiceResult> SetCurrentRosters(Guid matchdayId);
+        Task<IServiceResult> SetCurrentRostersAsync(Guid matchdayId);
 
-        Task<IServiceResult> SetNewFormation(Formation formation, Guid rosterId);
+        Task<IServiceResult> SetNewFormationAsync(Formation formation, Guid rosterId);
 
     }
 }

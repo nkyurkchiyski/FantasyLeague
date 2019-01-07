@@ -8,17 +8,15 @@ namespace FantasyLeague.Services.Contracts
     public interface IPlayersService
     {
         ICollection<T> All<T>();
+        
+        Task<T> GetPlayerAsync<T>(Guid playerId);
 
-        ICollection<T> AllFromTeam<T>(Guid teamId);
+        Task<IServiceResult> CreateAsync(PlayerDetailedViewModel model);
 
-        Task<T> GetPlayer<T>(Guid playerId);
+        Task<IServiceResult> EditAsync(PlayerDetailedViewModel model);
 
-        Task<IServiceResult> Create(PlayerDetailedViewModel model);
+        Task<IServiceResult> ArchiveAsync(Guid playerId);
 
-        Task<IServiceResult> Edit(PlayerDetailedViewModel model);
-
-        Task<IServiceResult> Archive(Guid playerId);
-
-        Task<IServiceResult> Restore(Guid playerId);
+        Task<IServiceResult> RestoreAsync(Guid playerId);
     }
 }

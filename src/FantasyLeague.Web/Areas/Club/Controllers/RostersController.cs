@@ -107,7 +107,7 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
                 .GetCurrentUserRoster(User.Identity.Name, matchday.Id);
 
             var result = await this.rostersService
-                .SetNewFormation(formation, roster.Id);
+                .SetNewFormationAsync(formation, roster.Id);
 
             if (!result.Succeeded)
             {
@@ -142,7 +142,7 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
 
             var rosterId = players.First().RosterId;
 
-            var result = await this.rostersService.Edit(players);
+            var result = await this.rostersService.EditAsync(players);
 
             if (!result.Succeeded)
             {
@@ -170,7 +170,7 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
         [HttpPost]
         public async Task<string> Create([FromBody] string[] ids)
         {
-            var result = await this.rostersService.Create(User.Identity.Name, ids);
+            var result = await this.rostersService.CreateAsync(User.Identity.Name, ids);
 
             string path = $"/{ControllerConstants.ClubAreaName}/{PagesConstants.Rosters}/{ActionConstants.Index}";
 

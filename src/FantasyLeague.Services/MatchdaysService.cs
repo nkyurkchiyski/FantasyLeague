@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FantasyLeague.Common.Constants;
 using FantasyLeague.Data.Repositories.Contracts;
 using FantasyLeague.Models;
 using FantasyLeague.Models.Enums;
@@ -23,7 +24,7 @@ namespace FantasyLeague.Services
 
         public ICollection<T> All<T>()
         {
-            var matchdays = this.matchdaysRepository.All();
+            var matchdays = this.matchdaysRepository.All().ToList();
 
             var models = matchdays.Select(x => this.mapper.Map<T>(x))
                 .ToList();
@@ -33,10 +34,21 @@ namespace FantasyLeague.Services
 
         public T GetMatchday<T>(Guid matchdayId)
         {
+            if (matchdayId == null ||
+                matchdayId == Guid.Empty)
+            {
+                return default(T);
+            }
+
             var matchday = this.matchdaysRepository
                 .GetByIdAsync(matchdayId)
                 .GetAwaiter()
                 .GetResult();
+
+            if (matchday == null)
+            {
+                return default(T);
+            }
 
             var model = this.mapper.Map<T>(matchday);
 
@@ -46,18 +58,34 @@ namespace FantasyLeague.Services
         public T GetCurrentMatchday<T>()
         {
             var currentMatchday = this.matchdaysRepository.All()
-                .First(x => x.MatchdayStatus == MatchdayStatus.Current);
+                .FirstOrDefault(x => x.MatchdayStatus == MatchdayStatus.Current);
+
+            if (currentMatchday == null)
+            {
+                return default(T);
+            }
 
             var model = this.mapper.Map<T>(currentMatchday);
 
             return model;
         }
 
-        public async Task<Matchday> SetCurrentMatchday(int week, TransferWindowStatus transferWindowStatus)
+        public async Task<Matchday> SetCurrentMatchdayAsync(int week, TransferWindowStatus transferWindowStatus)
         {
+            if (week <= 0 || week > GlobalConstants.TotalMatchdays)
+            {
+                return null;
+            }
+
             var matchdays = this.matchdaysRepository.All();
 
-            var currentMatchday = matchdays.First(x => x.Week == week);
+            var currentMatchday = matchdays
+                .FirstOrDefault(x => x.Week == week);
+
+            if (currentMatchday == null)
+            {
+                return null;
+            }
 
             currentMatchday.MatchdayStatus = MatchdayStatus.Current;
             currentMatchday.TransferWindowStatus = transferWindowStatus;
@@ -75,9 +103,9 @@ namespace FantasyLeague.Services
                     m.TransferWindowStatus = TransferWindowStatus.Closed;
                 }
             }
-            
+
             await this.matchdaysRepository.SaveChangesAsync();
-            
+
             return currentMatchday;
         }
     }

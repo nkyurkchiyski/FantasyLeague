@@ -32,7 +32,7 @@ namespace FantasyLeague.Web.Areas.Rounds.Controllers
         [Authorize(Roles = RoleConstants.AdminRoleName)]
         public async Task<IActionResult> GenerateScores(Guid id)
         {
-            var result = await this.fixtureService.GenerateScores(id);
+            var result = await this.fixtureService.GenerateScoresAsync(id);
 
             if (!result.Succeeded)
             {

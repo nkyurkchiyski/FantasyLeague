@@ -25,8 +25,21 @@ namespace FantasyLeague.Services
             this.cloudinary = cloudinary;
         }
 
-        public async Task<Image> Create(string type, string publicId, string url)
+        public async Task<Image> CreateAsync(string type, string publicId, string url)
         {
+            if (string.IsNullOrEmpty(type) ||
+                string.IsNullOrEmpty(publicId) ||
+                string.IsNullOrEmpty(url))
+            {
+                return null;
+            }
+
+            if (type != GlobalConstants.PlayerName &&
+                type != GlobalConstants.TeamName)
+            {
+                return null;
+            }
+
             var image = new Image
             {
                 Url = url,
@@ -38,7 +51,6 @@ namespace FantasyLeague.Services
             await this.imageRepository.SaveChangesAsync();
 
             return image;
-
         }
 
         public DelResResult Delete(Image image)
@@ -51,6 +63,12 @@ namespace FantasyLeague.Services
 
         public IImageUploadResult Upload(IFormFile file, string type)
         {
+            if (file == null ||
+                string.IsNullOrEmpty(type))
+            {
+                return null;
+            }
+
             string fileName = Guid.NewGuid().ToString();
 
             var uploadParams = new ImageUploadParams()
@@ -58,17 +76,16 @@ namespace FantasyLeague.Services
                 File = new FileDescription(fileName, file.OpenReadStream()),
             };
 
-            if (type == GlobalConstants.PlayerName)
+            switch (type)
             {
-                uploadParams.Folder = GlobalConstants.PlayersFolderPath;
-            }
-            else if (type == GlobalConstants.TeamName)
-            {
-                uploadParams.Folder = GlobalConstants.TeamsFolderPath;
-            }
-            else
-            {
-                return null;
+                case GlobalConstants.PlayerName:
+                    uploadParams.Folder = GlobalConstants.PlayersFolderPath;
+                    break;
+                case GlobalConstants.TeamName:
+                    uploadParams.Folder = GlobalConstants.TeamsFolderPath;
+                    break;
+                default:
+                    return null;
             }
 
             ImageUploadResult uploadResult = new ImageUploadResult();

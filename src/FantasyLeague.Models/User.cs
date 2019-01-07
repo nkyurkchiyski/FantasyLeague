@@ -28,12 +28,12 @@ namespace FantasyLeague.Models
 
         [NotMapped]
         public int CurrentPoints => this.Rosters
-            .FirstOrDefault(x => x.Matchday.MatchdayStatus == MatchdayStatus.Current) == null ? 0 :
+            .FirstOrDefault(x => x.Matchday.MatchdayStatus == MatchdayStatus.Current && x.IsValid) == null ? 0 :
             this.Rosters.FirstOrDefault(x => x.Matchday.MatchdayStatus == MatchdayStatus.Current).Points;
 
         [NotMapped]
         public int TotalPoints => this.Rosters
-            .Where(x => x.Matchday.MatchdayStatus < MatchdayStatus.Upcoming).Sum(x => x.Points);
+            .Where(x => x.Matchday.MatchdayStatus < MatchdayStatus.Upcoming && x.IsValid).Sum(x => x.Points);
 
     }
 }

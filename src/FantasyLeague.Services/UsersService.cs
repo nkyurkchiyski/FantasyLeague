@@ -23,7 +23,7 @@ namespace FantasyLeague.Services
             this.teamsRepository = teamsRepository;
         }
 
-        public IServiceResult ClubNameTaken(string clubName)
+        public IServiceResult ClubNameVacant(string clubName)
         {
             var result = new ServiceResult { Succeeded = false };
 
@@ -45,6 +45,11 @@ namespace FantasyLeague.Services
         {
             var user = await this.usersRepository
                 .GetByIdAsync(userId);
+
+            if (user == null)
+            {
+                return null;
+            }
 
             return user.ClubName;
         }
@@ -71,7 +76,7 @@ namespace FantasyLeague.Services
             return models;
         }
 
-        public T GetUser<T>(string username)
+        public T GetUserByUsername<T>(string username)
         {
             var user = this.usersRepository.All()
                 .FirstOrDefault(x => x.UserName == username);
@@ -95,16 +100,24 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            var team = this.teamsRepository.All()
-                .FirstOrDefault(x => x.Name == teamName);
+            if (teamName != null)
+            {
 
-            if (team != null)
-            {
-                user.FavouriteTeamId = team.Id;
-            }
-            else
-            {
-                user.FavouriteTeamId = null;
+                var team = this.teamsRepository.All()
+                    .FirstOrDefault(x => x.Name == teamName);
+
+                if (team != null)
+                {
+                    user.FavouriteTeamId = team.Id;
+                }
+                else
+                {
+                    result.Error = string.Format(
+                     ExceptionConstants.NotFoundException,
+                     GlobalConstants.TeamName);
+                    return result;
+                }
+
             }
 
             await usersRepository.SaveChangesAsync();

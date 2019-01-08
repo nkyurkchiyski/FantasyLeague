@@ -8,7 +8,9 @@
             <th>#</th>
             <th>Image</th>
             <th>Name</th>
+            <th>Team</th>
             <th>Position</th>
+            <th>APs</th>
             <th>Price</th>
             <th>TP</th>
             <th>Actions</th>
@@ -25,7 +27,13 @@
                         @Model[i].Name
                     </td>
                     <td>
+                        @Model[i].TeamName
+                    </td>
+                    <td>
                         @Model[i].Position
+                    </td>
+                    <td>
+                        @Model[i].Appearances
                     </td>
                     <td>
                         @Model[i].Price
@@ -67,7 +75,7 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
 <script type="text/javascript">
-    
+
     $(document).ready(function () {
         $('#table_players').DataTable({
             "responsive": true,

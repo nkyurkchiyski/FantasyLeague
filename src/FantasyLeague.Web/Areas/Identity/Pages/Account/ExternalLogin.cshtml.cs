@@ -132,7 +132,7 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
                     Email = Input.Email
                 };
                 
-                var clubNameResult = _usersService.ClubNameTaken(Input.ClubName);
+                var clubNameResult = _usersService.ClubNameVacant(Input.ClubName);
                 var result = new IdentityResult();
 
                 if (clubNameResult.Succeeded)

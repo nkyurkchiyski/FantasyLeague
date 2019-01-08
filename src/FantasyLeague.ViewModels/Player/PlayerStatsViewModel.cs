@@ -19,5 +19,9 @@ namespace FantasyLeague.ViewModels.Player
         public bool Active { get; set; }
 
         public double Price { get; set; }
+
+        public string TeamName { get; set; }
+
+        public int Appearances { get; set; }
     }
 }

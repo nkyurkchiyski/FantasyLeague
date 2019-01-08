@@ -60,12 +60,12 @@ namespace FantasyLeague.Models
             int result = 0;
 
             //Primary Stats
-            result += this.Goals * ScoreConstants.GoalParam;
-            result += this.Assists * (position - ScoreConstants.SecondaryParam);
-            result += this.Shots * (position - ScoreConstants.PrimaryParam);
+            result += this.Goals * (ScoreConstants.GoalParam + ScoreConstants.TertiaryParam);
+            result += this.Assists * (position - ScoreConstants.TertiaryParam);
+            result += this.Shots / ScoreConstants.SecondaryParam;
 
             //Defensive stats
-            result += this.Tackles * (ScoreConstants.MaxPlayerPosition - position + ScoreConstants.SecondaryParam);
+            result += this.Tackles / ScoreConstants.SecondaryParam;
 
             if (this.CleanSheet)
             {
@@ -78,7 +78,7 @@ namespace FantasyLeague.Models
 
             if (position == (int)PlayerPosition.Goalkeeper)
             {
-                result += position;
+                result += (position - ScoreConstants.PrimaryParam);
             }
 
             //Other stats
@@ -88,7 +88,8 @@ namespace FantasyLeague.Models
 
             if (IsWiner.HasValue)
             {
-                result += this.IsWiner.Value ? ScoreConstants.OutcomeBonus : -ScoreConstants.OutcomeBonus;
+                result += this.IsWiner.Value ? ScoreConstants.OutcomeBonus :
+                    -(ScoreConstants.OutcomeBonus);
             }
 
             return result;

@@ -32,7 +32,7 @@ namespace FantasyLeague.Web.Controllers
                 .GetCurrentMatchday<IndexViewModel>();
 
             var user = this.usersService
-                .GetUser<UserViewModel>(User.Identity.Name);
+                .GetUserByUsername<UserViewModel>(User.Identity.Name);
 
             if (user != null)
             {

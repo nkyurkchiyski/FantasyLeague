@@ -3,10 +3,13 @@
     public static class ScoreConstants
     {
         public const int MaxPlayedMinutesValue = 90;
+
         public const int PrimaryParam = 3;
+        public const int SecondaryParam = 2;
+        public const int TertiaryParam = 1;
+
         public const int GoalParam = 4;
         public const int AssistParam = 2;
-        public const int SecondaryParam = 1;
         public const int PlayedMinutesDivider = 30;
 
         public const int MaxFormations = 5;

@@ -76,7 +76,7 @@ namespace FantasyLeague.Web
                 .ForMember(
                     f => f.Roster,
                     opt => opt.MapFrom(src => src.Rosters
-                    .FirstOrDefault(x=>x.Matchday.MatchdayStatus == MatchdayStatus.Current)));
+                    .FirstOrDefault(x => x.Matchday.MatchdayStatus == MatchdayStatus.Current)));
 
             CreateMap<User, UserInfoViewModel>()
                 .ForMember(
@@ -145,22 +145,29 @@ namespace FantasyLeague.Web
             CreateMap<Player, PlayerStatsViewModel>()
                 .ForMember(
                     f => f.Goals,
-                    opt => opt.MapFrom(src => src.Scores
-                                                 .Where(x => x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
+                    opt => opt.MapFrom(src => src.Scores.Where(x =>
+                    x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
                                                  .Sum(x => x.Goals)))
                 .ForMember(
                     f => f.Assists,
-                    opt => opt.MapFrom(src => src.Scores
-                                                 .Where(x => x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
+                    opt => opt.MapFrom(src => src.Scores.Where(x => 
+                    x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
                                                  .Sum(x => x.Assists)))
                 .ForMember(
+                    f => f.Appearances,
+                    opt => opt.MapFrom(src => src.Scores.Where(x =>
+                    x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming).Count()))
+                .ForMember(
                     f => f.TotalPoints,
-                    opt => opt.MapFrom(src => src.Scores
-                                                 .Where(x => x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
+                    opt => opt.MapFrom(src => src.Scores.Where(x => 
+                    x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
                                                  .Sum(x => x.GetScore())))
                 .ForMember(
                     f => f.PlayerImage,
-                    opt => opt.MapFrom(src => src.Image == null ? GlobalConstants.TemplatePlayerImageUrl : src.Image.Url));
+                    opt => opt.MapFrom(src => src.Image == null ? GlobalConstants.TemplatePlayerImageUrl : src.Image.Url))
+                .ForMember(
+                    f => f.TeamName,
+                    opt => opt.MapFrom(src => src.Team.Name));
         }
 
         private void CreateMatchdayMappings()

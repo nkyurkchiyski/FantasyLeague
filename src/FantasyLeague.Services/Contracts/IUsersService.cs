@@ -6,7 +6,7 @@ namespace FantasyLeague.Services.Contracts
 {
     public interface IUsersService
     {
-        IServiceResult ClubNameTaken(string clubName);
+        IServiceResult ClubNameVacant(string clubName);
 
         Task<string> GetClubNameAsync(string userId);
 
@@ -14,7 +14,7 @@ namespace FantasyLeague.Services.Contracts
 
         Task<IServiceResult> SetFavouriteTeamAsync(string userId, string teamName);
 
-        T GetUser<T>(string username);
+        T GetUserByUsername<T>(string username);
 
         ICollection<T> GetLeaderboard<T>();
 

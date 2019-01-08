@@ -10,7 +10,11 @@ namespace FantasyLeague.Generators
 {
     public static class TeamScoresGenerator
     {
-        public static List<ScoreViewModel> GenerateTeamPlayerScores(int matchdayWeek, int goals, int goalsConceded, Team team)
+        public static List<ScoreViewModel> GenerateTeamPlayerScores(
+            int matchdayWeek,
+            int goals,
+            int goalsConceded,
+            Team team)
         {
             var random = new Random();
 
@@ -25,7 +29,10 @@ namespace FantasyLeague.Generators
             return models.Distinct().ToList();
         }
 
-        private static List<ScoreViewModel> GenerateSubs(Random random, int subs, List<ScoreViewModel> models)
+        private static List<ScoreViewModel> GenerateSubs(
+            Random random,
+            int subs,
+            List<ScoreViewModel> models)
         {
             var notSubbedPlayers = models.Where(x =>
                                                     x.Position != PlayerPosition.Goalkeeper &&
@@ -97,7 +104,10 @@ namespace FantasyLeague.Generators
             }
         }
 
-        private static void GenerateTackles(Random random, int goalsConceded, ScoreViewModel model)
+        private static void GenerateTackles(
+            Random random,
+            int goalsConceded,
+            ScoreViewModel model)
         {
             int tackles = random.Next(0, ScoreConstants.PlayerPosParam);
 
@@ -123,7 +133,10 @@ namespace FantasyLeague.Generators
             }
         }
 
-        private static void GenerateShots(Random random, int goals, ScoreViewModel model)
+        private static void GenerateShots(
+            Random random,
+            int goals,
+            ScoreViewModel model)
         {
             int shots = random.Next(0, ScoreConstants.PlayerPosParam);
 
@@ -145,11 +158,9 @@ namespace FantasyLeague.Generators
                 case PlayerPosition.Defender:
                     model.Shots = Math.Abs(--shots);
                     break;
-            }
-
-            if (model.Position == PlayerPosition.Goalkeeper)
-            {
-                model.Shots = 0;
+                case PlayerPosition.Goalkeeper:
+                    model.Shots = 0;
+                    break;
             }
         }
 
@@ -271,7 +282,11 @@ namespace FantasyLeague.Generators
             return playerModels;
         }
 
-        private static IEnumerable<Player> GetSubPlayers(Random random, int subs, List<Player> selectedPlayers, Team team)
+        private static IEnumerable<Player> GetSubPlayers(
+            Random random,
+            int subs,
+            List<Player> selectedPlayers,
+            Team team)
         {
             var remainingPlayers = team.Players
                 .Except(selectedPlayers)
@@ -370,12 +385,15 @@ namespace FantasyLeague.Generators
                 {
                     eligiblePlayers.Add(player);
                 }
-                
+
             }
             return eligiblePlayers;
         }
 
-        private static int[] GetRandomTeamLayout(Random random, int matchdayWeek, Team team)
+        private static int[] GetRandomTeamLayout(
+            Random random,
+            int matchdayWeek,
+            Team team)
         {
             int defendersCount = GetPlayersForPosition(matchdayWeek, team, PlayerPosition.Defender).Count();
             int attackersCount = GetPlayersForPosition(matchdayWeek, team, PlayerPosition.Attacker).Count();

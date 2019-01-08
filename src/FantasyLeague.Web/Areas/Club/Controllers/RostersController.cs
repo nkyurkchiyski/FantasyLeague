@@ -50,7 +50,7 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
                                       .OrderBy(x => x).ToArray();
 
             var user = this.usersService
-                .GetUser<User>(User.Identity.Name);
+                .GetUserByUsername<User>(User.Identity.Name);
 
             var indexRosterViewModel = new UserRosterViewModel
             {
@@ -83,7 +83,7 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
             var roster = rosters.FirstOrDefault(x => x.Matchday.Week == model.MarchdayWeek);
 
             var user = this.usersService
-                .GetUser<UserViewModel>(User.Identity.Name);
+                .GetUserByUsername<UserViewModel>(User.Identity.Name);
 
             var indexRosterViewModel = new UserRosterViewModel
             {

@@ -99,7 +99,7 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
                     user.FavouriteTeamId = Input.FavouriteTeamId;
                 }
 
-                var clubNameResult = _usersService.ClubNameTaken(Input.ClubName);
+                var clubNameResult = _usersService.ClubNameVacant(Input.ClubName);
                 var result = new IdentityResult();
                 var addRoleResult = new IdentityResult();
 

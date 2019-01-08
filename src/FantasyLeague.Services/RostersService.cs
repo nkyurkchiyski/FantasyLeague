@@ -42,7 +42,9 @@ namespace FantasyLeague.Services
         {
             var result = new ServiceResult { Succeeded = false };
 
-            if (playerIds.Length != GlobalConstants.RosterSize)
+            if (playerIds.Length != GlobalConstants.RosterSize ||
+                playerIds.Any(x => string.IsNullOrEmpty(x)) ||
+                playerIds.Any(x => string.IsNullOrWhiteSpace(x)))
             {
                 result.Error = ExceptionConstants.InvalidRosterException;
 
@@ -51,7 +53,17 @@ namespace FantasyLeague.Services
 
             var matchday = this.matchdaysService.GetCurrentMatchday<Matchday>();
 
-            var user = this.userRepository.All().FirstOrDefault(x => x.UserName == username);
+            if (matchday == null)
+            {
+                result.Error = string.Format(
+                   ExceptionConstants.NotFoundException,
+                   GlobalConstants.MatchdayName);
+
+                return result;
+            }
+
+            var user = this.userRepository.All()
+                .FirstOrDefault(x => x.UserName == username);
 
             if (user == null)
             {
@@ -113,6 +125,12 @@ namespace FantasyLeague.Services
         public async Task<IServiceResult> EditAsync(ICollection<RosterPlayerViewModel> players)
         {
             var result = new ServiceResult { Succeeded = false };
+
+            if (players.Count != GlobalConstants.RosterSize)
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidRosterException);
+                return result;
+            }
 
             foreach (var rp in players)
             {

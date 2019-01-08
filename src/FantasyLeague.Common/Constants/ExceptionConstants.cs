@@ -25,9 +25,7 @@
         public const string InvalidInputException = "Invalid input.";
 
         public const string SetCurrentMatchdayException = "An error occurred while setting up new current matchday.";
-
-
-
+        
         public const string ErrorMessage = "errorMessage";
 
     }

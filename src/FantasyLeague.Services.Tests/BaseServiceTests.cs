@@ -1,15 +1,11 @@
 ﻿using AutoMapper;
-using CloudinaryDotNet;
 using FantasyLeague.Data;
 using FantasyLeague.Data.Repositories;
 using FantasyLeague.Data.Repositories.Contracts;
-using FantasyLeague.Data.Seeding;
 using FantasyLeague.Models;
 using FantasyLeague.Services.Contracts;
 using FantasyLeague.Web;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

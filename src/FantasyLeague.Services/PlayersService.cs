@@ -15,14 +15,17 @@ namespace FantasyLeague.Services
     {
         private readonly IImagesService imagesService;
         private readonly IRepository<Player> playerRepository;
+        private readonly IRepository<Team> teamRepository;
 
         public PlayersService(
             IImagesService imagesService,
             IRepository<Player> playerRepository,
+            IRepository<Team> teamRepository,
             IMapper mapper) : base(mapper)
         {
             this.imagesService = imagesService;
             this.playerRepository = playerRepository;
+            this.teamRepository = teamRepository;
         }
 
         public ICollection<T> All<T>()
@@ -34,7 +37,7 @@ namespace FantasyLeague.Services
 
             return models;
         }
-        
+
         public async Task<IServiceResult> ArchiveAsync(Guid playerId)
         {
             var result = new ServiceResult { Succeeded = false };
@@ -70,8 +73,20 @@ namespace FantasyLeague.Services
 
             if (model.TeamId == Guid.Empty ||
                 model.Price <= 0 ||
+                model.Price > GlobalConstants.MaxPlayerPrice ||
                 string.IsNullOrEmpty(model.Name) ||
-                string.IsNullOrEmpty(model.Nationality))
+                string.IsNullOrEmpty(model.Nationality) ||
+                string.IsNullOrWhiteSpace(model.Name) ||
+                string.IsNullOrWhiteSpace(model.Nationality))
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidInputException);
+                return result;
+            }
+
+            var team = await this.teamRepository
+                .GetByIdAsync(model.TeamId);
+
+            if (team == null)
             {
                 result.Error = string.Format(ExceptionConstants.InvalidInputException);
                 return result;
@@ -127,8 +142,20 @@ namespace FantasyLeague.Services
             if (model.Id == Guid.Empty ||
                 model.TeamId == Guid.Empty ||
                 model.Price <= 0 ||
+                model.Price > GlobalConstants.MaxPlayerPrice ||
                 string.IsNullOrEmpty(model.Name) ||
-                string.IsNullOrEmpty(model.Nationality))
+                string.IsNullOrEmpty(model.Nationality)||
+                string.IsNullOrWhiteSpace(model.Name) ||
+                string.IsNullOrWhiteSpace(model.Nationality))
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidInputException);
+                return result;
+            }
+
+            var team = await this.teamRepository
+               .GetByIdAsync(model.TeamId);
+
+            if (team == null)
             {
                 result.Error = string.Format(ExceptionConstants.InvalidInputException);
                 return result;

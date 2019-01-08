@@ -57,18 +57,18 @@ namespace FantasyLeague.Services
 
         private bool? GetFixtureOutcome(Guid teamId, Fixture fixture)
         {
-            if (teamId == fixture.HomeTeamId)
+            switch (fixture.Winner)
             {
-                return fixture.Winner == MatchResult.HomeTeam;
+                case MatchResult.HomeTeam:
+                    return teamId == fixture.HomeTeamId;
+                case MatchResult.AwayTeam:
+                    return teamId == fixture.AwayTeamId;
+                default:
+                case MatchResult.Unknown:
+                case MatchResult.Draw:
+                    return null;
             }
-            else if (teamId == fixture.HomeTeamId)
-            {
-                return fixture.Winner == MatchResult.AwayTeam;
-            }
-            else
-            {
-                return null;
-            }
+
         }
 
         private Score CreateScore(Fixture fixture, ScoreViewModel model)

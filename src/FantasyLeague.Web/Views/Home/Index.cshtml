@@ -8,7 +8,7 @@
     var transferWindowStatuses = Enum.GetNames(typeof(TransferWindowStatus));
 }
 
-@if (User.Identity.IsAuthenticated)
+@if (User.Identity.IsAuthenticated && Model.User != null)
 {
     <h1>Welcome back, <span class="font-italic">@User.Identity.Name</span></h1>
     <hr />

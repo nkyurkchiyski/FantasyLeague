@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using FantasyLeague.Services.Contracts;
+using FantasyLeague.Common.Constants;
 
 namespace FantasyLeague.Web.Areas.Identity.Pages.Account
 {
@@ -88,6 +89,7 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
 
             // Sign in the user with this external login provider if the user already has a login.
             var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+
             if (result.Succeeded)
             {
                 _logger.LogInformation("{Name} logged in with {LoginProvider} provider.", info.Principal.Identity.Name, info.LoginProvider);
@@ -134,14 +136,18 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
                 
                 var clubNameResult = _usersService.ClubNameVacant(Input.ClubName);
                 var result = new IdentityResult();
+                var addRoleResult = new IdentityResult();
 
                 if (clubNameResult.Succeeded)
                 {
                     user.ClubName = Input.ClubName;
                     result = await _userManager.CreateAsync(user);
+                    addRoleResult = await this._userManager.AddToRoleAsync(user, RoleConstants.UserRoleName);
                 }
 
-                if (result.Succeeded && clubNameResult.Succeeded)
+                if (result.Succeeded && 
+                    clubNameResult.Succeeded && 
+                    addRoleResult.Succeeded)
                 {
                     result = await _userManager.AddLoginAsync(user, info);
                     if (result.Succeeded)
@@ -151,8 +157,13 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
-
+                
                 foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+
+                foreach (var error in addRoleResult.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }

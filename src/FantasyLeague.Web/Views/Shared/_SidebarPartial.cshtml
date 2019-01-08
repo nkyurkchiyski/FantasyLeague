@@ -13,9 +13,9 @@
 <div class="collapse" id="navbarSupportedContent">
     <ul class="nav flex-column font-weight-bold">
         <li class="nav-item px-3">
-            <a class="nav-link @ManageSidebar.HomeNavClass(ViewContext)" asp-area="" asp-controller="Home" asp-action="Index" ><span class="oi oi-home" aria-hidden="true"></span>Home</a>
+            <a class="nav-link @ManageSidebar.HomeNavClass(ViewContext)" asp-area="" asp-controller="Home" asp-action="Index"><span class="oi oi-home" aria-hidden="true"></span>Home</a>
         </li>
-        @if (SignInManager.IsSignedIn(User))
+        @if (SignInManager.IsSignedIn(User) && UserManager.Users.FirstOrDefault(x => x.UserName == User.Identity.Name) != null)
         {
             <li class="nav-item px-3">
                 <a class="nav-link @ManageSidebar.RosterNavClass(ViewContext)" asp-area="Club" asp-controller="Rosters" asp-action="Index">

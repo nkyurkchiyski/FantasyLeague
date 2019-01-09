@@ -281,7 +281,9 @@ namespace FantasyLeague.Services
                 }
 
                 var lastRoster = this.rosterRepository.All()
-                    .Where(x => x.UserId == user.Id).LastOrDefault();
+                    .Where(x => x.UserId == user.Id)
+                    .OrderBy(x => x.Matchday.Week)
+                    .LastOrDefault();
 
                 if (lastRoster != null)
                 {

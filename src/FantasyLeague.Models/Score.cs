@@ -62,10 +62,10 @@ namespace FantasyLeague.Models
             //Primary Stats
             result += this.Goals * (ScoreConstants.GoalParam + ScoreConstants.TertiaryParam);
             result += this.Assists * (position - ScoreConstants.TertiaryParam);
-            result += this.Shots / ScoreConstants.SecondaryParam;
+            result += this.Shots;
 
             //Defensive stats
-            result += this.Tackles / ScoreConstants.SecondaryParam;
+            result += this.Tackles;
 
             if (this.CleanSheet)
             {
@@ -73,16 +73,21 @@ namespace FantasyLeague.Models
             }
             else
             {
-                result -= this.GoalsConceded;
+                result -= ScoreConstants.TertiaryParam;
             }
 
             if (position == (int)PlayerPosition.Goalkeeper)
             {
-                result += (position - ScoreConstants.PrimaryParam);
+                result += position - ScoreConstants.SecondaryParam;
+            }
+
+            if (position >= (int)PlayerPosition.Defender)
+            {
+                result -= this.GoalsConceded / ScoreConstants.SecondaryParam;
             }
 
             //Other stats
-            result += this.PlayedMinutes / ScoreConstants.PlayedMinutesDivider;
+            result += 1 + (this.PlayedMinutes / ScoreConstants.PlayedMinutesDivider);
             result -= this.YellowCards * ScoreConstants.CardParam;
             result -= this.RedCards * ScoreConstants.CardParam * ScoreConstants.CardParam;
 

@@ -1,4 +1,5 @@
-﻿using FantasyLeague.Models.Abstract;
+﻿using FantasyLeague.Common.Constants;
+using FantasyLeague.Models.Abstract;
 using FantasyLeague.Models.Enums;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,6 @@ namespace FantasyLeague.Models
 {
     public class Player : BaseEntity
     {
-        private const double MaxPriceValue = 30;
-
         public Player()
         {
             this.Rosters = new HashSet<RosterPlayer>();
@@ -27,7 +26,7 @@ namespace FantasyLeague.Models
         public PlayerPosition Position { get; set; }
 
         [Required]
-        [Range(minimum: 0, maximum: MaxPriceValue)]
+        [Range(minimum: 0, maximum: GlobalConstants.MaxPlayerPrice)]
         public double Price { get; set; }
 
         [Required]

@@ -37,6 +37,6 @@ namespace FantasyLeague.Models
                       x.Player.Scores.FirstOrDefault(y => this.Matchday.Fixtures.Contains(y.Fixture)).GetScore());
 
         [NotMapped]
-        public bool IsValid => this.Players.Count == GlobalConstants.RosterSize &&                               this.Budget >= 0;
+        public bool IsValid => this.Players.Count == GlobalConstants.RosterSize && this.Budget >= 0;
     }
 }

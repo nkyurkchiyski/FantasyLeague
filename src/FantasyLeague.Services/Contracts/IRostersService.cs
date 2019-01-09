@@ -8,7 +8,7 @@ namespace FantasyLeague.Services.Contracts
 {
     public interface IRostersService
     {
-        RosterViewModel GetCurrentUserRoster(string username, Guid matchdayId);
+        RosterViewModel GetCurrentUserRoster(string username);
 
         ICollection<RosterViewModel> GetAllUserRosters(string username);
 
@@ -19,6 +19,5 @@ namespace FantasyLeague.Services.Contracts
         Task<IServiceResult> SetCurrentRostersAsync(Guid matchdayId);
 
         Task<IServiceResult> SetNewFormationAsync(Formation formation, Guid rosterId);
-
     }
 }

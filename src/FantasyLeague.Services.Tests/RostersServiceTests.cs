@@ -2,6 +2,7 @@
 using FantasyLeague.Common.Constants;
 using FantasyLeague.Data.Seeding;
 using FantasyLeague.Models;
+using FantasyLeague.Models.Enums;
 using FantasyLeague.Services.Contracts;
 using FantasyLeague.ViewModels.Roster;
 using Microsoft.Extensions.DependencyInjection;
@@ -190,7 +191,6 @@ namespace FantasyLeague.Services.Tests
 
             result.Succeeded.ShouldBeTrue();
             this.TearDown();
-
         }
 
         [Fact]
@@ -222,9 +222,7 @@ namespace FantasyLeague.Services.Tests
 
             result.Succeeded.ShouldBeFalse();
             this.TearDown();
-
         }
-
 
         [Fact]
         public void EditAsync_WithInvalidRosterSize_ShouldReturnTrue()
@@ -255,7 +253,227 @@ namespace FantasyLeague.Services.Tests
 
             result.Succeeded.ShouldBeFalse();
             this.TearDown();
+        }
 
+        [Fact]
+        public void SetNewFormationAsync_WithValidData_ShouldReturnTrue()
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays.First();
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+                .SetNewFormationAsync(Formation.Formation442, roster.Id)
+                .GetAwaiter().GetResult();
+
+            result.Succeeded.ShouldBeTrue();
+            this.TearDown();
+        }
+
+        [Fact]
+        public void SetNewFormationAsync_WithInvalidRosterId_ShouldReturnFalse()
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays.First();
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+                .SetNewFormationAsync(Formation.Formation442, Guid.NewGuid())
+                .GetAwaiter().GetResult();
+
+            result.Succeeded.ShouldBeFalse();
+            this.TearDown();
+        }
+
+        [Fact]
+        public void SetNewFormationAsync_WithEmptyRosterId_ShouldReturnFalse()
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays.First();
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+                .SetNewFormationAsync(Formation.Formation442, Guid.Empty)
+                .GetAwaiter().GetResult();
+
+            result.Succeeded.ShouldBeFalse();
+            this.TearDown();
+        }
+
+        [Fact]
+        public void SetCurrentRostersAsync_WithValidData_ShouldReturnTrue()
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays.First();
+            var newMatchday = this.Context.Matchdays.Last();
+
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+                .SetCurrentRostersAsync(newMatchday.Id)
+                .GetAwaiter().GetResult();
+
+            result.Succeeded.ShouldBeTrue();
+            this.TearDown();
+        }
+
+        [Fact]
+        public void SetCurrentRostersAsync_WithInvalidMatchdayId_ShouldReturnFalse()
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays.First();
+
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+               .SetCurrentRostersAsync(Guid.NewGuid())
+               .GetAwaiter().GetResult();
+
+            result.Succeeded.ShouldBeFalse();
+            this.TearDown();
+        }
+
+        [Fact]
+        public void SetCurrentRostersAsync_WithEmptyMatchdayId_ShouldReturnFalse()
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays.First();
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+               .SetCurrentRostersAsync(Guid.Empty)
+               .GetAwaiter().GetResult();
+
+            result.Succeeded.ShouldBeFalse();
+            this.TearDown();
+        }
+
+        [Fact]
+        public void GetAllUserRosters_WithValidData_ShouldReturnSameSize()
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays.First();
+
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+                .GetAllUserRosters(user.UserName);
+
+            var resultCount = result.Count;
+
+            result.ShouldNotBeEmpty();
+            resultCount.ShouldBe(user.Rosters.Count);
+            this.TearDown();
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        [InlineData("ADMIN")]
+        [InlineData("aDmIn")]
+        [InlineData("       ")]
+        [InlineData("  ")]
+        [InlineData("SomeName")]
+        [InlineData("12315651")]
+        [InlineData("sdkjfns-skdfkjsnfk-56544-sdfs")]
+        [InlineData("kek")]
+        public void GetAllUserRosters_WithInvalidData_ShouldReturnEmpty(string name)
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays.First();
+
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+                .GetAllUserRosters(name);
+
+            result.ShouldBeEmpty();
+            this.TearDown();
+        }
+
+        [Fact]
+        public void GetCurrentUserRoster_WithValidData_ShouldReturnRosterViewModel()
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays
+                .First(x => x.MatchdayStatus == MatchdayStatus.Current);
+
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+                .GetCurrentUserRoster(user.UserName);
+
+            var model = this.mapper.Map<Roster>(roster);
+
+            result.ShouldNotBeNull();
+            model.ShouldBeSameAs(roster);
+            this.TearDown();
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        [InlineData("ADMIN")]
+        [InlineData("aDmIn")]
+        [InlineData("       ")]
+        [InlineData("  ")]
+        [InlineData("SomeName")]
+        [InlineData("12315651")]
+        [InlineData("sdkjfns-skdfkjsnfk-56544-sdfs")]
+        [InlineData("kek")]
+        public void GetCurrentUserRoster_WithValidData_ShouldReturnNull(string name)
+        {
+            FantasyLeagueDbContextSeeder.Seed(Context, Provider);
+            var matchday = this.Context.Matchdays
+                .First(x => x.MatchdayStatus == MatchdayStatus.Current);
+
+            var user = this.Context.Users.First();
+            var roster = this.CreateRoster(user, matchday);
+
+            this.Context.Rosters.Add(roster);
+            this.Context.SaveChanges();
+
+            var result = this.rostersService
+                .GetCurrentUserRoster(name);
+            
+            result.ShouldBeNull();
+            this.TearDown();
         }
     }
 }

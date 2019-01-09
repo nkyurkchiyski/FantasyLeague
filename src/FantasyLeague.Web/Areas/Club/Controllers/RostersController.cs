@@ -40,7 +40,7 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
                .GetCurrentMatchday<MatchdayViewModel>();
 
             var currentRoster = this.rostersService
-               .GetCurrentUserRoster(User.Identity.Name, currentMatchday.Id);
+               .GetCurrentUserRoster(User.Identity.Name);
 
             var rosters = this.rostersService
                       .GetAllUserRosters(User.Identity.Name);
@@ -104,7 +104,7 @@ namespace FantasyLeague.Web.Areas.Club.Controllers
                 .GetCurrentMatchday<Matchday>();
 
             var roster = this.rostersService
-                .GetCurrentUserRoster(User.Identity.Name, matchday.Id);
+                .GetCurrentUserRoster(User.Identity.Name);
 
             var result = await this.rostersService
                 .SetNewFormationAsync(formation, roster.Id);

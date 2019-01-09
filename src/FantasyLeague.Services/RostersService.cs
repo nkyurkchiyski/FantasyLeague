@@ -184,7 +184,7 @@ namespace FantasyLeague.Services
             var models = rosters.Select(x => this.mapper.Map<RosterViewModel>(x))
                .ToList();
 
-            if (models != null)
+            if (models != null && models.Any())
             {
                 foreach (var rosterVM in models)
                 {
@@ -210,11 +210,19 @@ namespace FantasyLeague.Services
             return models;
         }
 
-        public RosterViewModel GetCurrentUserRoster(string username, Guid matchdayId)
+        public RosterViewModel GetCurrentUserRoster(string username)
         {
+            var currentMatchday = this.matchdaysService
+                .GetCurrentMatchday<Matchday>();
+
+            if (currentMatchday == null)
+            {
+                return null;
+            }
+
             var roster = this.rosterRepository.All()
                 .FirstOrDefault(x => x.User.UserName == username &&
-                                   x.MatchdayId == matchdayId);
+                                   x.MatchdayId == currentMatchday.Id);
 
             var model = this.mapper.Map<RosterViewModel>(roster);
 
@@ -223,7 +231,7 @@ namespace FantasyLeague.Services
                 foreach (var playerVM in model.Players)
                 {
                     var playerScore = this.scoreRepository.All()
-                                        .FirstOrDefault(x => x.Fixture.MatchdayId == matchdayId &&
+                                        .FirstOrDefault(x => x.Fixture.MatchdayId == currentMatchday.Id &&
                                                              x.PlayerId == playerVM.PlayerId);
 
                     if (playerScore != null)
@@ -236,16 +244,30 @@ namespace FantasyLeague.Services
                         }
                     }
                 }
-
             }
-
-
             return model;
         }
 
         public async Task<IServiceResult> SetCurrentRostersAsync(Guid matchdayId)
         {
             var result = new ServiceResult { Succeeded = false };
+
+            if (matchdayId == Guid.Empty)
+            {
+                result.Error = string.Format(ExceptionConstants.InvalidInputException);
+                return result;
+            }
+
+            var matchday = this.matchdaysService
+                .GetMatchday<Matchday>(matchdayId);
+
+            if (matchday == null)
+            {
+                result.Error = string.Format(
+                    ExceptionConstants.NotFoundException,
+                    GlobalConstants.MatchdayName);
+                return result;
+            }
 
             var users = this.userRepository.All().ToList();
 
@@ -266,14 +288,18 @@ namespace FantasyLeague.Services
                     var roster = new Roster
                     {
                         Budget = GlobalConstants.Budget - lastRoster.Players.Sum(x => x.Player.Price),
-                        MatchdayId = matchdayId,
+                        MatchdayId = matchday.Id,
                         Formation = lastRoster.Formation,
                         User = user
                     };
 
                     foreach (var player in lastRoster.Players)
                     {
-                        roster.Players.Add(new RosterPlayer { PlayerId = player.PlayerId, Selected = player.Selected });
+                        roster.Players.Add(new RosterPlayer
+                        {
+                            PlayerId = player.PlayerId,
+                            Selected = player.Selected
+                        });
                     }
 
                     rosters.Add(roster);

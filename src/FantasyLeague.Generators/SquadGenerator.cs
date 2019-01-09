@@ -38,7 +38,6 @@ namespace FantasyLeague.Generators
                 {
                     eligiblePlayers.Add(player);
                 }
-
             }
             return eligiblePlayers;
         }

@@ -37,7 +37,7 @@ namespace FantasyLeague.Web.Controllers
             if (user != null)
             {
                 var currentRoster = this.rostersService
-                    .GetCurrentUserRoster(User.Identity.Name, indexViewModel.MarchdayId);
+                    .GetCurrentUserRoster(User.Identity.Name);
 
                 user.Roster = currentRoster;
                 indexViewModel.User = user;

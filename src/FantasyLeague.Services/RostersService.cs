@@ -188,22 +188,7 @@ namespace FantasyLeague.Services
             {
                 foreach (var rosterVM in models)
                 {
-                    foreach (var playerVM in rosterVM.Players)
-                    {
-                        var playerScore = this.scoreRepository.All()
-                                        .FirstOrDefault(x => x.Fixture.MatchdayId == rosterVM.Matchday.Id &&
-                                                             x.PlayerId == playerVM.PlayerId);
-
-                        if (playerScore != null)
-                        {
-                            playerVM.CurrentPoints = playerScore.GetScore();
-
-                            if (playerVM.Selected)
-                            {
-                                rosterVM.Points += playerVM.CurrentPoints;
-                            }
-                        }
-                    }
+                    this.CreateRosterViewModel(rosterVM.Matchday.Id, rosterVM);
                 }
 
             }
@@ -228,22 +213,7 @@ namespace FantasyLeague.Services
 
             if (model != null)
             {
-                foreach (var playerVM in model.Players)
-                {
-                    var playerScore = this.scoreRepository.All()
-                                        .FirstOrDefault(x => x.Fixture.MatchdayId == currentMatchday.Id &&
-                                                             x.PlayerId == playerVM.PlayerId);
-
-                    if (playerScore != null)
-                    {
-                        playerVM.CurrentPoints = playerScore.GetScore();
-
-                        if (playerVM.Selected)
-                        {
-                            model.Points += playerVM.CurrentPoints;
-                        }
-                    }
-                }
+                this.CreateRosterViewModel(currentMatchday.Id, model);
             }
             return model;
         }
@@ -274,7 +244,9 @@ namespace FantasyLeague.Services
             var rosters = new List<Roster>();
             foreach (var user in users)
             {
-                var existingRoster = user.Rosters.FirstOrDefault(x => x.MatchdayId == matchdayId);
+                var existingRoster = user.Rosters
+                    .FirstOrDefault(x => x.MatchdayId == matchdayId);
+
                 if (existingRoster != null)
                 {
                     continue;
@@ -287,22 +259,7 @@ namespace FantasyLeague.Services
 
                 if (lastRoster != null)
                 {
-                    var roster = new Roster
-                    {
-                        Budget = GlobalConstants.Budget - lastRoster.Players.Sum(x => x.Player.Price),
-                        MatchdayId = matchday.Id,
-                        Formation = lastRoster.Formation,
-                        User = user
-                    };
-
-                    foreach (var player in lastRoster.Players)
-                    {
-                        roster.Players.Add(new RosterPlayer
-                        {
-                            PlayerId = player.PlayerId,
-                            Selected = player.Selected
-                        });
-                    }
+                    Roster roster = this.CopyOldRoster(matchday, user, lastRoster);
 
                     rosters.Add(roster);
                 }
@@ -313,6 +270,48 @@ namespace FantasyLeague.Services
 
             result.Succeeded = true;
             return result;
+        }
+
+        private Roster CopyOldRoster(Matchday matchday, User user, Roster lastRoster)
+        {
+            var roster = new Roster
+            {
+                Budget = GlobalConstants.Budget - lastRoster.Players.Sum(x => x.Player.Price),
+                MatchdayId = matchday.Id,
+                Formation = lastRoster.Formation,
+                User = user
+            };
+
+            foreach (var player in lastRoster.Players)
+            {
+                roster.Players.Add(new RosterPlayer
+                {
+                    PlayerId = player.PlayerId,
+                    Selected = player.Selected
+                });
+            }
+
+            return roster;
+        }
+        
+        private void CreateRosterViewModel(Guid matchdayId, RosterViewModel model)
+        {
+            foreach (var playerVM in model.Players)
+            {
+                var playerScore = this.scoreRepository.All()
+                                    .FirstOrDefault(x => x.Fixture.MatchdayId == matchdayId &&
+                                                         x.PlayerId == playerVM.PlayerId);
+
+                if (playerScore != null)
+                {
+                    playerVM.CurrentPoints = playerScore.GetScore();
+
+                    if (playerVM.Selected)
+                    {
+                        model.Points += playerVM.CurrentPoints;
+                    }
+                }
+            }
         }
 
     }

@@ -35,5 +35,7 @@
 
         public const int MaxPlayerPosition = 7;
 
+        public const int BaseStatValue = 0;
+
     }
 }

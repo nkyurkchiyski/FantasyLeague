@@ -102,7 +102,6 @@ namespace FantasyLeague.Services
 
             if (teamName != null)
             {
-
                 var team = this.teamsRepository.All()
                     .FirstOrDefault(x => x.Name == teamName);
 
@@ -117,11 +116,9 @@ namespace FantasyLeague.Services
                      GlobalConstants.TeamName);
                     return result;
                 }
-
             }
 
             await usersRepository.SaveChangesAsync();
-
             result.Succeeded = true;
             return result;
         }

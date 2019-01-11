@@ -258,7 +258,7 @@ namespace FantasyLeague.Services
                 }
                 catch (Exception e)
                 {
-                    result.Error = e.Message + "\n-----" + e.StackTrace + "\n-----" + e.Source;
+                    result.Error = e.Message;
                     return result;
                 }
 
@@ -276,7 +276,6 @@ namespace FantasyLeague.Services
             result.Succeeded = true;
             return result;
         }
-
-
+        
     }
 }

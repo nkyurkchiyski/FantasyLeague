@@ -28,6 +28,18 @@ namespace FantasyLeague.Services
             this.teamRepository = teamRepository;
         }
 
+        private Player CreatePlayer(PlayerDetailedViewModel model)
+        {
+            return new Player
+            {
+                Name = model.Name,
+                TeamId = model.TeamId,
+                Price = model.Price,
+                Nationality = model.Nationality,
+                Position = model.Position
+            };
+        }
+
         public ICollection<T> All<T>()
         {
             var players = this.playerRepository.All().ToList();
@@ -92,14 +104,7 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            var player = new Player
-            {
-                Name = model.Name,
-                TeamId = model.TeamId,
-                Price = model.Price,
-                Nationality = model.Nationality,
-                Position = model.Position
-            };
+            Player player = this.CreatePlayer(model);
 
             if (model.Image != null)
             {

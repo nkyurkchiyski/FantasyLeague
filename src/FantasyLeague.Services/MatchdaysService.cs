@@ -22,6 +22,23 @@ namespace FantasyLeague.Services
             this.matchdaysRepository = matchdaysRepository;
         }
 
+        private void ChangeMatchdaysStatuses(int currentWeek, IQueryable<Matchday> matchdays)
+        {
+            foreach (var m in matchdays)
+            {
+                if (m.Week < currentWeek)
+                {
+                    m.MatchdayStatus = MatchdayStatus.Past;
+                    m.TransferWindowStatus = TransferWindowStatus.Closed;
+                }
+                else if (m.Week > currentWeek)
+                {
+                    m.MatchdayStatus = MatchdayStatus.Upcoming;
+                    m.TransferWindowStatus = TransferWindowStatus.Closed;
+                }
+            }
+        }
+
         public ICollection<T> All<T>()
         {
             var matchdays = this.matchdaysRepository.All().ToList();
@@ -70,7 +87,9 @@ namespace FantasyLeague.Services
             return model;
         }
 
-        public async Task<Matchday> SetCurrentMatchdayAsync(int week, TransferWindowStatus transferWindowStatus)
+        public async Task<Matchday> SetCurrentMatchdayAsync(
+            int week,
+            TransferWindowStatus transferWindowStatus)
         {
             if (week <= 0 || week > GlobalConstants.TotalMatchdays)
             {
@@ -90,19 +109,7 @@ namespace FantasyLeague.Services
             currentMatchday.MatchdayStatus = MatchdayStatus.Current;
             currentMatchday.TransferWindowStatus = transferWindowStatus;
 
-            foreach (var m in matchdays)
-            {
-                if (m.Week < week)
-                {
-                    m.MatchdayStatus = MatchdayStatus.Past;
-                    m.TransferWindowStatus = TransferWindowStatus.Closed;
-                }
-                else if (m.Week > week)
-                {
-                    m.MatchdayStatus = MatchdayStatus.Upcoming;
-                    m.TransferWindowStatus = TransferWindowStatus.Closed;
-                }
-            }
+            this.ChangeMatchdaysStatuses(week, matchdays);
 
             await this.matchdaysRepository.SaveChangesAsync();
 

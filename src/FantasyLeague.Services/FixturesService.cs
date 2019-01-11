@@ -136,6 +136,42 @@ namespace FantasyLeague.Services
                    fixture.AwayTeamGoals != awayTeamGoals;
         }
 
+        private bool ValidFixtureInput(
+            Guid fixtureId,
+            DateTime date,
+            int homeTeamGoals,
+            int awayTeamGoals)
+        {
+            return fixtureId != Guid.Empty &&
+                   date != null &&
+                   homeTeamGoals >= 0 &&
+                   awayTeamGoals >= 0;
+        }
+
+        private void EditFixture(
+            DateTime date,
+            FixtureStatus status,
+            int homeTeamGoals,
+            int awayTeamGoals,
+            Fixture fixture)
+        {
+            fixture.Status = status;
+            fixture.Date = date;
+
+            if (status == FixtureStatus.Finished)
+            {
+                fixture.HomeTeamGoals = homeTeamGoals;
+                fixture.AwayTeamGoals = awayTeamGoals;
+                fixture.Winner = this.GetWinner(homeTeamGoals, awayTeamGoals);
+            }
+            else
+            {
+                fixture.HomeTeamGoals = null;
+                fixture.AwayTeamGoals = null;
+                fixture.Winner = MatchResult.Unknown;
+            }
+        }
+
         public ICollection<T> All<T>()
         {
             var fixtures = this.fixturesRepository.All();
@@ -167,10 +203,7 @@ namespace FantasyLeague.Services
         {
             var result = new ServiceResult { Succeeded = false };
 
-            if (fixtureId == Guid.Empty ||
-                date == null ||
-                homeTeamGoals < 0 ||
-                awayTeamGoals < 0)
+            if (!ValidFixtureInput(fixtureId, date, homeTeamGoals, awayTeamGoals))
             {
                 result.Error = string.Format(ExceptionConstants.InvalidInputException);
                 return result;
@@ -192,34 +225,15 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            fixture.Status = status;
-            fixture.Date = date;
-
-            if (status == FixtureStatus.Finished)
-            {
-                fixture.HomeTeamGoals = homeTeamGoals;
-                fixture.AwayTeamGoals = awayTeamGoals;
-
-                var winner = GetWinner(homeTeamGoals, awayTeamGoals);
-
-                fixture.Winner = winner;
-            }
-            else
-            {
-                fixture.HomeTeamGoals = null;
-                fixture.AwayTeamGoals = null;
-                fixture.Winner = MatchResult.Unknown;
-            }
+            this.EditFixture(date, status, homeTeamGoals, awayTeamGoals, fixture);
 
             this.scoresRepository.DeleteRange(fixture.Scores.ToArray());
-
             await fixturesRepository.SaveChangesAsync();
 
             result.Succeeded = true;
-
             return result;
         }
-
+        
         public async Task<IServiceResult> GenerateScoresAsync(Guid matchdayId)
         {
             var result = new ServiceResult { Succeeded = false };
@@ -276,6 +290,6 @@ namespace FantasyLeague.Services
             result.Succeeded = true;
             return result;
         }
-        
+
     }
 }

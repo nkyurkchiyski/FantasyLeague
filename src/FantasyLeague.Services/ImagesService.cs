@@ -25,11 +25,16 @@ namespace FantasyLeague.Services
             this.cloudinary = cloudinary;
         }
 
+        private static bool ValidImageInput(string type, string publicId, string url)
+        {
+            return !string.IsNullOrEmpty(type) &&
+                   !string.IsNullOrEmpty(publicId) &&
+                   !string.IsNullOrEmpty(url);
+        }
+        
         public async Task<Image> CreateAsync(string type, string publicId, string url)
         {
-            if (string.IsNullOrEmpty(type) ||
-                string.IsNullOrEmpty(publicId) ||
-                string.IsNullOrEmpty(url))
+            if (!ValidImageInput(type, publicId, url))
             {
                 return null;
             }
@@ -52,7 +57,7 @@ namespace FantasyLeague.Services
 
             return image;
         }
-
+        
         public DelResResult Delete(Image image)
         {
             var result = this.cloudinary.DeleteResources(image.PublicId);

@@ -28,6 +28,17 @@ namespace FantasyLeague.Services
             this.teamRepository = teamRepository;
         }
 
+        private bool ValidPlayerDetailedViewModel(PlayerDetailedViewModel model)
+        {
+            return model.TeamId != Guid.Empty &&
+                   model.Price > 0 &&
+                   model.Price <= GlobalConstants.MaxPlayerPrice &&
+                   !string.IsNullOrEmpty(model.Name) &&
+                   !string.IsNullOrEmpty(model.Nationality) &&
+                   !string.IsNullOrWhiteSpace(model.Name) &&
+                   !string.IsNullOrWhiteSpace(model.Nationality);
+        }
+
         private Player CreatePlayer(PlayerDetailedViewModel model)
         {
             return new Player
@@ -83,13 +94,7 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            if (model.TeamId == Guid.Empty ||
-                model.Price <= 0 ||
-                model.Price > GlobalConstants.MaxPlayerPrice ||
-                string.IsNullOrEmpty(model.Name) ||
-                string.IsNullOrEmpty(model.Nationality) ||
-                string.IsNullOrWhiteSpace(model.Name) ||
-                string.IsNullOrWhiteSpace(model.Nationality))
+            if (!this.ValidPlayerDetailedViewModel(model))
             {
                 result.Error = string.Format(ExceptionConstants.InvalidInputException);
                 return result;
@@ -129,7 +134,6 @@ namespace FantasyLeague.Services
             this.playerRepository.Add(player);
             await this.playerRepository.SaveChangesAsync();
 
-
             result.Succeeded = true;
             return result;
         }
@@ -144,14 +148,7 @@ namespace FantasyLeague.Services
                 return result;
             }
 
-            if (model.Id == Guid.Empty ||
-                model.TeamId == Guid.Empty ||
-                model.Price <= 0 ||
-                model.Price > GlobalConstants.MaxPlayerPrice ||
-                string.IsNullOrEmpty(model.Name) ||
-                string.IsNullOrEmpty(model.Nationality)||
-                string.IsNullOrWhiteSpace(model.Name) ||
-                string.IsNullOrWhiteSpace(model.Nationality))
+            if (model.Id == Guid.Empty || !ValidPlayerDetailedViewModel(model))
             {
                 result.Error = string.Format(ExceptionConstants.InvalidInputException);
                 return result;

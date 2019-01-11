@@ -55,14 +55,23 @@ namespace FantasyLeague.Web
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<FantasyLeagueDbContext>();
+            
+            services
+                .ConfigureApplicationCookie(options =>
+                {
+                    options.LoginPath = "/Identity/Account/Login";
+                    options.LogoutPath = "/Identity/Account/Logout";
+                    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                });
 
-
-            services.ConfigureApplicationCookie(options =>
-            {
-                options.LoginPath = $"/Identity/Account/Login";
-                options.LogoutPath = $"/Identity/Account/Logout";
-                options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
-            });
+            services
+                .Configure<CookiePolicyOptions>(options =>
+                {
+                    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                    options.CheckConsentNeeded = context => true;
+                    options.MinimumSameSitePolicy = SameSiteMode.Lax;
+                    options.ConsentCookie.Name = ".AspNetCore.ConsentCookie";
+                });
 
 
             //SetUp Cloudinary
@@ -101,7 +110,15 @@ namespace FantasyLeague.Web
             services.AddScoped<IMatchdaysService, MatchdaysService>();
             services.AddScoped<IRostersService, RostersService>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services
+                .AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddRazorPagesOptions(options =>
+                {
+                    options.AllowAreas = true;
+                    options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
+                    options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
+                }); ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

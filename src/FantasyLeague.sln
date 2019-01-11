@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FantasyLeague.ViewModels", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FantasyLeague.Generators", "FantasyLeague.Generators\FantasyLeague.Generators.csproj", "{09028220-784D-463A-BFBA-1926EE416CD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyLeague.Services.Tests", "FantasyLeague.Services.Tests\FantasyLeague.Services.Tests.csproj", "{38985966-182F-4B3E-B50D-10E54914A1CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FantasyLeague.Services.Tests", "FantasyLeague.Services.Tests\FantasyLeague.Services.Tests.csproj", "{38985966-182F-4B3E-B50D-10E54914A1CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

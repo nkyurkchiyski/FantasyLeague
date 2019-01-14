@@ -1,0 +1,53 @@
+﻿@{
+    @model PlayerPointsViewModel
+    ViewData["Title"] = $"{ActionConstants.Details} {GlobalConstants.PlayerName}";
+    ViewData["ActivePage"] = PagesConstants.Teams;
+}
+
+<h1>@ActionConstants.Details @GlobalConstants.PlayerName</h1>
+@{
+    <a asp-controller="@PagesConstants.Teams" asp-action="@ActionConstants.Details" asp-route-id="@Model.TeamId" class="btn btn-outline-primary"><span class="oi oi-arrow-left"></span></a>
+}
+<hr>
+
+<div class="d-flex justify-content-center">
+    <div class="w-80 row">
+        <div class="@(Model.Scores.Any()?"col-md-8":"col-md-12")">
+            <div class="card text-center bundesliga-box-shadow">
+                <div class="card-header bundesliga-bg-color">
+                    <h5 class="my-0 text-white">@Model.Name</h5>
+                </div>
+                <div class="pt-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="player-xl-image" src="@Model.PlayerImage" />
+                        </div>
+                        <div class="col-md-4 text-left text-muted">
+                            <h5>@Model.TeamName</h5>
+                            <h5>@Model.Nationality</h5>
+                            <h5>@Model.Position</h5>
+                            <h5 class="bundesliga-color">Price: @(Model.Price)M</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="player-badge" src="@Model.Team.TeamImage" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between text-uppercase font-weight-bold">
+                    <div>Goals: @(Model.Goals)</div>
+                    <div>Assists: @(Model.Assists)</div>
+                    <div>Apps: @(Model.Appearances)</div>
+                    <div>Points: @(Model.TotalPoints)P</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="accordion">
+                @foreach (var score in Model.Scores.OrderByDescending(x => x.MatchdayWeek))
+                {
+                    <partial name="~/Areas/Competition/Views/Shared/_ScorePartial.cshtml" model="@score" />
+                }
+            </div>
+        </div>
+    </div>
+</div>

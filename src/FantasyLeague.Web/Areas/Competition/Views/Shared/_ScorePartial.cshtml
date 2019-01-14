@@ -1,0 +1,67 @@
+﻿@{
+    @model ScorePointsViewModel
+}
+
+<div class="card my-0">
+    <div class="card-header" id="heading@(Model.MatchdayWeek)">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse@(Model.MatchdayWeek)" aria-expanded="true" aria-controls="collapse@(Model.MatchdayWeek)">
+                Matchday @Model.MatchdayWeek
+            </button>
+        </h5>
+    </div>
+    <div id="collapse@(Model.MatchdayWeek)" class="collapse" aria-labelledby="heading@(Model.MatchdayWeek)" data-parent="#accordion">
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div>Goals:</div>
+                        <div>@Model.Goals</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div>Assists:</div>
+                        <div>@Model.Assists</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div>Shots:</div>
+                        <div>@Model.Shots</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div>Tackles:</div>
+                        <div>@Model.Tackles</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div>Yellow Cards:</div>
+                        <div>@Model.YellowCards</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div>Red Cards:</div>
+                        <div>@Model.RedCards</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div>Minutes:</div>
+                        <div>@Model.PlayedMinutes</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between text-uppercase font-weight-bold">
+                        <div>Points:</div>
+                        <div>@Model.Points</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

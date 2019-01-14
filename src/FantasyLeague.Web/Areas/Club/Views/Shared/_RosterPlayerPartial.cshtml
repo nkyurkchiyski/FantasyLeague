@@ -10,19 +10,22 @@
 <div class="card text-center p-2">
 
     <div>
-        @foreach (var name in names)
-        {
-            if (name.Length > 12)
+        <a asp-area="@ControllerConstants.CompetitionAreaName" asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Details" asp-route-id="@Model.PlayerId">
+            @foreach (var name in names)
             {
-                <h7>@name</h7>
-            }
-            else
-            {
+                if (name.Length > 12)
+                {
 
-                <h6>@name</h6>
-            }
+                    <h7>@name</h7>
 
-        }
+                }
+                else
+                {
+
+                    <h6>@name</h6>
+                }
+            }
+        </a>
         @if (names.Length == 1)
         {
             <h6>&nbsp;</h6>

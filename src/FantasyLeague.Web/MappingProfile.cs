@@ -139,6 +139,30 @@ namespace FantasyLeague.Web
         {
             CreateMap<Player, PlayerViewModel>();
 
+            CreateMap<Player, PlayerPointsViewModel>()
+                .ForMember(
+                    f => f.PlayerImage,
+                    opt => opt.MapFrom(src => src.Image == null ? GlobalConstants.TemplatePlayerImageUrl : src.Image.Url))
+                .ForMember(
+                    f => f.Goals,
+                    opt => opt.MapFrom(src => src.Scores.Where(x =>
+                    x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
+                                                 .Sum(x => x.Goals)))
+                .ForMember(
+                    f => f.Assists,
+                    opt => opt.MapFrom(src => src.Scores.Where(x =>
+                    x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
+                                                 .Sum(x => x.Assists)))
+                .ForMember(
+                    f => f.Appearances,
+                    opt => opt.MapFrom(src => src.Scores.Where(x =>
+                    x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming).Count()))
+                .ForMember(
+                    f => f.TotalPoints,
+                    opt => opt.MapFrom(src => src.Scores.Where(x =>
+                    x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
+                                                 .Sum(x => x.GetScore())));
+
             CreateMap<Player, PlayerDetailedViewModel>()
                 .ForPath(e => e.Image, opt => opt.Ignore());
 
@@ -150,7 +174,7 @@ namespace FantasyLeague.Web
                                                  .Sum(x => x.Goals)))
                 .ForMember(
                     f => f.Assists,
-                    opt => opt.MapFrom(src => src.Scores.Where(x => 
+                    opt => opt.MapFrom(src => src.Scores.Where(x =>
                     x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
                                                  .Sum(x => x.Assists)))
                 .ForMember(
@@ -159,7 +183,7 @@ namespace FantasyLeague.Web
                     x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming).Count()))
                 .ForMember(
                     f => f.TotalPoints,
-                    opt => opt.MapFrom(src => src.Scores.Where(x => 
+                    opt => opt.MapFrom(src => src.Scores.Where(x =>
                     x.Fixture.Matchday.MatchdayStatus < MatchdayStatus.Upcoming)
                                                  .Sum(x => x.GetScore())))
                 .ForMember(
@@ -202,6 +226,14 @@ namespace FantasyLeague.Web
         private void CreateScoreMappings()
         {
             CreateMap<Score, ScoreViewModel>();
+
+            CreateMap<Score, ScorePointsViewModel>()
+                .ForMember(
+                    f => f.MatchdayWeek,
+                    opt => opt.MapFrom(src => src.Fixture.Matchday.Week))
+                .ForMember(
+                    f => f.Points,
+                    opt => opt.MapFrom(src => src.GetScore()));
 
             CreateMap<Score, ScorePlayerViewModel>()
                 .ForMember(

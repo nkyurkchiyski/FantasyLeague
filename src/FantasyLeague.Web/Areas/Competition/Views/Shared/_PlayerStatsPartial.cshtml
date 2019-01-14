@@ -32,7 +32,7 @@
                     <td>@(i + 1)</td>
                     <td><img class="mini-image" src="@Model[i].PlayerImage" /></td>
                     <td>
-                        @Model[i].Name
+                        <a asp-area="@ControllerConstants.CompetitionAreaName" asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Details" asp-route-id="@Model[i].Id">@Model[i].Name</a>
                     </td>
                     <td>
                         @Model[i].Nationality

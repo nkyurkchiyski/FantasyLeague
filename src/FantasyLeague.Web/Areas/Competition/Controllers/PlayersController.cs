@@ -171,5 +171,14 @@ namespace FantasyLeague.Web.Areas.Competition.Controllers
 
             return View(model);
         }
+        
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var model = await this.playersService
+                .GetPlayerAsync<PlayerPointsViewModel>(id);
+            
+            return View(model);
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using FantasyLeague.Models;
+﻿using FantasyLeague.Common.Constants;
+using FantasyLeague.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -47,13 +48,20 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
             public bool RememberMe { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public async Task<IActionResult> OnGetAsync(string returnUrl = null)
         {
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
             }
-            
+
+            if (this.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction(
+                    controllerName: PagesConstants.Home,
+                    actionName: ActionConstants.Index);
+            }
+
             returnUrl = returnUrl ?? Url.Content("~/");
 
             // Clear the existing external cookie to ensure a clean login process
@@ -62,6 +70,8 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
             ReturnUrl = returnUrl;
+
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)

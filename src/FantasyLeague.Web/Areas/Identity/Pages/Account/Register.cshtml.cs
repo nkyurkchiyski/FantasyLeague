@@ -73,11 +73,19 @@ namespace FantasyLeague.Web.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
         }
 
-        public void OnGet(string returnUrl = null)
+        public IActionResult OnGet(string returnUrl = null)
         {
+            if (this.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction(
+                    controllerName: PagesConstants.Home,
+                    actionName: ActionConstants.Index);
+            }
+
             ReturnUrl = returnUrl;
             BundesligaTeams = this._teamsService
                 .All<TeamViewModel>();
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)

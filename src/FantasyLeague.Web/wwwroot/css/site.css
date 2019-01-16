@@ -427,3 +427,7 @@ a {
     object-fit: contain;
     height: 200px;
 }
+
+.no-underline {
+    text-decoration: none !important
+}

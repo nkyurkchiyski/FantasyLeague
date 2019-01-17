@@ -1,0 +1,124 @@
+﻿@{
+    @model IList<PlayerStatsViewModel>
+}
+
+<table id="table_rosterPlayers" class="table table-hover text-center">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Position</th>
+            <th>APs</th>
+            <th>Price</th>
+            <th>TP</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td><img class="mini-image" src="@Model[i].PlayerImage" /></td>
+                    <td>
+                        <a asp-area="@ControllerConstants.CompetitionAreaName" asp-controller="@PagesConstants.Players" asp-action="@ActionConstants.Details" asp-route-id="@Model[i].Id">@Model[i].Name</a>
+                    </td>
+                    <td>
+                        @Model[i].TeamName
+                    </td>
+                    <td>
+                        @Model[i].Position
+                    </td>
+                    <td>
+                        @Model[i].Appearances
+                    </td>
+                    <td>
+                        @Model[i].Price
+                    </td>
+                    <td>
+                        @Model[i].TotalPoints
+                    </td>
+                    <td id="player_div_@Model[i].Id">
+                        <div id="player_info_@Model[i].Id" class="@HtmlCssConstants.None">
+                            <div id="player_id_@Model[i].Id" class="@HtmlCssConstants.None out ">@Model[i].Id.ToString()</div>
+                            <div id="player_position_@Model[i].Id" hidden>@Model[i].Position</div>
+                            <div id="player_price_@Model[i].Id" hidden>@Model[i].Price</div>
+                            <div class="row mb-3">
+                                <div class="col-md-9">
+                                    <input class="form-control" asp-for="@Model[i].Name" disabled />
+                                </div>
+                                <div class="col-md-3 pl-0">
+                                    <a role="button" class="btn btn-primary text-white" onclick="moveOutButton('@Model[i].Id')">
+                                        <span class="oi oi-minus"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-holder d-flex justify-content-center">
+                            <a id="add_button_@Model[i].Id" role="button" class="btn btn-primary text-white" onclick="moveOutButton('@Model[i].Id')">
+                                <span class="oi oi-plus"></span>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#table_rosterPlayers').DataTable({
+            "responsive": true,
+            "scrollY": 400,
+            "paging": false,
+            "keys": true
+        });
+
+    });
+
+    function moveOutButton(id) {
+        var elem = document.getElementById('player_info_' + id);
+        var position = document.getElementById('player_position_' + id);
+        var price = parseFloat(document.getElementById('player_price_' + id).innerHTML);
+
+        var slotsLeft = document.getElementById('playersOut_count');
+        var button = document.getElementById('add_button_' + id);
+        var budgetLeft = document.getElementById('budget');
+        var playerId = document.getElementById('player_id_' + id);
+
+        if ($(elem).parent().prop('nodeName') == "TD") {
+
+            if (slotsLeft.innerHTML - 1 > -1) {
+                $(elem).detach().appendTo('#playersOut');
+                $(elem).removeClass("@HtmlCssConstants.None");
+                $(button).addClass("@HtmlCssConstants.Disabled");
+
+                $(position).addClass("playerOut-position");
+
+                $(playerId).addClass(" ids");
+                slotsLeft.innerHTML--;
+                budgetLeft.innerHTML = parseFloat(budgetLeft.innerHTML) + price;
+            }
+        }
+        else {
+            slotsLeft.innerHTML++;
+            budgetLeft.innerHTML = parseFloat(budgetLeft.innerHTML) - price;
+            $(playerId).removeClass(" ids");
+            $(elem).detach().appendTo('#player_div_' + id);
+            $(elem).addClass("@HtmlCssConstants.None");
+            $(button).removeClass("@HtmlCssConstants.Disabled");
+
+            $(position).removeClass("playerOut-position");
+        }
+    }
+</script>

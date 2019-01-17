@@ -23,9 +23,18 @@
 <h4>Manage your team</h4>
 @if (Model.TransferWindowStatus == TransferWindowStatus.Opened)
 {
-    <a asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Create" class="btn btn-primary">
-        <span class="oi oi-transfer"></span>
-    </a>
+    if (Model.RostersWeeks.Any())
+    {
+        <a asp-controller="@PagesConstants.Transfers" asp-action="@ActionConstants.Index" class="btn btn-primary">
+            <span class="oi oi-transfer"></span>
+        </a>
+    }
+    else
+    {
+        <a asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Create" class="btn btn-primary">
+            <span class="oi oi-pencil"></span>
+        </a>
+    }
 }
 <div class="alert-light rounded p-3 my-2">
     <h5 class="p-0 m-0">

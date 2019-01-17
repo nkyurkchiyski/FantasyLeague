@@ -11,6 +11,7 @@
         public const string Rosters = "Rosters";
         public const string Register = "Register";
         public const string Login = "Login";
+        public const string Transfers = "Transfers";
 
         public const string AccountIndex = "AccountIndex";
         public const string ChangePassword = "ChangePassword";

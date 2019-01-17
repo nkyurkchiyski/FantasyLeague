@@ -25,7 +25,9 @@
 
         public const double Budget = 150;
         public const int RosterSize = 15;
-        public const int MaxTransfers = 6;
+
+        public const int MinTransfers = 0;
+        public const int MaxTransfers = 3;
 
         public const int TotalMatchdays = 34;
 

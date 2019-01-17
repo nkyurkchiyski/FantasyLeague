@@ -143,6 +143,8 @@ namespace FantasyLeague.Data.Migrations
 
                     b.Property<Guid>("MatchdayId");
 
+                    b.Property<int>("TransfersLeft");
+
                     b.Property<string>("UserId")
                         .IsRequired();
 

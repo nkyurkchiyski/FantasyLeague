@@ -1,0 +1,117 @@
+﻿@{
+    @model TransfersRosterViewModel
+    ViewData["Title"] = $"{ActionConstants.Transfer} {PagesConstants.Players}";
+    ViewData["ActivePage"] = PagesConstants.Rosters;
+}
+
+<h1>@ActionConstants.Transfer @PagesConstants.Players</h1>
+<a asp-controller="@PagesConstants.Rosters" asp-action="@ActionConstants.Index" class="btn btn-outline-primary">
+    <span class="oi oi-arrow-left"></span>
+</a>
+<hr />
+
+<partial name="~/Areas/Club/Views/Shared/_TransfersPartial.cshtml" model="@Model.AllPlayers" />
+<partial name="~/Areas/Club/Views/Shared/_RosterPlayersPartial.cshtml" model="@Model.RosterPlayers" />
+
+<form class="my-4">
+    <div>
+        <h2>Roster</h2>
+        <h4 class="m-0">
+            Budget <span id="budget">@Model.Budget</span>M
+        </h4>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <h3>In: <span id="playersIn_count">@Model.TransfersLeft</span></h3>
+            <div id="playersIn">
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Out: <span id="playersOut_count">@Model.TransfersLeft</span></h3>
+            <div id="playersOut">
+
+            </div>
+        </div>
+    </div>
+    <div class="button-holder d-flex justify-content-center my-5">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+<script>
+    function valid() {
+        var playersInCount = parseInt(document.getElementById('playersIn_count').innerHTML);
+        var playersOutCount = parseInt(document.getElementById('playersOut_count').innerHTML);
+
+        var playersInPositions = document.getElementsByClassName("playerIn-position");
+        var playersOutPositions = document.getElementsByClassName("playerOut-position");
+
+        var playersIn = [];
+        var playersOut = [];
+
+        for (var i = 0; i < playersInPositions.length; i++) {
+            playersIn.push(playersInPositions[i].innerHTML);
+        }
+
+        for (var i = 0; i < playersOutPositions.length; i++) {
+            playersOut.push(playersOutPositions[i].innerHTML);
+        }
+
+        var validTransfers = playersIn.length === playersOut.length &&
+            playersIn.sort().every(function (value, index) { return value === playersOut.sort()[index] });
+
+        var budgetLeft = parseFloat(document.getElementById('budget').innerHTML);
+
+        if (budgetLeft < 0) {
+            alert("You are over budget!");
+            return false;
+        }
+
+        if (playersInCount != playersOutCount) {
+            alert("You have to have 15 players in your roster!");
+            return false;
+        }
+
+        if (!validTransfers) {
+            alert("You have to have 2 goakeepers, 5 defenders, 5 midfielders and 3 attackers in your roster!");
+            return false;
+        }
+
+        return true;
+    }
+
+    $("form").submit(function (event) {
+        event.preventDefault();
+
+        if (valid())  {
+            var inIdsTemp = document.getElementsByClassName("@HtmlCssConstants.None in ids");
+            var outIdsTemp = document.getElementsByClassName("@HtmlCssConstants.None out ids");
+
+            var playersIn = [];
+            var playersOut = [];
+
+            for (var i = 0; i < inIdsTemp.length; i++) {
+                playersIn.push(inIdsTemp[i].innerHTML);
+                playersOut.push(outIdsTemp[i].innerHTML);
+            }
+            
+            var model = {
+                "PlayersIn": playersIn,
+                "PlayersOut": playersOut
+            };
+
+            $.ajax({
+                method: 'POST',
+                url: '/Club/Transfers/Create',
+                data: JSON.stringify(model),
+                contentType: 'application/json',
+                 success: function (data) {
+                    window.location.href = data;
+
+                }
+            });
+        }
+
+    });
+</script>

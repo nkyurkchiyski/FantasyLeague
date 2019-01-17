@@ -10,6 +10,7 @@
         public const string All = "All";
         public const string Error = "Error";
         public const string Index = "Index";
+        public const string Transfer = "Transfer";
 
         public const string AddPlayerStats = "AddPlayerStats";
         public const string AddMatchdayResults = "AddMatchdayResults";

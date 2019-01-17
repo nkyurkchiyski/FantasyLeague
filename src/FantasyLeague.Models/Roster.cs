@@ -15,11 +15,15 @@ namespace FantasyLeague.Models
         {
             this.Players = new HashSet<RosterPlayer>();
             this.Budget = GlobalConstants.Budget;
+            this.TransfersLeft = GlobalConstants.MaxTransfers;
         }
 
         public Formation Formation { get; set; }
 
         public double Budget { get; set; }
+
+        [Range(minimum: GlobalConstants.MinTransfers, maximum: GlobalConstants.MaxTransfers)]
+        public int TransfersLeft { get; set; }
 
         [Required]
         public string UserId { get; set; }
@@ -33,8 +37,8 @@ namespace FantasyLeague.Models
 
         public int Points => this.Players
             .Where(x => x.Selected)
-            .Sum(x => x.Player.Scores.FirstOrDefault(y => this.Matchday.Fixtures.Contains(y.Fixture)) == null ? 0 :
-                      x.Player.Scores.FirstOrDefault(y => this.Matchday.Fixtures.Contains(y.Fixture)).GetScore());
+            .Sum(x => x.Player.Scores.FirstOrDefault(y => this.Matchday.Fixtures.Contains(y.Fixture)) == null ?
+            0 : x.Player.Scores.FirstOrDefault(y => this.Matchday.Fixtures.Contains(y.Fixture)).GetScore());
 
         [NotMapped]
         public bool IsValid => this.Players.Count == GlobalConstants.RosterSize && this.Budget >= 0;

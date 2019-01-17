@@ -102,6 +102,7 @@ namespace FantasyLeague.Web
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             //Services
+            services.AddScoped<ITransfersService, TransfersService>();
             services.AddScoped<IImagesService, ImagesService>();
             services.AddScoped<IPlayersService, PlayersService>();
             services.AddScoped<IUsersService, UsersService>();
